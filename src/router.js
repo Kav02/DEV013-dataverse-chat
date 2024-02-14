@@ -13,7 +13,7 @@ export const setRoutes = (newRoutesValue) => {
   // optional Throw errors if routes isn't an object
   // optional Throw errors if routes doesn't define an /error route
   if (typeof newRoutesValue === "object") {
-    if (newRoutesValue['/error']) {
+    if (newRoutesValue["/Error"]) {
       // assign ROUTES
       ROUTES = newRoutesValue;
     }
@@ -30,7 +30,7 @@ const renderView = (pathname, props = {}) => {
     const template = ROUTES[pathname](props);
     root.appendChild(template);
   } else {
-    root.appendChild(ROUTES["/error"]());
+    root.appendChild(ROUTES["/Error"]());
   }
 };
 /* const pageView = new View(props);
@@ -56,9 +56,8 @@ export const onURLChange = (location) => {
   renderView(location); // En este caso no estamos pasando los dos parámetros a la función. Por eso al definir renderView se define props de una vez como un elemento vacío.
 };
 
-
 //const queryStringToObject = (queryString) => {
-  // convert query string to URLSearchParams
-  // convert URLSearchParams to an object
-  // return the object
+// convert query string to URLSearchParams
+// convert URLSearchParams to an object
+// return the object
 //};

@@ -1,4 +1,4 @@
-import data from "./data/dataset.js";
+import data from "./../data/dataset";
 
 const artistList = []; //Crear array vacio
 for (const artwork of data) {

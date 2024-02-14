@@ -1,0 +1,68 @@
+/* FONTS:
+ "Sometype Mono":Titulo de los cuadros
+ "JetBrains Mono":inf de las tarjetas,descipcion larga,cuadraditos,limpiar,galeria
+ "Ubuntu": art place,todo lo demas */
+body {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+main {
+    /*todo el cuerpo donde estan las tarjetas*/
+    background-color: white;
+    columns: 4 300px;
+    /*cuantas columnas y cual es su ancho*/
+    column-gap: 4%;
+    /*distancia entre columnas*/
+    display: inline-block;
+    /* Asegura que las tarjetas se comporten como bloques en línea */
+    padding-right: 1vw;
+    list-style: none;
+    /*para que los puntitos desaparezcan*/
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-right: 5vw;
+}
+
+#cardContainer {
+    /*tarjetas independientes*/
+    background-color: #F8F8F1;
+    max-width: 100%;
+    margin-bottom: 20%;
+    padding-bottom: 5%;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
+    /*para generar la sombra*/
+    break-inside: avoid-column;
+    /*Evita que una tarjeta se divida entre columnas*/
+    display: block;
+}
+
+li {
+    list-style: none;
+    /*para que los puntitos desaparezcan*/
+}
+
+dd {
+    /*cada item dentro de las tarjetas*/
+    font-family: "JetBrains Mono";
+    max-width: 100%;
+    margin: 1px 0px;
+    text-align: center;
+    font-size: 15px;
+    /* Centra el texto horizontalmente */
+}
+
+img[itemprop="image"] {
+    margin: 0 px;
+    padding: 0px;
+    width: 100%;
+    object-fit: cover;
+}
+
+dd[itemprop="name"] {
+    font-family: "Sometype Mono";
+    font-weight: bold;
+    font-size: 20px;
+    margin: 3px;
+}
