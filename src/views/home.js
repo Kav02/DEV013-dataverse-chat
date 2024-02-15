@@ -3,8 +3,15 @@ import { renderItems } from "../view.js";
 import data from "../data/dataset.js";
 
 export const Home = () => {
+  const viewHome = document.createElement("section");
+  viewHome.id = "viewHome";
+  //Pendiente Crear el header y el banner
+  const banner = document.createElement("div");
+  banner.id = "banner";
+  const galery = document.createElement("h2");
+  galery.textContent = "GALERIA";
+  banner.appendChild(galery);
   //Crea la lista de artistas
-
   const artistList = []; //Crear array vacio
   for (const artwork of data) {
     const artistName = artwork.facts.artistName;
@@ -52,17 +59,17 @@ export const Home = () => {
              <option value="desc">Z - A</option>
            </select>`;
   article.appendChild(selectMenu);
-
+  banner.appendChild(article);
   // Genera las tarjetas a partir de renderItems
 
-  const artWorkList = document.createElement("main");
-  artWorkList.id = "mainCointainer";
+  const artWorkList = document.createElement("section");
+  artWorkList.id = "cardBody";
   //let currentData = [...data];
   const shortCards = renderItems(data); // Agrega las tarjetas al elemento artWorkList
-  artWorkList.appendChild(article);
   artWorkList.appendChild(shortCards);
+  viewHome.append(banner, artWorkList);
 
-  return artWorkList;
+  return viewHome;
 };
 
 //Función de filtrar

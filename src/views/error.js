@@ -1,5 +1,6 @@
 export const Error = () => {
-  const viewError = document.createElement("main");
+  const viewError = document.createElement("section");
+  viewError.id = "viewError";
 
   const header = document.createElement("section");
   header.id = "sectionHeader";
