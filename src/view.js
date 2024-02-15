@@ -18,7 +18,7 @@ export const renderItems = (data) => {
     // Crea la tarjeta detallada
     listItem.querySelector("img").addEventListener("click", () => {
       const longCard = renderCards([painting]); // Obtiene la tarjeta detallada para esa pintura
-      const detailCard = document.getElementById("detailCard"); // Obtiene el elemento detailCard del html
+      const detailCard = document.createElement("detailCard"); // Crea elemento detailCard del html
       const closeButton = document.createElement("button");
       closeButton.id = "close-button";
       closeButton.textContent = "Cerrar";

@@ -1,9 +1,10 @@
-/*import { filterData, sortData, computeStats } from "./../lib/dataFunctions.js";*/
+//import { filterData } from "./../lib/dataFunctions.js";
 import { renderItems } from "../view.js";
-import data from "./../data/dataset.js";
+import data from "../data/dataset.js";
 
 export const Home = () => {
   //Crea la lista de artistas
+
   const artistList = []; //Crear array vacio
   for (const artwork of data) {
     const artistName = artwork.facts.artistName;
@@ -53,30 +54,32 @@ export const Home = () => {
   article.appendChild(selectMenu);
 
   // Genera las tarjetas a partir de renderItems
+
   const artWorkList = document.createElement("main");
   artWorkList.id = "mainCointainer";
-  // let currentData = [...data];
+  //let currentData = [...data];
   const shortCards = renderItems(data); // Agrega las tarjetas al elemento artWorkList
   artWorkList.appendChild(article);
   artWorkList.appendChild(shortCards);
+
   return artWorkList;
 };
 
 //Función de filtrar
 //Por artista
-//   document
-//     .querySelector("#artist-filter")
-//     .addEventListener("change", function (event) {
-//       const artistDisplay = event.target.value;
-//       document.querySelector("artmovement-filter").value = "Corrientes";
-//       document.querySelector("alphabetical-order").value = "Ordenar";
-//       const artistCards = filterData(data, "artistName", artistDisplay);
-//       currentData = [...artistCards];
-//       const filteredCards = renderItems(artistCards);
-//       const clearScreen = document.querySelector("cardContainer");
-//       clearScreen.innerHTML = "";
-//       clearScreen.appendChild(filteredCards);
-//     });
+// document
+//   .querySelector("#artist-filter")
+//   .addEventListener("change", function (event) {
+//     const artistDisplay = event.target.value;
+//     document.querySelector("artmovement-filter").value = "Corrientes";
+//     document.querySelector("alphabetical-order").value = "Ordenar";
+//     const artistCards = filterData(data, "artistName", artistDisplay);
+//     //currentData = [...artistCards];
+//     const filteredCards = renderItems(artistCards);
+//     const clearScreen = document.querySelector("mainContainer");
+//     clearScreen.innerHTML = "";
+//     clearScreen.appendChild(filteredCards);
+//   });
 //   //Por movimiento
 //   document
 //     .querySelector("#artmovement-filter")
