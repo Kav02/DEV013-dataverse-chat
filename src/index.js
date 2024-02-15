@@ -7,13 +7,14 @@ import {
 } from "./router.js";
 import { Home } from "./views/Home.js";
 import { Error } from "./views/Error.js";
-
+import { Individual } from "./views/Individual.js";
+import { Groupal } from "./views/Groupal.js";
 //1.- Definir rutas en router.
 const routes = {
   "/": Home,
   "/Error": Error,
-  //   "/individual": Chat_individual,
-  //   "/groupal": Chat_Groupal,
+  "/Individual": Individual,
+  "/Groupal": Groupal,
   //   "/chatkey": Chat_key,
 };
 
@@ -23,8 +24,8 @@ setRootElement(root);
 setRoutes(routes);
 
 //3.- Invocar el router para renderizar la vista correcta.
-document.addEventListener("DOMContentLoaded", (event) => {
-  onURLChange(event.target.location.pathname);
+document.addEventListener("DOMContentLoaded", (e) => {
+  onURLChange(e.currentTarget.location.pathname);
 });
 
 // //Carga inicial
