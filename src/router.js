@@ -10,29 +10,52 @@ export const setRootElement = (newRootElementValue) => {
 
 //Esta función asigna el valor del parámetro routes al objeto ROUTES
 export const setRoutes = (newRoutesValue) => {
-  // optional Throw errors if routes isn't an object
-  // optional Throw errors if routes doesn't define an /error route
+  // verifica que routes sea un objeto
+  // verifica que haya manejo de error
   if (typeof newRoutesValue === "object") {
-    if (newRoutesValue['/error']) {
-      // assign ROUTES
+    if (newRoutesValue["/Error"]) {
+      // asigna ROUTES
       ROUTES = newRoutesValue;
     }
   }
 };
 
-const renderView = (pathname, props = {}) => {
-  //Renderiza una vista root especificado. Parametros: pathname que es el parte de window.location y props que es un objeto de datos que podemos pasar a la vista.
-  // clear the root element
+const renderView = (pathname, props) => {
+  //en este caso props es un nombre convencional para referirse a los datos adicionales en este caso la función relacionada a la vista
+  //Renderiza una vista root especificado. Parametros: pathname que es el parte de window.location y props: Home, Error, etc.
+  // Limpiar root
   const root = rootElement;
-  rootElement.innerHTML = "";
-  // find the correct view in ROUTES for the pathname
+  root.innerHTML = "";
+  // buscar en ROUTES el view para ese path
   if (ROUTES[pathname]) {
     const template = ROUTES[pathname](props);
     root.appendChild(template);
   } else {
-    root.appendChild(ROUTES["/error"]());
+    root.appendChild(ROUTES["/Error"](props));
   }
 };
+
+export const navigateTo = (pathname, props = {}) => {
+  const URLvisited = window.location + pathname;
+  //Parámetros de pushState: state, title, URL. El estado se pasa vacío porque no interesa asociarlo a nada.
+  history.pushState({}, "", URLvisited);
+  // render the view with the pathname and props
+  renderView(pathname, props);
+};
+
+export const onURLChange = (pathname) => {
+  // parse the location for the pathname and search params
+  // convert the search params to an object
+  // render the view with the pathname and object
+  renderView(pathname); // En este caso no estamos pasando los dos parámetros a la función. Por eso al definir renderView se define props de una vez como un elemento vacío.
+};
+
+//const queryStringToObject = (queryString) => {
+// convert query string to URLSearchParams
+// convert URLSearchParams to an object
+// return the object
+//};
+
 /* const pageView = new View(props);
   // render the correct view passing the value of props
   const viewContent = pageView.render();
@@ -40,25 +63,3 @@ const renderView = (pathname, props = {}) => {
   rootElement.appendChild(viewContent);*/
 
 // in case not found render the error view
-
-export const navigateTo = (pathname, props = {}) => {
-  // update window history with pushState
-  const URLvisited = window.location + pathname;
-  history.pushState({}, "", URLvisited);
-  // render the view with the pathname and props
-  renderView(pathname, props);
-};
-
-export const onURLChange = (location) => {
-  // parse the location for the pathname and search params
-  // convert the search params to an object
-  // render the view with the pathname and object
-  renderView(location); // En este caso no estamos pasando los dos parámetros a la función. Por eso al definir renderView se define props de una vez como un elemento vacío.
-};
-
-
-//const queryStringToObject = (queryString) => {
-  // convert query string to URLSearchParams
-  // convert URLSearchParams to an object
-  // return the object
-//};
