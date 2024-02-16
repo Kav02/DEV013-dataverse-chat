@@ -21,7 +21,7 @@ export const Error = () => {
   contentError.innerHTML = `
 <h1 class=titleError> Error </h1>
 <br>
-<p class=textEror> Pagina no encontrada </p>`;
+<p class=textError> Pagina no encontrada </p>`;
 
   // const imgBackground = document.createElement("img");
   // imgBackground.src = "./Imagenes/BackgroundError.jpg";

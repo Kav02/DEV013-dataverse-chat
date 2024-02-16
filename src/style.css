@@ -103,18 +103,17 @@ article {
     margin-top: 76px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    position: absolute;
-    align-items: flex-start;
     /*se alinea verticalmente*/
     height: auto;
     border-bottom-style: double;
     border-width: 1px;
+    justify-content: space-between;
 }
 
-.select-menu,
-.buttons {
-    flex: 1;
+/* Barra de menu */
+
+label {
+    display: none;
 }
 
 .select-menu {
@@ -123,7 +122,87 @@ article {
     justify-content: flex-start;
     min-width: 150px;
     width: fit-content;
+}
 
+select {
+    height: 34px;
+    width: 100%;
+    font-family: "JetBrains Mono";
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+option {
+    height: 350px;
+    background-color: #D9D9D9;
+    width: 500px;
+}
+
+select option {
+    height: 30px;
+    padding: 5px;
+
+}
+
+option:hover {
+    background-color: #918d8d;
+}
+
+.buttons {
+    /* display: flex;
+    justify-content: space-between; */
+    height: 34px;
+    /* width: 100%; */
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    /* width: fit-content;
+    padding-left: 10vw;
+    padding-right: 2vw; */
+
+}
+
+#button-clear {
+    font-family: "JetBrains Mono";
+    color: white;
+    background-color: #000000;
+    border-radius: 20px;
+    border-color: #F8F8F1;
+    padding: 5px 25px;
+    box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.63);
+}
+
+#button-clear:hover {
+    background-color: #575656;
+    transition: 0.3s;
+}
+
+#button-stats {
+    color: rgb(0, 0, 0);
+    background-color: #929191;
+    border-radius: 30%;
+    border-color: #F8F8F1;
+    padding: 2px 5px;
+    height: 30px;
+    box-shadow: 2px 1px 5px 0px rgba(4, 2, 2, 0.63);
+}
+
+#button-stats:hover {
+    background-color: #cfcea7;
+    transition: 0.3s;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    color: black;
 }
 
 /* Vista Error */
@@ -186,23 +265,51 @@ article {
     justify-content: center;
 }
 
-.textEror {
+.textError {
     display: flex;
     justify-content: center;
     padding-top: 10px;
     font-family: "JetBrains Mono";
 }
 
+/* Vista Chat Groupal*/
+#viewGroupal {
+    display: flex;
+    flex-direction: column;
+    width: 100vh;
+    height: 100vw;
 
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24;
-    font-size: 40px;
-    height: auto;
 }
+
+#chatHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#smallLogo {
+    background-color: black;
+    height: 5vh;
+    padding: 1vw
+}
+
+#headerTitle {
+    font-family: "Ubuntu";
+    background-color: black;
+    color: white;
+    height: 5vh;
+    font-size: 50px;
+    flex: 1;
+    padding: 1vw;
+}
+
+#chatBody {
+    background-color: #e5f4f6;
+
+}
+
+
 
 /* .material-symbols-outlined-home {
   font-variation-settings:
@@ -218,3 +325,63 @@ article {
     'GRAD' 0,
     'opsz' 24
 } */
+
+@media(max-width: 2000px) {
+
+    /* .menu-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    } */
+
+    .bar-menu {
+        display: none;
+    }
+
+    #button-menu {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+
+    .select-menu {
+        /* display: none;
+        position: absolute; */
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        z-index: 1;
+    }
+
+    .selects {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .selects option {
+        padding: 5px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+        height: 34px;
+        font-size: 15px;
+        text-align: center;
+        cursor: pointer;
+        align-items: center;
+        padding: 0 10px;
+
+    }
+
+    .button-menu.open .select-menu {
+        display: block;
+    }
+
+    .button-menu.open .button-menu {
+        background-color: #ccc;
+    }
+}

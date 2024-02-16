@@ -1,11 +1,11 @@
 //import { filterData } from "./../lib/dataFunctions.js";
-import { renderItems } from "../view.js";
+import { renderItems, openMenu } from "../view.js";
 import data from "../data/dataset.js";
 
 export const Home = () => {
   const viewHome = document.createElement("section");
   viewHome.id = "viewHome";
-  //Pendiente Crear el header y el banner
+  //Pendiente Crear el header
   const banner = document.createElement("div");
   banner.id = "banner";
   const galery = document.createElement("h2");
@@ -35,8 +35,22 @@ export const Home = () => {
 
   //Crear el menu de filtrado
   const article = document.createElement("article");
+  const menuContainer = document.createElement("div");
+  menuContainer.classList.add("menu-container");
+  const barMenu = document.createElement("div");
+  barMenu.classList.add("bar-menu");
   const selectMenu = document.createElement("div");
   selectMenu.classList.add("select-menu");
+  const buttonMenu = document.createElement("button");
+  buttonMenu.id = "button-menu";
+  const iconMenu = document.createElement("span");
+  iconMenu.classList.add("material-symbols-outlined");
+  iconMenu.textContent = "Menu";
+
+  buttonMenu.appendChild(iconMenu);
+  buttonMenu.appendChild(selectMenu);
+  menuContainer.appendChild(buttonMenu);
+
   selectMenu.innerHTML = `
           <label for="artist-filter">Artista</label>
           <select data-testid="select-filter" name="artist-filter" id="artist-filter">
@@ -58,17 +72,40 @@ export const Home = () => {
              <option value="asc">A - Z</option>
              <option value="desc">Z - A</option>
            </select>`;
-  article.appendChild(selectMenu);
-  banner.appendChild(article);
-  // Genera las tarjetas a partir de renderItems
 
+  buttonMenu.appendChild(selectMenu);
+
+  menuContainer.appendChild(barMenu);
+  menuContainer.appendChild(buttonMenu);
+  article.appendChild(menuContainer);
+
+  const buttons = document.createElement("div");
+  buttons.classList.add("buttons");
+  buttons.innerHTML = `
+    <button data-testid="button-stats" id="button-stats">
+     <span class="material-symbols-outlined">
+         bar_chart
+       </span>
+     </button>
+     <button data-testid="button-clear" id="button-clear">Limpiar
+     </button>`;
+  article.appendChild(buttons);
+
+  const menuButton = document.getElementById("button-menu");
+  console.log(menuButton);
+  if (menuButton) {
+    document.getElementById("button-menu").addEventListener("click", openMenu);
+  }
+  console.log(document.getElementById("button-menu"));
+  // Genera las tarjetas a partir de renderItems
   const artWorkList = document.createElement("section");
   artWorkList.id = "cardBody";
   //let currentData = [...data];
   const shortCards = renderItems(data); // Agrega las tarjetas al elemento artWorkList
   artWorkList.appendChild(shortCards);
-  viewHome.append(banner, artWorkList);
 
+  banner.appendChild(article);
+  viewHome.append(banner, artWorkList);
   return viewHome;
 };
 
@@ -163,14 +200,3 @@ export const Home = () => {
 //   }
 //   return icon;
 // }
-
-//   <div class="buttons">
-//     <button data-testid="button-stats" id="button-stats">
-//       <span class="material-symbols-outlined">
-//         bar_chart
-//       </span>
-//     </button>
-//     <button data-testid="button-clear" id="button-clear">Limpiar
-//     </button>
-//   </div>
-// </article>
