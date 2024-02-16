@@ -23,23 +23,15 @@ export const Error = () => {
 <br>
 <p class=textEror> Pagina no encontrada </p>`;
 
-  // const imgBackground = document.createElement("img");
-  // imgBackground.src = "./Imagenes/BackgroundError.jpg";
-  // // logoHeader.alt = "logo de la pagina";
-  // contentError.appendChild(imgBackground);
-
   const articleMenu = document.createElement("article");
   articleMenu.id = "articleMenu";
   articleMenu.innerHTML = `
-  <span class="material-symbols-outlined" id="icon-key">
-  vpn_key </span>
   <span class="material-symbols-outlined" id="icon-home">
   home </span>
   <span class="material-symbols-outlined" id="icon-chat">
   groups </span>
   `;
-  viewError.append(header, contentError, articleMenu);
-
+  viewError.append(contentError, articleMenu);
   return viewError;
 };
 

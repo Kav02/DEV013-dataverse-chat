@@ -5,16 +5,19 @@ import {
   setRootElement,
   onURLChange,
 } from "./router.js";
-import { Home } from "./views/Home.js";
-import { Error } from "./views/Error.js";
-import { Individual } from "./views/Individual.js";
-import { Groupal } from "./views/Groupal.js";
+import { Home } from "./views/home.js";
+import { Error } from "./views/error.js";
+import { Welcome } from "./views/welcome.js";
+import { Card } from "./views/card.js";
+
 //1.- Definir rutas en router.
 const routes = {
   "/": Home,
-  "/Error": Error,
-  "/Individual": Individual,
-  "/Groupal": Groupal,
+  "/error": Error,
+  "/welcome": Welcome,
+  "/card": Card,
+  //   "/individual": Chat_individual,
+  //   "/groupal": Chat_Groupal,
   //   "/chatkey": Chat_key,
 };
 
