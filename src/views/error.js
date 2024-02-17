@@ -1,19 +1,11 @@
+import { headerComponent } from "../components/Header.js";
+
 export const Error = () => {
   const viewError = document.createElement("section");
   viewError.id = "viewError";
 
-  const header = document.createElement("section");
-  header.id = "sectionHeader";
-
-  // Crear un elemento de imagen
-  const logoHeader = document.createElement("img");
-  logoHeader.id = "logoHeader";
-  logoHeader.src = "./Imagenes/logo.png";
-  // logoHeader.alt = "logo de la pagina";
-
-  header.appendChild(logoHeader);
-
-  header.innerHTML += "ART PLACE"; /* += : para concatenar */
+  const headerError = headerComponent();
+  viewError.appendChild(headerError);
 
   const contentError = document.createElement("section");
   contentError.id = "contentError";
@@ -34,20 +26,3 @@ export const Error = () => {
   viewError.append(contentError, articleMenu);
   return viewError;
 };
-
-// export const error = () => {
-//   const viewError =  document.createElement("section")
-//   const header = document.createElement("h1"); /*despues se cambia por el header de home*/
-//   header.innerHTML = "ART PLACE";
-
-//   const sectionMenu = document.createElement("article");
-//   sectionMenu.innerHTML =`
-//   <span class="material-symbols-outlined-key">
-//   vpn_key </span>
-//   <span class="material-symbols-outlined-home">
-//   home </span>
-//   <span class="material-symbols-outlined-chat">
-//   groups </span>
-//   `;
-//   viewError.append(header,sectionMenu);
-// };

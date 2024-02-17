@@ -13,7 +13,7 @@ export const setRoutes = (newRoutesValue) => {
   // verifica que routes sea un objeto
   // verifica que haya manejo de error
   if (typeof newRoutesValue === "object") {
-    if (newRoutesValue["/Error"]) {
+    if (newRoutesValue["/error"]) {
       // asigna ROUTES
       ROUTES = newRoutesValue;
     }
@@ -31,7 +31,7 @@ const renderView = (pathname, props) => {
     const template = ROUTES[pathname](props);
     root.appendChild(template);
   } else {
-    root.appendChild(ROUTES["/Error"](props));
+    root.appendChild(ROUTES["/error"](props));
   }
 };
 
