@@ -1,5 +1,5 @@
 //import { filterData } from "./../lib/dataFunctions.js";
-import { renderItems, openMenu } from "../view.js";
+import { renderItems, openMenu } from "../functions.js";
 import data from "../data/dataset.js";
 
 export const Home = () => {
