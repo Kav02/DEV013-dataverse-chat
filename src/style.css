@@ -6,7 +6,7 @@
     margin: 0;
     box-sizing: border-box;
     padding: 0;
-    font-size: 100%;
+    font-size: 16px;
 }
 
 
@@ -270,44 +270,46 @@ option:hover {
     justify-content: center;
     padding-top: 10px;
     font-family: "JetBrains Mono";
+    font-size: 1.5rem;
 }
 
 /* Vista Chat Groupal*/
-#viewGroupal {
+#view-groupal {
     display: flex;
-    flex-direction: column;
-    width: 100vh;
-    height: 100vw;
-
 }
 
-#chatHeader {
+#chat-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    background-color: #000000;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    width: 100%;
 }
 
 
 #smallLogo {
     background-color: black;
-    height: 5vh;
-    padding: 1vw
+    width: 100px;
 }
 
-#headerTitle {
+#header-title {
     font-family: "Ubuntu";
     background-color: black;
     color: white;
-    height: 5vh;
-    font-size: 50px;
-    flex: 1;
-    padding: 1vw;
+    font-size: 4rem;
 }
 
-#chatBody {
+#home-icon {
+    background-color: black;
+    width: 100px;
+
+}
+
+/* #chatBody {
     background-color: #e5f4f6;
 
-}
+} */
 
 
 
@@ -326,14 +328,14 @@ option:hover {
     'opsz' 24
 } */
 
-@media(max-width: 2000px) {
+/*@media(max-width: 768px) {
 
-    /* .menu-container {
+     .menu-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
-    } */
+    }
 
     .bar-menu {
         display: none;
@@ -348,7 +350,7 @@ option:hover {
 
     .select-menu {
         /* display: none;
-        position: absolute; */
+        position: absolute; 
         top: 100%;
         left: 0;
         background-color: #fff;
@@ -384,4 +386,4 @@ option:hover {
     .button-menu.open .button-menu {
         background-color: #ccc;
     }
-}
+}*/
