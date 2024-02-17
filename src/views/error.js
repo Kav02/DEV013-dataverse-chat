@@ -13,7 +13,7 @@ export const Error = () => {
   contentError.innerHTML = `
 <h1 class=titleError> Error </h1>
 <br>
-<p class=textEror> Pagina no encontrada </p>`;
+<p class=textError> Página no encontrada </p>`;
 
   const articleMenu = document.createElement("article");
   articleMenu.id = "articleMenu";

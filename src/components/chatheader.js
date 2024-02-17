@@ -11,7 +11,7 @@ export const chatHeaderComponent = () => {
   chatHeader.appendChild(headerTitle);
   const homeIcon = document.createElement("img");
   homeIcon.id = "home-icon";
-  homeIcon.src = "./Imagenes/home.png";
+  homeIcon.src = "./Imagenes/homeheader.svg";
   chatHeader.appendChild(homeIcon);
 
   return chatHeader;

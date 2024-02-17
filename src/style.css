@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 16px;
+    /* font-size: 16px; */
 }
 
 
@@ -202,18 +202,7 @@ option:hover {
 }
 
 /* Vista Error */
-#articleMenu {
-    border-top-style: solid;
-    border-color: rgb(0, 0, 0);
-    justify-content: space-evenly;
-    display: flex;
-    background-color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 3px;
-}
+
 
 
 #viewError {
@@ -223,109 +212,51 @@ option:hover {
     /*para que el footer este abajo usando grid*/
 }
 
-
-#sectionHeader {
-    #header {
-        font-family: "Ubuntu";
-        background-color: black;
-        color: white;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 45px;
-        padding: 5px;
-    }
-
-    #logoHeader {
-        width: 50px;
-        height: auto;
-        padding-right: 10px;
-    }
-
-    #contentError {
-        background-image: url("./Imagenes/ERROR.jpg");
-        margin: 0;
-        padding: 0;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        height: 100%;
-    }
-
-    .titleError {
-        display: flex;
-        justify-content: center;
-        padding-top: 8vh;
-        font-family: "JetBrains Mono";
-        font-weight: bold;
-        font-size: 5vh;
-        justify-content: center;
-    }
-
-    .textError {
-        display: flex;
-        justify-content: center;
-        font-size: 2.5vh;
-        font-family: "JetBrains Mono";
-        font-size: 1.5rem;
-    }
-
-    /* Vista Chat Groupal*/
-    #view-groupal {
-        display: flex;
-    }
-
-    #chat-header {
-        display: flex;
-        align-items: center;
-        background-color: #000000;
-        justify-content: space-between;
-        padding: 1rem 2rem;
-        width: 100%;
-    }
-
-
-    #smallLogo {
-        background-color: black;
-        width: 100px;
-    }
-
-    #header-title {
-        font-family: "Ubuntu";
-        background-color: black;
-        color: white;
-        font-size: 4rem;
-    }
-
-    #home-icon {
-        background-color: black;
-        width: 100px;
-
-    }
-
-    /* #chatBody {
-    background-color: #e5f4f6;
-
-} */
-
-
-
-    /* .material-symbols-outlined-home {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+#header {
+    font-family: "Ubuntu";
+    background-color: black;
+    color: white;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    padding: 5px;
 }
-.material-symbols-outlined-chat {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-} */
+
+#logoHeader {
+    width: 50px;
+    height: auto;
+    padding-right: 10px;
+}
+
+#contentError {
+    background-image: url("./Imagenes/ERROR.jpg");
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 100%;
+}
+
+.titleError {
+    display: flex;
+    justify-content: center;
+    padding-top: 8vh;
+    font-family: "JetBrains Mono";
+    font-weight: bold;
+    font-size: 5vh;
+    justify-content: center;
+}
+
+.textError {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5vh;
+    font-family: "JetBrains Mono";
+    font-size: 1.5rem;
 }
 
 #articleMenu {
@@ -349,6 +280,58 @@ option:hover {
         'opsz' 24;
     font-size: 37px;
 }
+
+/* Vista Chat Groupal*/
+#view-groupal {
+    display: flex;
+}
+
+#chat-header {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    justify-content: space-between;
+    padding: 2px;
+    width: 100%;
+    height: 50px;
+}
+
+
+#smallLogo {
+    background-color: black;
+    width: 40px;
+    height: auto;
+    padding-left: 5px;
+
+}
+
+#header-title {
+    font-family: "Ubuntu";
+    background-color: black;
+    color: white;
+    font-size: 35px;
+    font-weight: normal;
+}
+
+#home-icon {
+    background-color: black;
+    fill: white;
+    width: 45px;
+    height: auto;
+    padding-right: 5px;
+
+
+}
+
+/* #chatBody {
+    background-color: #e5f4f6;
+
+} */
+
+
+
+
+
 
 /*View Welcome*/
 #welcomeMain {
