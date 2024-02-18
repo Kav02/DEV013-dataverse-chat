@@ -4,7 +4,7 @@ import {Home} from "./views/home.js";
 import {Error} from "./views/error.js";
 import {Welcome} from "./views/welcome.js";
 import {Card} from "./views/card.js";
-
+import {Apiregister}from "./views/apiregister.js";
 
 //1.- Definir rutas en router.
 const routes = {
@@ -14,7 +14,7 @@ const routes = {
   "/card":Card,
   //   "/individual": Chat_individual,
   //   "/groupal": Chat_Groupal,
-  //   "/chatkey": Chat_key,
+  "/apiregister":Apiregister,
 };
 
 //2.- Pasar "root element" a router.
