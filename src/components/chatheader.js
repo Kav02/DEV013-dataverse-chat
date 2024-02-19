@@ -1,8 +1,8 @@
 export const chatHeaderComponent = () => {
   const chatHeader = document.createElement("header");
-  chatHeader.id = "chat-header";
+  chatHeader.classList.add("chat-header");
   const logo = document.createElement("img");
-  logo.id = "smallLogo";
+  logo.classList.add("smallLogo");
   logo.src = "./Imagenes/Small-Logo.png";
   chatHeader.appendChild(logo);
   const headerTitle = document.createElement("h1");

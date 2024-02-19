@@ -45,6 +45,7 @@ export const Home = () => {
   buttonMenu.id = "button-menu";
   const iconMenu = document.createElement("span");
   iconMenu.classList.add("material-symbols-outlined");
+  iconMenu.id = "icon-menu";
   iconMenu.textContent = "Menu";
 
   buttonMenu.appendChild(iconMenu);
@@ -83,7 +84,7 @@ export const Home = () => {
   buttons.classList.add("buttons");
   buttons.innerHTML = `
     <button data-testid="button-stats" id="button-stats">
-     <span class="material-symbols-outlined">
+     <span class="material-symbols-outlined" id="bar-chart">
          bar_chart
        </span>
      </button>

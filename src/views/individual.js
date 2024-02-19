@@ -1,18 +1,17 @@
+import { indChatHeaderComponent } from "./../components/indChatHeader.js";
+import { chatInputComponent } from "../components/chatinput.js";
+
 export const Individual = () => {
   const viewIndividual = document.createElement("section");
-  viewIndividual.id = "viewIndividual";
-  //-------------------Header-----------------------------------
-  const chatHeader = document.createElement("header");
-  chatHeader.id = "chatHeader";
-  const logo = document.createElement("img");
-  logo.id = "smallLogo";
-  logo.src = "./Imagenes/Small-Logo.png";
-  chatHeader.appendChild(logo);
-  chatHeader.innerHTML += "ART PLACE"; /* += : para concatenar */
-  //--------------------- Fin del header-------------------
+  viewIndividual.id = "view-individual";
+  const indChatHeader = indChatHeaderComponent();
+  viewIndividual.appendChild(indChatHeader);
 
-  viewIndividual.append(chatHeader);
+  const chatBody = document.createElement("section");
+  chatBody.classList.add("chat-body");
+  viewIndividual.appendChild(chatBody);
+  const chatInput = chatInputComponent();
+  viewIndividual.appendChild(chatInput);
 
-  console.log(chatHeader);
   return viewIndividual;
 };

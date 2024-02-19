@@ -70,7 +70,8 @@ export const renderStats = (percentages) => {
   }
 };
 
-export function openMenu() {
+export const openMenu = () => {
   const menuContainer = document.querySelector(".menu-container");
   menuContainer.classList.toggle("open");
-}
+  return openMenu;
+};
