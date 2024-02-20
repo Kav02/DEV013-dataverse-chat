@@ -1,11 +1,213 @@
-/* FONTS:
- "Sometype Mono":Titulo de los cuadros
- "JetBrains Mono":inf de las tarjetas,descipcion larga,cuadraditos,limpiar,galeria
- "Ubuntu": art place,todo lo demas */
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+
+
+/* Vista Home */
+#viewhome {
+    display: flex;
+    flex-direction: column;
+}
+
+#banner {
+    /*galeria*/
+    background-image: url("./Imagenes/imagen\ fondo.jpg");
+    background-size: cover;
+    /*para que la imagen se acome al contenedor*/
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 50px;
+    height: 60px;
+}
+
+h2 {
+    /*Galeria*/
+    font-family: "JetBrains Mono";
+    background-color: #f5f1e5;
+    min-width: 30%;
+    font-size: 35px;
+    text-align: center;
+    position: absolute;
+    margin-top: 14px;
+}
+
+.bar-menu {
+    display: none;
+}
+
+#cardBody {
+    /*todo el cuerpo donde estan las tarjetas*/
+    background-color: white;
+    columns: 4 300px;
+    /*cuantas columnas y cual es su ancho*/
+    column-gap: 4%;
+    /*distancia entre columnas*/
+    display: inline-block;
+    /* Asegura que las tarjetas se comporten como bloques en línea */
+    padding-right: 1vw;
+    list-style: none;
+    /*para que los puntitos desaparezcan*/
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+#cardContainer {
+    /*tarjetas independientes*/
+    background-color: #F8F8F1;
+    max-width: 100%;
+    margin-bottom: 20%;
+    padding-bottom: 5%;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
+    /*para generar la sombra*/
+    break-inside: avoid-column;
+    /*Evita que una tarjeta se divida entre columnas*/
+    display: block;
+}
+
+li {
+    list-style: none;
+    /*para que los puntitos desaparezcan*/
+}
+
+dd {
+    /*cada item dentro de las tarjetas*/
+    font-family: "JetBrains Mono";
+    max-width: 100%;
+    margin: 1px 0px;
+    text-align: center;
+    font-size: 15px;
+    /* Centra el texto horizontalmente */
+}
+
+img[itemprop="image"] {
+    margin: 0 px;
+    padding: 0px;
+    width: 100%;
+    object-fit: cover;
+}
+
+dd[itemprop="name"] {
+    font-family: "Sometype Mono";
+    font-weight: bold;
+    font-size: 20px;
+    margin: 3px;
+}
+
+article {
+    /*Filtros */
+    background-color: rgba(255, 255, 255, 0.9);
+    /*para que la opacidad solo afecte al fondo y no todo lo de adentro*/
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /*se alinea verticalmente*/
+    height: auto;
+    border-bottom-style: double;
+    border-width: 1px;
+    justify-content: space-around;
+}
+
+/* Barra de menu */
+
+label {
+    display: none;
+}
+
+
+select {
+    height: 34px;
+    width: 100%;
+    font-family: "JetBrains Mono";
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+option {
+    height: 350px;
+    background-color: #D9D9D9;
+    width: 500px;
+}
+
+select option {
+    height: 30px;
+    padding: 5px;
+
+}
+
+option:hover {
+    background-color: #918d8d;
+}
+
+.buttons {
+    /* display: flex;
+    justify-content: space-between; */
+    height: 34px;
+    /* width: 100%; */
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    /* width: fit-content;
+    padding-left: 10vw;
+    padding-right: 2vw; */
+
+}
+
+#button-clear {
+    font-family: "JetBrains Mono";
+    color: white;
+    background-color: #000000;
+    border-radius: 20px;
+    border-color: #F8F8F1;
+    padding: 5px 25px;
+    box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.63);
+}
+
+#button-clear:hover {
+    background-color: #575656;
+    transition: 0.3s;
+}
+
+#button-stats {
+    color: rgb(0, 0, 0);
+    background-color: #929191;
+    border-radius: 30%;
+    border-color: #F8F8F1;
+    padding: 2px 5px;
+    height: 30px;
+    align-items: center;
+    box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.63);
+}
+
+#button-stats:hover {
+    background-color: #cfcea7;
+    transition: 0.3s;
+}
+
+/*Bar Chart*/
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    color: black;
+}
+
+
+/* Vista Error */
+
+
+    box-sizing: border-box;
+}
+
 
 #viewError {
     /*para que el footer este abajo usando grid*/
@@ -18,7 +220,9 @@
     font-family: "Ubuntu";
     background-color: black;
     color: white;
-    height: 60px;
+
+    height: 70px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,11 +257,12 @@
     justify-content: center;
 }
 
-.textEror {
+.textError {
     display: flex;
     justify-content: center;
     font-size: 2.5vh;
     font-family: "JetBrains Mono";
+    font-size: 1.5rem;
 }
 
 #articleMenu {
@@ -79,8 +284,158 @@
         'wght' 400,
         'GRAD' 0,
         'opsz' 24;
-    font-size: 37px;
+    /* font-size: 37px; */
 }
+
+/*Vista Chat individual*/
+#view-individual {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#painting-info {
+    background-color: white;
+    width: 50%;
+    min-height: 100%;
+}
+
+/* Vista Chat Grupal*/
+#view-groupal {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    justify-content: space-between;
+    padding: 2px;
+    width: 100%;
+    height: 50px;
+}
+
+
+.smallLogo {
+    background-color: black;
+    width: 40px;
+    height: auto;
+    padding-left: 5px;
+
+}
+
+#header-title {
+    font-family: "Ubuntu";
+    background-color: black;
+    color: white;
+    font-size: 35px;
+    font-weight: normal;
+}
+
+#home-icon {
+    background-color: black;
+    fill: white;
+    width: 45px;
+    height: auto;
+    padding-right: 5px;
+
+
+}
+
+.chat-container {
+    display: flex;
+    height: 100vh;
+
+}
+
+#group-info {
+    background-color: white;
+    width: 50%;
+    min-height: 100%;
+}
+
+.chat-body {
+    background-color: #e5f4f6;
+    width: 50%;
+    min-height: 100%;
+
+}
+
+#chat-input-container {
+    display: flex;
+    height: 30px;
+    background-color: rgb(176, 174, 174);
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    margin-right: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    height: 50px;
+
+}
+
+#chat-input {
+    background-color: white;
+    border-radius: 15px;
+    height: 35px;
+    width: 90%;
+    border: none;
+    padding-left: 5px;
+}
+
+#arrow {
+    width: 35px;
+
+}
+
+
+/*View Welcome*/
+#welcomeMain {
+    background-image: url("./Imagenes/Inicio.png");
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "JetBrains Mono";
+    color: white;
+}
+
+.welcomeSection {
+    width: 50%;
+    height: fit-content;
+    top: 20%;
+}
+
+.containerWelcome {
+    width: 90%;
+    height: 60vh;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-color: rgb(255, 255, 255);
+    margin-left: 8%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+#welcomeMain h1 {
+    font-size: 40px;
+}
+
+#welcomeMain h2 {
+    font-size: 35px;
+}
+  
 
 /*View Welcome*/
 #welcomeMain {
@@ -126,6 +481,7 @@
     font-size: 35px;
 }
 
+
 #welcomeMain h3 {
     font-size: 16px;
     width: 40%;
@@ -134,7 +490,9 @@
 /* VIEW CARD*/
 #bannerGaleria {
     background-image: url("./Imagenes/banner.jpg");
-    height: 80px;
+
+    height: 90px;
+
     width: 100%;
     display: flex;
     align-items: center;
@@ -181,4 +539,76 @@
     #bannerGaleria {
         height: 62px;
     }
+
+}
+
+/*Vista menu hamburgesa */
+/*.menu-container {
+    display: flex;
+    flex-direction: column;
+   justify-content: space-between;
+}*/
+.menu-container {
+    position: relative;
+}
+
+#button-menu {
+    color: rgb(0, 0, 0);
+    background-color: #929191;
+    border-radius: 30%;
+    border-color: #F8F8F1;
+    padding: 2px 5px;
+    height: 30px;
+    align-items: center;
+    box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.63);
+}
+
+#button-menu:hover {
+    background-color: #cfcea7;
+    transition: 0.3s;
+}
+
+.select-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    min-width: 150px;
+    width: fit-content;
+    background: #f8f8f1;
+
+}
+
+.selects {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.selects option {
+    padding: 5px;
+}
+
+.buttons {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    height: 34px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    padding: 0 10px;
+
+}
+
+.menu-container.open {
+    display: block;
+}
+
+.menu-container.open .select-menu {
+    display: block;
+
+
 }

@@ -4,16 +4,16 @@ export const Error = () => {
   const viewError = document.createElement("section");
   viewError.id = "viewError";
 
-  const headerError = headerComponent();
-  viewError.appendChild(headerError);
 
+  const sectionError = headerComponent();
   const contentError = document.createElement("section");
   contentError.id = "contentError";
 
   contentError.innerHTML = `
 <h1 class=titleError> Error </h1>
 <br>
-<p class=textEror> Pagina no encontrada </p>`;
+
+<p class=textError> Página no encontrada </p>`;
 
   const articleMenu = document.createElement("article");
   articleMenu.id = "articleMenu";
@@ -23,6 +23,8 @@ export const Error = () => {
   <span class="material-symbols-outlined" id="icon-chat">
   groups </span>
   `;
-  viewError.append(contentError, articleMenu);
+
+  viewError.append(sectionError, contentError, articleMenu);
+
   return viewError;
 };

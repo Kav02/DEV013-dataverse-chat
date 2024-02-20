@@ -1,5 +1,7 @@
-import { headerComponent } from "./../components/Header.js";
-import { bannerComponent } from "./../components/Banner.js";
+
+import { headerComponent } from "../components/Header.js";
+import { bannerComponent } from "../components/Banner.js";
+
 
 export const Card = () => {
   const viewCard = document.createElement("section");

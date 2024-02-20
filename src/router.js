@@ -20,7 +20,7 @@ export const setRoutes = (newRoutesValue) => {
   }
 };
 
-const renderView = (pathname, props) => {
+const renderView = (pathname, props = {}) => {
   //en este caso props es un nombre convencional para referirse a los datos adicionales en este caso la función relacionada a la vista
   //Renderiza una vista root especificado. Parametros: pathname que es el parte de window.location y props: Home, Error, etc.
   // Limpiar root
@@ -31,23 +31,25 @@ const renderView = (pathname, props) => {
     const template = ROUTES[pathname](props);
     root.appendChild(template);
   } else {
-    root.appendChild(ROUTES["/error"](props));
+
+    root.appendChild(ROUTES["/error"]());
+
   }
 };
 
 export const navigateTo = (pathname, props = {}) => {
-  const URLvisited = window.location + pathname;
+  const URLvisited = pathname;
   //Parámetros de pushState: state, title, URL. El estado se pasa vacío porque no interesa asociarlo a nada.
-  history.pushState({}, "", URLvisited);
+  window.history.pushState({}, "", URLvisited);
   // render the view with the pathname and props
   renderView(pathname, props);
 };
 
-export const onURLChange = (pathname) => {
+export const onURLChange = (location) => {
   // parse the location for the pathname and search params
   // convert the search params to an object
   // render the view with the pathname and object
-  renderView(pathname); // En este caso no estamos pasando los dos parámetros a la función. Por eso al definir renderView se define props de una vez como un elemento vacío.
+  renderView(location); // En este caso no estamos pasando los dos parámetros a la función. Por eso al definir renderView se define props de una vez como un elemento vacío.
 };
 
 //const queryStringToObject = (queryString) => {
@@ -61,5 +63,3 @@ export const onURLChange = (pathname) => {
   const viewContent = pageView.render();
   // add the view element to the DOM root element
   rootElement.appendChild(viewContent);*/
-
-// in case not found render the error view

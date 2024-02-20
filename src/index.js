@@ -5,14 +5,16 @@ import {
   setRootElement,
   onURLChange,
 } from "./router.js";
+
 import { Home } from "./views/home.js";
 import { Error } from "./views/error.js";
 import { Welcome } from "./views/welcome.js";
 import { Card } from "./views/card.js";
-import { Groupal } from "./views/groupal.js";
-import { Individual } from "./views/individual.js";
+import { Individual } from "./../views/individual.js";
+import { Groupal } from "./../views/groupal.js";
 
-//1.- Definir rutas en router.
+///1.- Definir rutas en router.
+
 const routes = {
   "/": Home,
   "/error": Error,
@@ -29,8 +31,8 @@ setRootElement(root);
 setRoutes(routes);
 
 //3.- Invocar el router para renderizar la vista correcta.
-document.addEventListener("DOMContentLoaded", (e) => {
-  onURLChange(e.currentTarget.location.pathname);
+document.addEventListener("DOMContentLoaded", (event) => {
+  onURLChange(event.target.location.pathname);
 });
 
 // //Carga inicial
