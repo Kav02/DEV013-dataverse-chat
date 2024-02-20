@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 
@@ -11,7 +10,6 @@
     display: flex;
     flex-direction: column;
 }
-
 
 #banner {
     /*galeria*/
@@ -206,18 +204,25 @@ option:hover {
 
 /* Vista Error */
 
+
+    box-sizing: border-box;
+}
+
+
 #viewError {
+    /*para que el footer este abajo usando grid*/
     display: grid;
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
-    /*para que el footer este abajo usando grid*/
 }
 
 #header {
     font-family: "Ubuntu";
     background-color: black;
     color: white;
+
     height: 70px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -430,6 +435,52 @@ option:hover {
 #welcomeMain h2 {
     font-size: 35px;
 }
+  
+
+/*View Welcome*/
+#welcomeMain {
+    background-image: url("./Imagenes/Inicio.png");
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "JetBrains Mono";
+    color: white;
+}
+
+.welcomeSection {
+    width: 50%;
+    height: fit-content;
+    top: 20%;
+}
+
+.containerWelcome {
+    width: 90%;
+    height: 60vh;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-color: rgb(255, 255, 255);
+    margin-left: 8%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+#welcomeMain h1 {
+    font-size: 40px;
+}
+
+#welcomeMain h2 {
+    font-size: 35px;
+}
+
 
 #welcomeMain h3 {
     font-size: 16px;
@@ -439,7 +490,9 @@ option:hover {
 /* VIEW CARD*/
 #bannerGaleria {
     background-image: url("./Imagenes/banner.jpg");
+
     height: 90px;
+
     width: 100%;
     display: flex;
     align-items: center;
@@ -486,6 +539,7 @@ option:hover {
     #bannerGaleria {
         height: 62px;
     }
+
 }
 
 /*Vista menu hamburgesa */
@@ -555,5 +609,6 @@ option:hover {
 
 .menu-container.open .select-menu {
     display: block;
+
 
 }

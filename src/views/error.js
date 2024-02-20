@@ -4,14 +4,15 @@ export const Error = () => {
   const viewError = document.createElement("section");
   viewError.id = "viewError";
 
-  const sectionError = headerComponent();
 
+  const sectionError = headerComponent();
   const contentError = document.createElement("section");
   contentError.id = "contentError";
 
   contentError.innerHTML = `
 <h1 class=titleError> Error </h1>
 <br>
+
 <p class=textError> Página no encontrada </p>`;
 
   const articleMenu = document.createElement("article");
@@ -22,23 +23,8 @@ export const Error = () => {
   <span class="material-symbols-outlined" id="icon-chat">
   groups </span>
   `;
+
   viewError.append(sectionError, contentError, articleMenu);
+
   return viewError;
 };
-
-// export const error = () => {
-//   const viewError =  document.createElement("section")
-//   const header = document.createElement("h1"); /*despues se cambia por el header de home*/
-//   header.innerHTML = "ART PLACE";
-
-//   const sectionMenu = document.createElement("article");
-//   sectionMenu.innerHTML =`
-//   <span class="material-symbols-outlined-key">
-//   vpn_key </span>
-//   <span class="material-symbols-outlined-home">
-//   home </span>
-//   <span class="material-symbols-outlined-chat">
-//   groups </span>
-//   `;
-//   viewError.append(header,sectionMenu);
-// };

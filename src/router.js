@@ -31,7 +31,9 @@ const renderView = (pathname, props = {}) => {
     const template = ROUTES[pathname](props);
     root.appendChild(template);
   } else {
+
     root.appendChild(ROUTES["/error"]());
+
   }
 };
 

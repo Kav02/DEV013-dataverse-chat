@@ -1,3 +1,4 @@
+
 import { filterData, sortData } from "./../lib/dataFunctions.js";
 import { renderItems } from "../functions.js";
 import { headerComponent } from "./../components/Header.js";
