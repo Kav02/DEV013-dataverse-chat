@@ -5,7 +5,6 @@ export const Error = () => {
   viewError.id = "viewError";
 
   const sectionError = headerComponent();
-  viewError.appendChild(sectionError);
 
   const contentError = document.createElement("section");
   contentError.id = "contentError";
@@ -23,7 +22,7 @@ export const Error = () => {
   <span class="material-symbols-outlined" id="icon-chat">
   groups </span>
   `;
-  viewError.append(contentError, articleMenu);
+  viewError.append(sectionError, contentError, articleMenu);
   return viewError;
 };
 
