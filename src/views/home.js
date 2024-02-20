@@ -1,5 +1,4 @@
-
-import { filterData, sortData } from "./../lib/dataFunctions.js";
+import { filterData, sortData, computeStats } from "./../lib/dataFunctions.js";
 import { renderItems } from "../functions.js";
 import { headerComponent } from "./../components/Header.js";
 import { bannerComponent } from "./../components/Banner.js";
@@ -88,6 +87,15 @@ export const Home = () => {
      <button data-testid="button-clear" id="button-clear">Limpiar
      </button>`;
   article.appendChild(buttons);
+  //Seccion de la Estadistica
+  const statsContainer = document.createElement("section");
+  statsContainer.id = "statsContainer";
+  statsContainer.innerHTML = `
+      <div id="title">Porcentaje de Obras por Corriente</div>
+      <div id="iconContainer">
+      <div id="stats"></div>
+      <div id="graphs"></div></div>
+    </section>`;
 
   // Genera las tarjetas a partir de renderItems
   const artWorkList = document.createElement("section");
@@ -96,7 +104,7 @@ export const Home = () => {
   const shortCards = renderItems(data); // Agrega las tarjetas al elemento artWorkList
   artWorkList.appendChild(shortCards);
 
-  viewHome.append(article, artWorkList);
+  viewHome.append(article, statsContainer, artWorkList);
 
   //Menu de filtros
   const menuButton = viewHome.querySelector("#button-menu");
@@ -161,40 +169,41 @@ export const Home = () => {
   const buttonClear = viewHome.querySelector('[data-testid="button-clear"]');
   buttonClear.addEventListener("click", clear_filters);
 
-  // //Estadística
-  // const dataStats = computeStats(data);
-  // const selectStats = document.getElementById("movementEstadistic");
-  // document.querySelector("#button-stats").addEventListener("click", function () {
-  //   if (selectStats.style.display === "flex") {
-  //     selectStats.style.display = "none";
-  //     // selectEstadistic.innerHTML = "";
-  //   } else {
-  //     selectStats.style.display = "flex";
-  //     const stats = document.getElementById("stats");
-  //     const graphs = document.getElementById("graphs");
-  //     if (stats.childElementCount === 0) {
-  //       Object.entries(dataStats).forEach(([key, value]) => {
-  //         const cardStats = document.createElement("div");
-  //         cardStats.id = "cardStats";
-  //         cardStats.innerHTML = `${key}: ${value} %`;
+  //Estadística
 
-  //         const graph = document.createElement("div");
-  //         graph.id = "graph";
-  //         graph.innerHTML = graphIcon(value);
+  const dataStats = computeStats(data);
+  const selectStats = viewHome.querySelector("#statsContainer");
+  viewHome
+    .querySelector("#button-stats")
+    .addEventListener("click", function () {
+      if (selectStats.style.display === "flex") {
+        selectStats.style.display = "none";
+      } else {
+        selectStats.style.display = "flex";
+        const stats = viewHome.querySelector("#stats");
+        const graphs = viewHome.querySelector("#graphs");
+        if (stats.childElementCount === 0) {
+          Object.entries(dataStats).forEach(([key, value]) => {
+            const cardStats = document.createElement("div");
+            cardStats.id = "cardStats";
+            cardStats.innerHTML = `${key}: ${value} %`;
+            console.log(cardStats);
+            const graph = document.createElement("div");
+            graph.id = "graph";
+            graph.innerHTML = graphIcon(value);
+            stats.appendChild(cardStats);
+            graphs.appendChild(graph);
+          });
+        }
+      }
+    });
 
-  //         stats.appendChild(cardStats);
-  //         graphs.appendChild(graph);
-  //       });
-  //     }
-  //   }
-  // });
-
-  // function graphIcon(count) {
-  //   let icon = "";
-  //   for (let i = 0; i < count; i++) {
-  //     icon += `<span class = "dots">■</span>`;
-  //   }
-  //   return icon;
-  // }
+  function graphIcon(count) {
+    let icon = "";
+    for (let i = 0; i < count; i++) {
+      icon += `<span class = "dots">■</span>`;
+    }
+    return icon;
+  }
   return viewHome;
 };
