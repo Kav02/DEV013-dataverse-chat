@@ -27,17 +27,26 @@ export const Apiregister = () => {
   return viewapiRegister ;
 };
 
-//   contentApi.innerHTML = 
-// <article class="conteinerApi"> 
-// <form id="registroApi">
-//   <label for="nombre">Nombre</label>
-//   <input type="text" id="nombre" name="nombre" required>
-//   <br>
-//   <label for="telefono">Api Key</label>
-//   <input type="tel" id="apikey" name="apikey" required>
-//   <br>
-//   <input type="submit" value="Guardar">
-// </form>
-// </article>
-// `;
+//COMO PONER LA INFO EN LOCAL STORAGE
+// Obtener el formulario dentro del contenido dinámico
+// const formulario = contentApi.querySelector('#containerApi');
 
+// // Manejar el evento de envío del formulario
+// formulario.addEventListener('submit', function (event) {
+//     // Evitar que el formulario se envíe normalmente (recargando la página)
+//     event.preventDefault();
+
+//     // Obtener los valores del formulario
+//     const nombre = formulario.querySelector('[name="nombre"]').value;
+//     const apiKey = formulario.querySelector('[name="apikey"]').value;
+
+//     // Almacenar los valores en el Local Storage
+//     localStorage.setItem('nombre', nombre);
+//     localStorage.setItem('apiKey', apiKey);
+
+//     // Puedes mostrar un mensaje de confirmación o realizar otras acciones aquí
+//     alert('Datos guardados');
+// });
+
+// // Agregar el contenido dinámico al documento (por ejemplo, al body)
+// document.body.appendChild(contentApi);

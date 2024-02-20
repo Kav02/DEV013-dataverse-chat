@@ -5,7 +5,7 @@ export const bannerComponent = () => {
 //   const galeria = document.createElement("article");
 //   galeria.id = "galeria";
   bannerGaleria.innerHTML = `
-    <h2 class="galeria">GALERIA</h2>`;
+    <h2 class="galeriabanner">GALERIA</h2>`;
 
 //  }
   return bannerGaleria;

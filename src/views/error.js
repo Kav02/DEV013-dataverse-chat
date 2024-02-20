@@ -1,31 +1,45 @@
-import {headerComponent} from "../components/Header.js";
-import {Menuinfcomponent} from "../components/Menuinferior.js";
-
+import { headersecundaryComponent } from "../components/Headersecundary.js";
 
 export const Error = () => {
   const viewError = document.createElement("section");
   viewError.id = "viewError";
- 
-  const headerError=  headerComponent();
-  const menuinfError=  Menuinfcomponent();
-  viewError.append(headerError,menuinfError);
+
+  const headerError=  headersecundaryComponent();
+  // viewError.append(headerError,menuinfError);
 
   const contentError = document.createElement("section");
-  contentError.id = "contentError"
+  contentError.id = "contentError";
 
-  contentError.innerHTML=`
+  contentError.innerHTML = `
 <h1 class=titleError> Error </h1>
 <br>
-<p class=textEror> Pagina no encontrada </p>`;
+<p class=textError> Página no encontrada </p>`;
 
   // const menuinfError=  Menuinfcomponent();
   // viewError.appendChild(menuinfError);
   
-  viewError.append(contentError);
+  viewError.append(headerError,contentError);
   return viewError;
 };
 
 
 
 
+
+// export const error = () => {
+//   const viewError =  document.createElement("section")
+//   const header = document.createElement("h1"); /*despues se cambia por el header de home*/
+//   header.innerHTML = "ART PLACE";
+
+//   const sectionMenu = document.createElement("article");
+//   sectionMenu.innerHTML =`
+//   <span class="material-symbols-outlined-key">
+//   vpn_key </span>
+//   <span class="material-symbols-outlined-home">
+//   home </span>
+//   <span class="material-symbols-outlined-chat">
+//   groups </span>
+//   `;
+//   viewError.append(header,sectionMenu);
+// };
 

@@ -1,124 +1,419 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-}
-#viewError{
-    /*para que el footer este abajo usando grid*/
-    display: grid;
-    min-height: 100vh;
-    grid-template-rows: auto 1fr auto;
-}
-#header{
-    font-family: "Ubuntu";
-    background-color: black;
-    color: white;
-    height:60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size:45px;
-    padding:5px;
-}
-#logoHeader{
-    width:50px;
-    height: auto;
-    padding-right:10px;
-}
-#contentError{
-    background-image: url("./Imagenes/ERROR.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.titleError{
-    display: flex;
-    justify-content: center; 
-    padding-top: 8vh;
-    font-family: "JetBrains Mono";
-    font-weight: bold;
-    font-size:5vh;
-    justify-content: center; 
-}
-.textEror{
-    display: flex;
-    justify-content: center; 
-    font-size:2.5vh ;
-    font-family: "JetBrains Mono";
-}
-#articleMenu{
-    border-top-style: solid;
-    border-color: rgb(0, 0, 0);
-    justify-content:space-evenly;
-    display: flex;
-    background-color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 3px;
-}
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24;
-    font-size:37px;
-}
-/*View Welcome*/
-#welcomeMain{
-    background-image: url("./Imagenes/Inicio.png");
+* {
     margin: 0;
     padding: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; 
-    height: 100vh;
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items:center ;
-    font-family: "JetBrains Mono";
-    color: white;
-}
-.welcomeSection{
-    width: 50%;
-    height:fit-content;
-    top:20%;
-}
-.containerWelcome{
-    width:90%;
-    height:60vh;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-color: rgb(255, 255, 255);
-    margin-left:8%;
-    margin-top: 1%;
-    display: flex;
-    justify-content: end;
-    align-items: flex-end;
-}
-#welcomeMain h1{
-    font-size:40px;
-}
-#welcomeMain h2{
-    font-size: 35px;
-}
-#welcomeMain h3{
-    font-size: 16px;
-    width:40%; 
+    box-sizing: border-box;
+    /* font-size: 16px; */
 }
 
-/* VIEW CARD*/
-#bannerGaleria{
+
+/* Vista Home */
+#banner{
     background-image:url("./Imagenes/banner.jpg");
     height: 80px;
     width: 100%;
     display: flex;
     align-items: center;
 }
-.galeria{
+.galeriabanner{
+    font-family: "JetBrains Mono";
+    background-color: #f5f1e5;
+    min-width: 30%;
+    font-size: 32px;
+    text-align: center;
+    height: fit-content;
+}
+#cardBody {
+    /*todo el cuerpo donde estan las tarjetas*/
+    background-color: white;
+    columns: 4 300px;
+    /*cuantas columnas y cual es su ancho*/
+    column-gap: 4%;
+    /*distancia entre columnas*/
+    display: inline-block;
+    /* Asegura que las tarjetas se comporten como bloques en línea */
+    padding-right: 1vw;
+    list-style: none;
+    /*para que los puntitos desaparezcan*/
+    margin-top: 150px;
+    margin-bottom: 20px;
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+#cardContainer {
+    /*tarjetas independientes*/
+    background-color: #F8F8F1;
+    max-width: 100%;
+    margin-bottom: 20%;
+    padding-bottom: 5%;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
+    /*para generar la sombra*/
+    break-inside: avoid-column;
+    /*Evita que una tarjeta se divida entre columnas*/
+    display: block;
+}
+
+li {
+    list-style: none;
+    /*para que los puntitos desaparezcan*/
+}
+
+dd {
+    /*cada item dentro de las tarjetas*/
+    font-family: "JetBrains Mono";
+    max-width: 100%;
+    margin: 1px 0px;
+    text-align: center;
+    font-size: 15px;
+    /* Centra el texto horizontalmente */
+}
+
+img[itemprop="image"] {
+    margin: 0 px;
+    padding: 0px;
+    width: 100%;
+    object-fit: cover;
+}
+
+dd[itemprop="name"] {
+    font-family: "Sometype Mono";
+    font-weight: bold;
+    font-size: 20px;
+    margin: 3px;
+}
+
+article {
+    /*Filtros */
+    background-color: rgba(255, 255, 255, 0.9);
+    /*para que la opacidad solo afecte al fondo y no todo lo de adentro*/
+    width: 100%;
+    margin-top: 76px;
+    display: flex;
+    flex-direction: row;
+    /*se alinea verticalmente*/
+    height: auto;
+    border-bottom-style: double;
+    border-width: 1px;
+    justify-content: space-between;
+}
+
+/* Barra de menu */
+
+label {
+    display: none;
+}
+
+.select-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    min-width: 150px;
+    width: fit-content;
+}
+
+select {
+    height: 34px;
+    width: 100%;
+    font-family: "JetBrains Mono";
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+option {
+    height: 350px;
+    background-color: #D9D9D9;
+    width: 500px;
+}
+
+select option {
+    height: 30px;
+    padding: 5px;
+
+}
+
+option:hover {
+    background-color: #918d8d;
+}
+
+.buttons {
+    /* display: flex;
+    justify-content: space-between; */
+    height: 34px;
+    /* width: 100%; */
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    /* width: fit-content;
+    padding-left: 10vw;
+    padding-right: 2vw; */
+
+}
+
+#button-clear {
+    font-family: "JetBrains Mono";
+    color: white;
+    background-color: #000000;
+    border-radius: 20px;
+    border-color: #F8F8F1;
+    padding: 5px 25px;
+    box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.63);
+}
+
+#button-clear:hover {
+    background-color: #575656;
+    transition: 0.3s;
+}
+
+#button-stats {
+    color: rgb(0, 0, 0);
+    background-color: #929191;
+    border-radius: 30%;
+    border-color: #F8F8F1;
+    padding: 2px 5px;
+    height: 30px;
+    box-shadow: 2px 1px 5px 0px rgba(4, 2, 2, 0.63);
+}
+
+#button-stats:hover {
+    background-color: #cfcea7;
+    transition: 0.3s;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 170,
+        'GRAD' 0,
+        'opsz' 24;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left: 0;
+    margin-left: 3%;
+    font-size: 60px;
+    
+}
+
+/* Vista Error */
+
+
+
+#viewError {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    /*para que el footer este abajo usando grid*/
+}
+#headerSecundary{
+    font-family: "Ubuntu";
+    background-color: black;
+    color: white;
+    height: 65px;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    padding: 5px;
+    display: flex;
+}
+/* #iconhomeHeader{
+    width: fit-content;
+}
+#titleHeader{
+    color: brown;
+} */
+
+#header {
+    font-family: "Ubuntu";
+    background-color: black;
+    color: white;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    padding: 5px;
+}
+#logoHeader {
+    width: 50px;
+    height: auto;
+    padding-right: 10px;
+}
+#contentError {
+    background-image: url("./Imagenes/ERROR.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.titleError {
+    display: flex;
+    justify-content: center;
+    padding-top: 8vh;
+    font-family: "JetBrains Mono";
+    font-weight: bold;
+    font-size: 5vh;
+    justify-content: center;
+}
+
+.textError{
+    display: flex;
+    justify-content: center; 
+    font-size:2.5vh ;
+    font-family: "JetBrains Mono";
+}
+
+#articleMenu {
+    border-top-style: solid;
+    border-color: rgb(0, 0, 0);
+    justify-content: space-evenly;
+    display: flex;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 30%;
+    text-align: center;
+    padding: 3px;
+    
+}
+
+
+
+/* Vista Chat Groupal*/
+#view-groupal {
+    display: flex;
+}
+
+#chat-header {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    justify-content: space-between;
+    padding: 2px;
+    width: 100%;
+    height: 50px;
+}
+
+
+#smallLogo {
+    background-color: black;
+    width: 40px;
+    height: auto;
+    padding-left: 5px;
+
+}
+
+#header-title {
+    font-family: "Ubuntu";
+    background-color: black;
+    color: white;
+    font-size: 35px;
+    font-weight: normal;
+}
+
+#home-icon {
+    background-color: black;
+    fill: white;
+    width: 45px;
+    height: auto;
+    padding-right: 5px;
+    position: absolute;
+
+
+}
+
+/* #chatBody {
+    background-color: #e5f4f6;
+
+} */
+
+
+
+
+
+
+/*View Welcome*/
+#welcomeMain {
+    background-image: url("./Imagenes/Inicio.png");
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "JetBrains Mono";
+    color: white;
+}
+
+.welcomeSection {
+    width: 50%;
+    height: fit-content;
+    position: absolute;
+    top: 12%;
+}
+
+.containerWelcome {
+    width: 90%;
+    height: 55vh;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-color: rgb(255, 255, 255);
+    margin-left: 8%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+#welcomeMain h1 {
+    font-size: 40px;
+}
+
+.galeriaWelcome {
+    font-size: 35px;
+}
+
+#welcomeMain h3 {
+    font-size: 16px;
+    width: 40%;
+}
+#iconocontinuar{
+height: 40px;
+margin-top: 4px
+}
+#buttoncontinuar{
+    background: linear-gradient(to right, rgb(255, 255, 255,0), rgb(0, 0, 0,0.7));
+    color: white;
+    border: none;
+    width: 50%;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-family: "JetBrains Mono";
+    font-size: 18px;
+    text-align: right;
+    padding-right: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end
+}
+
+/* VIEW CARD*/
+#bannerGaleria {
+    background-image: url("./Imagenes/banner.jpg");
+    height: 85px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.galeria {
     font-family: "JetBrains Mono";
     background-color: #f5f1e5;
     min-width: 30%;
@@ -185,48 +480,90 @@
         height:50px;
         font-size:35px;
     }
-    .material-symbols-outlined {
-        font-size:28px;
+    #headerSecundary{
+        height:50px;
+        font-size:35px;
     }
-    #welcomeMain h1{
-        font-size:30px;
+    #welcomeMain h1 {
+        font-size: 30px;
     }
-    #welcomeMain h2{
+
+    #welcomeMain h2 {
         font-size: 25px;
     }
-    #welcomeMain h3{
+
+    #welcomeMain h3 {
         font-size: 13px;
-        width:65%; 
+        width: 65%;
     }
-    .galeria{
-        min-width: 40%; 
+
+    .galeria {
+        min-width: 40%;
         font-size: 28px;
     }
-    #bannerGaleria{
+
+    #bannerGaleria {
         height: 62px;
     }
-    #containerApi{
-        padding:3% 5% 4% 5% ;
-        display: inline-block;
-        width: 60%;
-    }
 }
-@media(max-width: 600px){
-    #containerApi{
-        padding:3% 5% 6% 5% ;
-        display: inline-block;
-        width: 80%;
+
+
+/*@media(max-width: 768px) {
+
+     .menu-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
     }
-    .text{
+
+    .bar-menu {
+        display: none;
+    }
+
+    #button-menu {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+
+    .select-menu {
+        /* display: none;
+        position: absolute; 
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        z-index: 1;
+    }
+
+    .selects {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .selects option {
+        padding: 5px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+        height: 34px;
         font-size: 15px;
-    }
-}
-@media(max-width: 375px){
-    .input{
-        width: 100%;
-        height:30px;
-        border-radius: 7px;
-    }
-}
+        text-align: center;
+        cursor: pointer;
+        align-items: center;
+        padding: 0 10px;
 
+    }
 
+    .button-menu.open .select-menu {
+        display: block;
+    }
+
+    .button-menu.open .button-menu {
+        background-color: #ccc;
+    }
+}*/
