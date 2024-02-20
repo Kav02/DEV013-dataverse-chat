@@ -69,8 +69,3 @@ export const renderStats = (percentages) => {
     listMove.textContent = `${artMovement}: ${percentages[artMovement]}`;
   }
 };
-
-export function openMenu() {
-  const menuContainer = document.querySelector(".menu-container");
-  menuContainer.classList.toggle("open");
-}

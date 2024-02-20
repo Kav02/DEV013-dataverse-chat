@@ -29,11 +29,11 @@ const renderView = (pathname, props = {}) => {
   // buscar en ROUTES el view para ese path
   if (ROUTES[pathname]) {
     const template = ROUTES[pathname](props);
-    console.log(pathname);
     root.appendChild(template);
-    console.log(template);
   } else {
+
     root.appendChild(ROUTES["/error"]());
+
   }
 };
 
@@ -63,5 +63,3 @@ export const onURLChange = (location) => {
   const viewContent = pageView.render();
   // add the view element to the DOM root element
   rootElement.appendChild(viewContent);*/
-
-// in case not found render the error view

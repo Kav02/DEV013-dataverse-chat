@@ -5,7 +5,9 @@ export const headerComponent = () => {
   // Crear un elemento de imagen
   const logoHeader = document.createElement("img");
   logoHeader.id = "logoHeader";
-  logoHeader.src = "./Imagenes/logo.png";
+
+  logoHeader.src = "./../Imagenes/logo.png";
+
 
   header.appendChild(logoHeader);
 

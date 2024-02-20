@@ -9,6 +9,7 @@ import {Individual} from "./views/individual.js";
 import {Groupal} from "./views/groupal.js";
 
 ///1.- Definir rutas en router.
+
 const routes = {
   "/": Home,
   "/welcome": Welcome,

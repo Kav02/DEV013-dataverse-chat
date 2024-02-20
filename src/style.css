@@ -2,17 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-size: 16px; */
 }
 
 
 /* Vista Home */
-#banner{
-    background-image:url("./Imagenes/banner.jpg");
-    height: 80px;
-    width: 100%;
+
+#viewhome {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+}
+
+#banner {
+    /*galeria*/
+    background-image: url("./Imagenes/imagen\ fondo.jpg");
+    background-size: cover;
+    /*para que la imagen se acome al contenedor*/
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 50px;
+    height: 60px;
+
 }
 .galeriabanner{
     font-family: "JetBrains Mono";
@@ -22,6 +31,12 @@
     text-align: center;
     height: fit-content;
 }
+
+
+.bar-menu {
+    display: none;
+}
+
 #cardBody {
     /*todo el cuerpo donde estan las tarjetas*/
     background-color: white;
@@ -34,7 +49,7 @@
     padding-right: 1vw;
     list-style: none;
     /*para que los puntitos desaparezcan*/
-    margin-top: 150px;
+    margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 5vw;
     margin-left: 5vw;
@@ -87,14 +102,13 @@ article {
     background-color: rgba(255, 255, 255, 0.9);
     /*para que la opacidad solo afecte al fondo y no todo lo de adentro*/
     width: 100%;
-    margin-top: 76px;
     display: flex;
     flex-direction: row;
     /*se alinea verticalmente*/
     height: auto;
     border-bottom-style: double;
     border-width: 1px;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 /* Barra de menu */
@@ -103,13 +117,6 @@ label {
     display: none;
 }
 
-.select-menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    min-width: 150px;
-    width: fit-content;
-}
 
 select {
     height: 34px;
@@ -175,7 +182,8 @@ option:hover {
     border-color: #F8F8F1;
     padding: 2px 5px;
     height: 30px;
-    box-shadow: 2px 1px 5px 0px rgba(4, 2, 2, 0.63);
+    align-items: center;
+    box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.63);
 }
 
 #button-stats:hover {
@@ -183,6 +191,7 @@ option:hover {
     transition: 0.3s;
 }
 
+/*Bar Chart*/
 .material-symbols-outlined {
     font-variation-settings:
         'FILL' 0,
@@ -197,15 +206,19 @@ option:hover {
     
 }
 
+
 /* Vista Error */
 
 
+    box-sizing: border-box;
+}
+
 
 #viewError {
+    /*para que el footer este abajo usando grid*/
     display: grid;
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
-    /*para que el footer este abajo usando grid*/
 }
 #headerSecundary{
     font-family: "Ubuntu";
@@ -229,7 +242,11 @@ option:hover {
     font-family: "Ubuntu";
     background-color: black;
     color: white;
-    height: 65px;
+
+
+    height: 70px;
+
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -279,13 +296,36 @@ option:hover {
 }
 
 
-
-/* Vista Chat Groupal*/
-#view-groupal {
-    display: flex;
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    /* font-size: 37px; */
 }
 
-#chat-header {
+
+/*Vista Chat individual*/
+#view-individual {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#painting-info {
+    background-color: white;
+    width: 50%;
+    min-height: 100%;
+}
+
+/* Vista Chat Grupal*/
+#view-groupal {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
     display: flex;
     align-items: center;
     background-color: #000000;
@@ -296,7 +336,7 @@ option:hover {
 }
 
 
-#smallLogo {
+.smallLogo {
     background-color: black;
     width: 40px;
     height: auto;
@@ -323,14 +363,53 @@ option:hover {
 
 }
 
-/* #chatBody {
+.chat-container {
+    display: flex;
+    height: 100vh;
+
+}
+
+#group-info {
+    background-color: white;
+    width: 50%;
+    min-height: 100%;
+}
+
+.chat-body {
     background-color: #e5f4f6;
+    width: 50%;
+    min-height: 100%;
 
-} */
+}
 
+#chat-input-container {
+    display: flex;
+    height: 30px;
+    background-color: rgb(176, 174, 174);
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    margin-right: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    height: 50px;
 
+}
 
+#chat-input {
+    background-color: white;
+    border-radius: 15px;
+    height: 35px;
+    width: 90%;
+    border: none;
+    padding-left: 5px;
+}
 
+#arrow {
+    width: 35px;
+
+}
 
 
 /*View Welcome*/
@@ -377,6 +456,52 @@ option:hover {
 .galeriaWelcome {
     font-size: 35px;
 }
+  
+
+/*View Welcome*/
+#welcomeMain {
+    background-image: url("./Imagenes/Inicio.png");
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "JetBrains Mono";
+    color: white;
+}
+
+.welcomeSection {
+    width: 50%;
+    height: fit-content;
+    top: 20%;
+}
+
+.containerWelcome {
+    width: 90%;
+    height: 60vh;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-color: rgb(255, 255, 255);
+    margin-left: 8%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+#welcomeMain h1 {
+    font-size: 40px;
+}
+
+#welcomeMain h2 {
+    font-size: 35px;
+}
+
 
 #welcomeMain h3 {
     font-size: 16px;
@@ -407,7 +532,11 @@ margin-top: 4px
 /* VIEW CARD*/
 #bannerGaleria {
     background-image: url("./Imagenes/banner.jpg");
-    height: 85px;
+
+
+    height: 90px;
+
+
     width: 100%;
     display: flex;
     align-items: center;
@@ -505,65 +634,76 @@ margin-top: 4px
     #bannerGaleria {
         height: 62px;
     }
+
 }
 
-
-/*@media(max-width: 768px) {
-
-     .menu-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-    }
-
-    .bar-menu {
-        display: none;
-    }
-
-    #button-menu {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-
-
-    .select-menu {
-        /* display: none;
-        position: absolute; 
-        top: 100%;
-        left: 0;
-        background-color: #fff;
-        z-index: 1;
-    }
-
-    .selects {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-
-    .selects option {
-        padding: 5px;
-    }
-
-    .buttons {
-        display: flex;
-        justify-content: space-around;
-        height: 34px;
-        font-size: 15px;
-        text-align: center;
-        cursor: pointer;
-        align-items: center;
-        padding: 0 10px;
-
-    }
-
-    .button-menu.open .select-menu {
-        display: block;
-    }
-
-    .button-menu.open .button-menu {
-        background-color: #ccc;
-    }
+/*Vista menu hamburgesa */
+/*.menu-container {
+    display: flex;
+    flex-direction: column;
+   justify-content: space-between;
 }*/
+.menu-container {
+    position: relative;
+}
+
+#button-menu {
+    color: rgb(0, 0, 0);
+    background-color: #929191;
+    border-radius: 30%;
+    border-color: #F8F8F1;
+    padding: 2px 5px;
+    height: 30px;
+    align-items: center;
+    box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.63);
+}
+
+#button-menu:hover {
+    background-color: #cfcea7;
+    transition: 0.3s;
+}
+
+.select-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    min-width: 150px;
+    width: fit-content;
+    background: #f8f8f1;
+
+}
+
+.selects {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.selects option {
+    padding: 5px;
+}
+
+.buttons {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    height: 34px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    padding: 0 10px;
+
+}
+
+.menu-container.open {
+    display: block;
+}
+
+.menu-container.open .select-menu {
+    display: block;
+
+
+}
