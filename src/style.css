@@ -209,11 +209,6 @@ option:hover {
 
 /* Vista Error */
 
-
-    box-sizing: border-box;
-}
-
-
 #viewError {
     /*para que el footer este abajo usando grid*/
     display: grid;
@@ -456,53 +451,6 @@ option:hover {
 .galeriaWelcome {
     font-size: 35px;
 }
-  
-
-/*View Welcome*/
-#welcomeMain {
-    background-image: url("./Imagenes/Inicio.png");
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "JetBrains Mono";
-    color: white;
-}
-
-.welcomeSection {
-    width: 50%;
-    height: fit-content;
-    top: 20%;
-}
-
-.containerWelcome {
-    width: 90%;
-    height: 60vh;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-color: rgb(255, 255, 255);
-    margin-left: 8%;
-    margin-top: 1%;
-    display: flex;
-    justify-content: end;
-    align-items: flex-end;
-}
-
-#welcomeMain h1 {
-    font-size: 40px;
-}
-
-#welcomeMain h2 {
-    font-size: 35px;
-}
-
-
 #welcomeMain h3 {
     font-size: 16px;
     width: 40%;
@@ -634,7 +582,39 @@ margin-top: 4px
     #bannerGaleria {
         height: 62px;
     }
-
+    #containerApi{
+        padding:3% 5% 4% 5% ;
+        display: inline-block;
+        width: 60%;
+    }
+    
+}
+@media(max-width: 600px){
+    #containerApi{
+        padding:3% 5% 6% 5% ;
+        display: inline-block;
+        width: 80%;
+    }
+    .text{
+        font-size: 15px;
+        text-align: center;
+        cursor: pointer;
+        align-items: center;
+        padding: 0 10px;
+    }
+    .button-menu.open .select-menu{
+        display: block;
+    }
+    .button-menu.open .button-menu{
+        background-color: #ccc;
+    }
+}
+@media(max-width: 375px){
+    .input{
+        width: 100%;
+        height:30px;
+        border-radius: 7px;
+    }
 }
 
 /*Vista menu hamburgesa */

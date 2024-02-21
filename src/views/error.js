@@ -4,19 +4,13 @@ export const Error = () => {
   const viewError = document.createElement("section");
   viewError.id = "viewError";
 
-
   const headerError=  headersecundaryComponent();
-  // viewError.append(headerError,menuinfError);
-
-
-  const sectionError = headerComponent();
   const contentError = document.createElement("section");
   contentError.id = "contentError";
 
   contentError.innerHTML = `
 <h1 class=titleError> Error </h1>
 <br>
-
 <p class=textError> Página no encontrada </p>`;
 
   // const menuinfError=  Menuinfcomponent();
@@ -46,5 +40,4 @@ export const Error = () => {
 //   `;
 //   viewError.append(header,sectionMenu);
 // };
-
 

@@ -4,7 +4,7 @@ import { renderItems } from "../functions.js";
 import { headerComponent } from "./../components/Header.js";
 import { bannerComponent } from "./../components/Banner.js";
 import data from "../data/dataset.js";
-
+import { navigateTo } from "../router.js";
 export const Home = () => {
   const viewHome = document.createElement("section");
   viewHome.id = "viewHome";
@@ -92,11 +92,29 @@ export const Home = () => {
   // Genera las tarjetas a partir de renderItems
   const artWorkList = document.createElement("section");
   artWorkList.id = "cardBody";
+  artWorkList.classList.add("cardBody");
   let currentData = [...data];
   const shortCards = renderItems(data); // Agrega las tarjetas al elemento artWorkList
   artWorkList.appendChild(shortCards);
 
   viewHome.append(article, artWorkList);
+
+  // Crea la tarjeta detallada
+  const cards = viewHome.querySelectorAll(".cardHome");
+  console.log(cards);
+  cards.forEach((painting)=> {
+    painting.addEventListener("click", () => {
+      const cardId = painting.getAttribute("id");
+      navigateTo("/card",{name:cardId});
+     console.log(cardId) ;
+    });
+  });
+  
+  // {
+  //   const longCard = renderCards([painting]);
+  // }); 
+  // Obtiene la tarjeta detallada para esa pintura
+
 
   //Menu de filtros
   const menuButton = viewHome.querySelector("#button-menu");
@@ -196,5 +214,6 @@ export const Home = () => {
   //   }
   //   return icon;
   // }
+
   return viewHome;
 };
