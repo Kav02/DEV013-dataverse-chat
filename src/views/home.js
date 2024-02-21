@@ -101,20 +101,12 @@ export const Home = () => {
 
   // Crea la tarjeta detallada
   const cards = viewHome.querySelectorAll(".cardHome");
-  console.log(cards);
   cards.forEach((painting)=> {
     painting.addEventListener("click", () => {
       const cardId = painting.getAttribute("id");
-      navigateTo("/card",{name:cardId});
-     console.log(cardId) ;
+      navigateTo("/card",{ id:cardId });
     });
   });
-  
-  // {
-  //   const longCard = renderCards([painting]);
-  // }); 
-  // Obtiene la tarjeta detallada para esa pintura
-
 
   //Menu de filtros
   const menuButton = viewHome.querySelector("#button-menu");
