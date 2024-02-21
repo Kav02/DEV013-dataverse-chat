@@ -8,6 +8,7 @@ export const sortData = (data, sortBy, sortOrder) => {
   for (const list of data) {
     sortedCard.push(list);
   }
+
   if (sortOrder === "asc") {
     sortedCard.sort((a, b) => a[sortBy].localeCompare(b[sortBy]));
   } else {

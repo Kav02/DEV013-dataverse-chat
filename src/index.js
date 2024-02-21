@@ -14,13 +14,13 @@ import { Groupal } from "./views/groupal.js";
 
 ///1.- Definir rutas en router.
 const routes = {
-  "/welcome": Welcome,
+  "/": Welcome,
   "/error": Error,
   "/home": Home,
   "/card": Card,
   "/individual": Individual,
   "/groupal": Groupal,
-  //   "/chatkey": Chat_key,
+  "/apiregister": Apiregister,
 };
 
 //2.- Pasar "root element" a router.

@@ -17,7 +17,7 @@ export const Welcome = () => {
 </span>
 </button>
 `;
-  const buttoncontinuar= viewWelcome.querySelector("#buttoncontinuar");
-  buttoncontinuar.addEventListener('click', () => navigateTo("/"))
+  const buttoncontinuar = viewWelcome.querySelector("#buttoncontinuar");
+  buttoncontinuar.addEventListener("click", () => navigateTo("/home"));
   return viewWelcome;
-}
+};
