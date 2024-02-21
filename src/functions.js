@@ -15,27 +15,7 @@ export const renderItems = (data) => {
           <dt class="contenedor1"></dt><dd itemprop="creationYear">${painting.facts.creationYear}</dd>
           <dt class="contenedor1"></dt><dd itemprop="shortDescription">${painting.shortDescription}</dd>
         </dl>`;
-    // Crea la tarjeta detallada
-    listItem.querySelector("img").addEventListener("click", () => {
-      const longCard = renderCards([painting]); // Obtiene la tarjeta detallada para esa pintura
-      const detailCard = document.createElement("detailCard"); // Crea elemento detailCard del html
-      const closeButton = document.createElement("button");
-      closeButton.id = "close-button";
-      closeButton.textContent = "Cerrar";
-      longCard.appendChild(closeButton);
-      detailCard.innerHTML = longCard.outerHTML;
-      detailCard.classList.add("show");
-      detailCard
-        .querySelector("#close-button")
-        .addEventListener("click", () => {
-          detailCard.classList.add("close");
-          setTimeout(() => {
-            detailCard.classList.remove("close");
-            detailCard.innerHTML = "";
-            detailCard.classList.remove("show");
-          }, 100);
-        });
-    });
+
     artCard.appendChild(listItem); //Esta coloca todos los valores en la tarjeta
   });
   return artCard;
