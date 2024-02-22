@@ -1,4 +1,4 @@
-import { headersecundaryComponent } from "../components/Headersecundary.js";
+import { headersecundaryComponent } from "./../components/Headersecundary.js";
 
 export const Error = () => {
   const viewError = document.createElement("section");

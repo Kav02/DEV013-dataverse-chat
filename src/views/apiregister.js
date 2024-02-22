@@ -6,8 +6,7 @@ export const Apiregister = () => {
   viewapiRegister.id = "viewapiRegister";
  
   const headerError=  headerComponent();
-  const menuinfError=  Menuinfcomponent();
-  viewapiRegister.append(headerError,menuinfError);
+  viewapiRegister.append(headerError);
 
   const contentApi = document.createElement("section");
   contentApi.id = "contentApi"

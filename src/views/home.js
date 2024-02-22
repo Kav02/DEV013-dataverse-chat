@@ -4,6 +4,7 @@ import { headerComponent } from "./../components/Header.js";
 import { bannerComponent } from "./../components/Banner.js";
 import data from "../data/dataset.js";
 import { navigateTo } from "../router.js";
+
 export const Home = () => {
   const viewHome = document.createElement("section");
   viewHome.id = "viewHome";
@@ -103,22 +104,22 @@ export const Home = () => {
   const artWorkList = document.createElement("section");
   artWorkList.id = "cardBody";
   artWorkList.classList.add("cardBody");
+  artWorkList.classList.add("cardBody");
   let currentData = [...data];
   const shortCards = renderItems(data); // Agrega las tarjetas al elemento artWorkList
   artWorkList.appendChild(shortCards);
 
   viewHome.append(article, statsContainer, artWorkList);
+
   // Crea la tarjeta detallada
-  const cards = viewHome.querySelectorAll(".cardBody");
+  const cards = viewHome.querySelectorAll(".cardHome");
   cards.forEach((painting) => {
     painting.addEventListener("click", () => {
-      const cardData = {
-        imageURL: painting.querySelector("img").src,
-        name: painting.querySelector(".card-title").textContent,
-      };
-      navigateTo("/card", { cardData });
+      const cardId = painting.getAttribute("id");
+      navigateTo("/card", { id: cardId });
     });
   });
+
   //Menu de filtros
   const menuButton = viewHome.querySelector("#button-menu");
   const menu = viewHome.querySelector(".menu-container");
