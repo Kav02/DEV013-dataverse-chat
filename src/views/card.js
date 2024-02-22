@@ -1,24 +1,3 @@
-// import { headerComponent } from "../components/Header.js";
-// import { bannerComponent } from "../components/Banner.js";
-// import { renderCards } from "../functions.js";
-// import data from "../data/dataset.js";
-
-// export const Card = () => {
-//   const viewCard = document.createElement("section");
-//   viewCard.id = "viewCard";
-//   /*------HEADER ART PLACE-----------------------------*/
-//   const headerCard = headerComponent();
-//   viewCard.appendChild(headerCard);
-//   /*--------------------------------------------------*/
-//   const bannerCard = bannerComponent();
-//   viewCard.appendChild(bannerCard);
-
-//   const longCard = renderCards(data);
-//   viewCard.appendChild(longCard);
-
-//   return viewCard;
-// };
-
 import { headerComponent } from "../components/Header.js";
 import { bannerComponent } from "../components/Banner.js";
 import { renderCards } from "../functions.js";

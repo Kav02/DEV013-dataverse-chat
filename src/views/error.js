@@ -1,10 +1,10 @@
-import { headersecundaryComponent } from "../components/Headersecundary.js";
+import { headersecundaryComponent } from "./../components/Headersecundary.js";
 
 export const Error = () => {
   const viewError = document.createElement("section");
   viewError.id = "viewError";
 
-  const headerError=  headersecundaryComponent();
+  const headerError = headersecundaryComponent();
   const contentError = document.createElement("section");
   contentError.id = "contentError";
 
@@ -15,14 +15,10 @@ export const Error = () => {
 
   // const menuinfError=  Menuinfcomponent();
   // viewError.appendChild(menuinfError);
-  
-  viewError.append(headerError,contentError);
+
+  viewError.append(headerError, contentError);
   return viewError;
 };
-
-
-
-
 
 // export const error = () => {
 //   const viewError =  document.createElement("section")
@@ -40,4 +36,3 @@ export const Error = () => {
 //   `;
 //   viewError.append(header,sectionMenu);
 // };
-

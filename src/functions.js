@@ -1,10 +1,10 @@
 export const renderItems = (data) => {
   const artCard = document.createElement("ul"); //itemscope se utiliza para especificar que el elemento y sus hijos contienen información sobre un solo ítem.
   artCard.setAttribute("itemscope", "");
-  
+
   data.forEach((painting) => {
     const listItem = document.createElement("section");
-  
+
     /* ` se utiliza para delimitar las plantillas de cadena, y ${}` se utiliza para insertar expresiones en esas plantillas de cadena.
     dt: description term y dd: description details. El dt está vacio porque no queremos mostrar el nombre de la caracteristica solo el dato*/
     listItem.innerHTML += `<li class="cardHome" id="${painting.id}" itemscope itemtype="paintin">
@@ -27,31 +27,30 @@ export const renderItems = (data) => {
     //   // longCard.appendChild(closeButton);
     //   detailCard.innerHTML = longCard.outerHTML;
     //   detailCard.classList.add("show");
-      // detailCard
-      //   .querySelector("#close-button")
-      //   .addEventListener("click", () => {
-      //     detailCard.classList.add("close");
-      //     setTimeout(() => {
-      //       detailCard.classList.remove("close");
-      //       detailCard.innerHTML = "";
-      //       detailCard.classList.remove("show");
-      //     }, 100);
-      //   });
+    // detailCard
+    //   .querySelector("#close-button")
+    //   .addEventListener("click", () => {
+    //     detailCard.classList.add("close");
+    //     setTimeout(() => {
+    //       detailCard.classList.remove("close");
+    //       detailCard.innerHTML = "";
+    //       detailCard.classList.remove("show");
+    //     }, 100);
+    //   });
     // });
     artCard.appendChild(listItem); //Esta coloca todos los valores en la tarjeta
   });
   return artCard;
 };
 export const renderCards = (data) => {
-
-  const longCard = document.createElement("ul"); 
-  longCard.id= "tarjeta";
+  const longCard = document.createElement("ul");
+  longCard.id = "tarjeta";
 
   longCard.setAttribute("itemscope", "");
 
   data.forEach((painting) => {
     const listCard = document.createElement("li");
-    listCard.setAttribute('itemscope', '');
+    listCard.setAttribute("itemscope", "");
     listCard.setAttribute("itemtype", "");
 
     const dlElement = document.createElement("dl");
@@ -108,4 +107,3 @@ export const renderStats = (percentages) => {
     listMove.textContent = `${artMovement}: ${percentages[artMovement]}`;
   }
 };
-
