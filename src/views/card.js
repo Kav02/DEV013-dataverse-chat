@@ -1,10 +1,11 @@
 import { headerComponent } from "../components/Header.js";
 import { bannerComponent } from "../components/Banner.js";
 import { renderCards } from "../functions.js";
+import { navigateTo } from "../router.js";
 import data from "../data/dataset.js";
 
-export const Card = (params) => {
-  const viewCard = document.createElement("main");
+export const Card = (props) => {
+  const viewCard = document.createElement("section");
   viewCard.id = "viewCard";
 
   /*------HEADER ART PLACE-----------------------------*/
@@ -15,28 +16,36 @@ export const Card = (params) => {
   const bannerCard = bannerComponent();
   viewCard.appendChild(bannerCard);
 
-  const conteinerIndividualCard = document.createElement("section");
-  conteinerIndividualCard.id ="conteinerIndividualCard";
-  
+  const containerIndividualCard = document.createElement("section");
+  containerIndividualCard.id = "containerIndividualCard";
+
   // Obtén el nombre de la tarjeta seleccionada de los parámetros de la URL
-  const selectedCardId = params.id;
+  const selectedCardId = props.id;
   console.log(selectedCardId);
   // Filtra los datos para obtener solo la tarjeta seleccionada
   const selectedPainting = data.find(
     (painting) => painting.id === selectedCardId
   );
 
-  // Renderiza solo la tarjeta seleccionada
+  // Renderizar solo la tarjeta seleccionada
   if (selectedPainting) {
     const longCard = renderCards([selectedPainting]);
-    conteinerIndividualCard.appendChild(longCard);
+    containerIndividualCard.appendChild(longCard);
+    console.log(longCard);
   } else {
-    // Puedes mostrar un mensaje o manejar la situación cuando no se encuentra la tarjeta
+    // Mensaje cuando no se encuentra la tarjeta
     const errorMessage = document.createElement("p");
     errorMessage.textContent = "Tarjeta no encontrada";
     viewCard.appendChild(errorMessage);
   }
-  viewCard.appendChild(conteinerIndividualCard);
+  //Ir al chat individual
+  const buttonIndChat =
+    containerIndividualCard.querySelector(".cardButtonChat");
+  console.log(buttonIndChat);
+  buttonIndChat.addEventListener("click", () =>
+    navigateTo("/individual", { id: selectedCardId })
+  );
 
+  viewCard.appendChild(containerIndividualCard);
   return viewCard;
 };
