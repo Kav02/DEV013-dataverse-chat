@@ -85,11 +85,14 @@ export const renderCards = (data) => {
       <dt></dt><dd itemprop="descriptionDetails">${painting.description}</dd>
       <dt></dt><dd itemprop="styleDetails" class="contenedor3">Estilo: ${painting.additionalInformation.style}</dd>
       <dt></dt><dd itemprop="techniqueDetails" class="contenedor3">Técnica: ${painting.additionalInformation.technique}</dd>
+
     `;
 
     // Agregar el div al dl después de divImage
     dlElement.appendChild(divContent);
-
+    const divChat = document.createElement("div");
+    divChat.innerHTML = `<button id="button-chatInd">Ir al chat </button>`;
+    listCard.appendChild(divChat);
     // Agregar dl al listCard
     listCard.appendChild(dlElement);
 

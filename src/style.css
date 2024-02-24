@@ -122,14 +122,72 @@ article {
     /*para que la opacidad solo afecte al fondo y no todo lo de adentro*/
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     /*se alinea verticalmente*/
     height: auto;
     border-bottom-style: double;
     border-width: 1px;
-    justify-content: space-around;
+
+
 }
 
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 60%;
+
+}
+
+#button-menu {
+    display: none;
+    border: none;
+    height: 30px;
+    background: none;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icon-menu {
+    width: 40px;
+    height: 30px;
+}
+
+.select-menu {
+    display: flex;
+    z-index: 1;
+    min-width: 150px;
+    min-height: 30PX;
+    width: fit-content;
+
+
+}
+
+.selects {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.selects option {
+    padding: 5px;
+}
+
+.buttons {
+    display: flex;
+    width: 60%;
+    height: 34px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    background: white;
+    border: none;
+    align-items: center;
+    justify-content: flex-start;
+
+}
 
 
 label {
@@ -138,14 +196,20 @@ label {
 
 
 select {
-    height: 34px;
-    width: 100%;
+
     font-family: "JetBrains Mono";
+    font-size: 16px;
     background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    font-size: 18px;
+    height: 34px;
+    width: 130px;
     text-align: center;
     cursor: pointer;
+    border: none;
+}
+
+select:hover {
+    background-color: #f7e4aa;
+    transition: 0.3s;
 }
 
 option {
@@ -164,49 +228,57 @@ option:hover {
     background-color: #918d8d;
 }
 
-.buttons {
-    /* display: flex;
-    justify-content: space-between; */
-    height: 34px;
-    /* width: 100%; */
-    font-size: 15px;
-    text-align: center;
-    cursor: pointer;
-    align-items: center;
-    /* width: fit-content;
-    padding-left: 10vw;
-    padding-right: 2vw; */
+.iconKey {
+    display: none;
+
 
 }
 
 #button-clear {
-    font-family: "JetBrains Mono";
-    color: white;
-    background-color: #000000;
-    border-radius: 20px;
-    border-color: #F8F8F1;
-    padding: 5px 25px;
-    box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.63);
+    width: 100%;
+    height: 34px;
+    background: white;
+    border: none;
+
+
 }
 
 #button-clear:hover {
-    background-color: #575656;
+    background-color: #afaecc;
     transition: 0.3s;
 }
 
-#button-stats {
+.menu {
+    display: flex;
+    flex-direction: row;
     color: rgb(0, 0, 0);
-    background-color: #929191;
-    border-radius: 30%;
-    border-color: #F8F8F1;
-    padding: 2px 5px;
-    height: 30px;
-    align-items: center;
-    box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.63);
+    height: 34px;
+    font-family: "JetBrains Mono";
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    cursor: pointer;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: 0.5px solid;
+    height: fit-content;
+    padding: 0 5% 0 5%;
+
 }
 
-#button-stats:hover {
-    background-color: #cfcea7;
+#iconClear {
+    width: 25px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#bar-chart {
+    display: none;
+}
+
+.menu:hover {
+    background-color: #f7e4aa;
     transition: 0.3s;
 }
 
@@ -296,7 +368,7 @@ option:hover {
     /* font-size: 37px; */
 }
 
-/*Vista Chat individual
+/*Vista Chat individual*/
 #view-individual {
     display: flex;
     flex-direction: column;
@@ -373,14 +445,13 @@ option:hover {
 
 #chat-input-container {
     display: flex;
-    height: 30px;
     background-color: rgb(176, 174, 174);
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-top: auto;
     margin-right: 5px;
     position: fixed;
-    width: 100%;
+    width: 50%;
     bottom: 0px;
     height: 50px;
 
@@ -559,59 +630,7 @@ footer {
     border-top: 2px solid black;
 }
 
-/*Vista menu hamburgesa */
-
-.menu-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-}
-
-#button-menu {
-    display: none;
-    border: none;
-    height: 30px;
-    background: none;
-}
-
-.icon-menu {
-    width: 40px;
-    height: auto;
-}
-
-.select-menu {
-    display: flex;
-    z-index: 1;
-    min-width: 150px;
-    min-height: 30PX;
-    width: fit-content;
-    background: #f8f8f1;
-
-}
-
-.selects {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.selects option {
-    padding: 5px;
-}
-
-.buttons {
-    display: flex;
-    width: 50%;
-    justify-content: space-around;
-    height: 34px;
-    font-size: 15px;
-    text-align: center;
-    cursor: pointer;
-    align-items: center;
-    padding: 0 10px;
-
-}
+/*Vista barra de menu*/
 
 
 
@@ -689,13 +708,10 @@ footer {
     /* font-size: 80%; */
 }
 
-@media(max-width: 768px) {
+@media(max-width: 900px) {
     #button-menu {
-        display: block;
-    }
-
-    .menu-container {
-        position: relative;
+        display: flex;
+        flex-direction: row;
     }
 
     .select-menu {
@@ -703,17 +719,37 @@ footer {
     }
 
     .menu-container.open {
-        display: block;
+        display: flex;
+
     }
 
     .menu-container.open .select-menu {
-        display: block;
+        display: flex;
+
 
     }
 
     #graphs {
         display: none;
         width: 0%
+    }
+
+    #button-stats {
+
+        background-color: #ffffff;
+        height: 30px;
+        align-items: center;
+        font-size: 0;
+
+    }
+
+    #button-stats:hover {
+        background-color: #f7e4aa;
+        transition: 0.3s;
+    }
+
+    #bar-chart {
+        display: block;
     }
 
     #stats {
@@ -758,7 +794,27 @@ footer {
         width: 60%;
     }
 
+    .menu {
+        text-align: center;
+        height: 34px;
+        padding: 0 10px 0 10px;
 
+
+
+    }
+
+    #button-key,
+    #button-group {
+        font-size: 0;
+    }
+
+    .iconKey {
+        display: flex;
+        width: 30px;
+        height: 30px;
+
+
+    }
 }
 
 
@@ -778,11 +834,12 @@ footer {
     }
 
     .button-menu.open .select-menu {
-        display: block;
+        display: flex;
     }
 
     .button-menu.open .button-menu {
         background-color: #ccc;
+
     }
 }
 

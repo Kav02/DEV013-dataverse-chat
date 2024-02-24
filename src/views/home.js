@@ -53,6 +53,9 @@ export const Home = () => {
   iconMenu.textContent = "Menu";
   buttonMenu.appendChild(iconMenu);
   menuContainer.appendChild(buttonMenu);
+  const clearContainer = document.createElement("div");
+  clearContainer.innerHTML = `<button data-testid="button-clear" id="button-clear"><img src="./../Imagenes/clear-all.svg" id="iconClear">
+     </button>`;
 
   selectMenu.innerHTML = `
           <label for="artist-filter">Artista</label>
@@ -77,18 +80,22 @@ export const Home = () => {
            </select>`;
 
   menuContainer.appendChild(selectMenu);
+  menuContainer.appendChild(clearContainer);
   article.appendChild(menuContainer);
 
   const buttons = document.createElement("div");
   buttons.classList.add("buttons");
   buttons.innerHTML = `
-    <button data-testid="button-stats" id="button-stats">
+     <button data-testid="button-stats" class= "menu" id="button-stats">Estadística
      <span class="material-symbols-outlined" id="bar-chart">
          bar_chart
        </span>
      </button>
-     <button data-testid="button-clear" id="button-clear">Limpiar
-     </button>`;
+     <button class= "menu" id="button-key">API-Key <span class="iconKey"><img src="./../Imagenes/key.svg"></span>
+     </button>
+     <button class= "menu" id="button-group">Chat Grupal <span class="iconKey"><img src="./../Imagenes/groupchat.svg"></span>
+     </button>
+     `;
   article.appendChild(buttons);
   //Seccion de la Estadistica
   const statsContainer = document.createElement("section");
@@ -218,6 +225,12 @@ export const Home = () => {
     }
     return icon;
   }
+  //Botones APIKey y Chat Grupal
+
+  const buttonApiKey = viewHome.querySelector("#button-key");
+  buttonApiKey.addEventListener("click", () => navigateTo("/apiregister"));
+  const buttonGroup = viewHome.querySelector("#button-group");
+  buttonGroup.addEventListener("click", () => navigateTo("/groupal"));
 
   //Footer
 
