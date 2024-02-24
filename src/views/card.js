@@ -16,9 +16,12 @@ export const Card = (props) => {
   const bannerCard = bannerComponent();
   viewCard.appendChild(bannerCard);
 
-  // Obtener el nombre de la tarjeta seleccionada de los parámetros de la URL
-  const selectedCardId = props.id;
+  const containerIndividualCard = document.createElement("section");
+  containerIndividualCard.id = "containerIndividualCard";
 
+  // Obtén el nombre de la tarjeta seleccionada de los parámetros de la URL
+  const selectedCardId = props.id;
+  console.log(selectedCardId);
   // Filtra los datos para obtener solo la tarjeta seleccionada
   const selectedPainting = data.find(
     (painting) => painting.id === selectedCardId
@@ -27,7 +30,7 @@ export const Card = (props) => {
   // Renderizar solo la tarjeta seleccionada
   if (selectedPainting) {
     const longCard = renderCards([selectedPainting]);
-    viewCard.appendChild(longCard);
+    containerIndividualCard.appendChild(longCard);
   } else {
     // Mensaje cuando no se encuentra la tarjeta
     const errorMessage = document.createElement("p");
@@ -35,8 +38,9 @@ export const Card = (props) => {
     viewCard.appendChild(errorMessage);
   }
   //Ir al chat individual
-  const buttonIndChat = viewCard.querySelector("#button-chatInd");
-
+  const buttonIndChat =
+    containerIndividualCard.querySelector("#button-chatInd");
+  console.log(buttonIndChat);
   buttonIndChat.addEventListener("click", () =>
     navigateTo("/individual", { id: selectedCardId })
   );

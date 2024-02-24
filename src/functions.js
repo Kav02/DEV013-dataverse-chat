@@ -66,13 +66,17 @@ export const renderCards = (data) => {
 
     // Crear la imagen y agregarla al divImage
     const imageElement = document.createElement("img");
+
     imageElement.setAttribute("itemprop", "imageDetails");
     imageElement.src = painting.imageUrl;
     imageElement.alt = painting.name;
+    imageElement.id = "imageElementCard";
 
     // Agregar la imagen al divImage
     divImage.appendChild(imageElement);
 
+    // divImage.innerHTML+=
+    // `<button class="cardButtonChat">Ir a chat</button>`;
     // Agregar divImage al dl antes que el divContent
     dlElement.appendChild(divImage);
 
@@ -85,7 +89,10 @@ export const renderCards = (data) => {
       <dt></dt><dd itemprop="descriptionDetails">${painting.description}</dd>
       <dt></dt><dd itemprop="styleDetails" class="contenedor3">Estilo: ${painting.additionalInformation.style}</dd>
       <dt></dt><dd itemprop="techniqueDetails" class="contenedor3">Técnica: ${painting.additionalInformation.technique}</dd>
-
+      <button class="cardButtonChat">Ir a chat  
+      <img id="iconbuttoncard"src="./../imagenes/iconbuttoncard.svg"/>
+      </button>
+      
     `;
 
     // Agregar el div al dl después de divImage
@@ -94,10 +101,10 @@ export const renderCards = (data) => {
     divChat.innerHTML = `<button id="button-chatInd">Ir al chat </button>`;
     listCard.appendChild(divChat);
     // Agregar dl al listCard
-    listCard.appendChild(dlElement);
+    // listCard.appendChild(dlElement);
 
     // Agregar listCard al contenedor principal
-    longCard.appendChild(listCard);
+    longCard.appendChild(dlElement);
   });
 
   return longCard;
