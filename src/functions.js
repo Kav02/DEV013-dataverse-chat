@@ -7,7 +7,7 @@ export const renderItems = (data) => {
 
     /* ` se utiliza para delimitar las plantillas de cadena, y ${}` se utiliza para insertar expresiones en esas plantillas de cadena.
     dt: description term y dd: description details. El dt está vacio porque no queremos mostrar el nombre de la caracteristica solo el dato*/
-    listItem.innerHTML += `<li class="cardHome" id="${painting.id}" itemscope itemtype="paintin">
+    listItem.innerHTML += `<li class="cardHome" id="${painting.id}" itemscope itemtype="painting">
     <dl id="cardContainer" class="cardContainer">
     <img itemprop="image" src="${painting.imageUrl}" alt="${painting.name}"></dd>
           <dt class="contenedor1"></dt><dd itemprop="name">${painting.name}</dd>

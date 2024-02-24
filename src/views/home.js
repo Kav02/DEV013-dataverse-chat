@@ -120,6 +120,7 @@ export const Home = () => {
 
   // Crea la tarjeta detallada
   const cards = viewHome.querySelectorAll(".cardHome");
+  console.log(cards);
   cards.forEach((painting) => {
     painting.addEventListener("click", () => {
       const cardId = painting.getAttribute("id");

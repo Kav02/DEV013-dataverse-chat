@@ -31,6 +31,7 @@ export const Card = (props) => {
   if (selectedPainting) {
     const longCard = renderCards([selectedPainting]);
     containerIndividualCard.appendChild(longCard);
+    console.log(longCard);
   } else {
     // Mensaje cuando no se encuentra la tarjeta
     const errorMessage = document.createElement("p");
@@ -39,11 +40,12 @@ export const Card = (props) => {
   }
   //Ir al chat individual
   const buttonIndChat =
-    containerIndividualCard.querySelector("#button-chatInd");
+    containerIndividualCard.querySelector(".cardButtonChat");
   console.log(buttonIndChat);
   buttonIndChat.addEventListener("click", () =>
     navigateTo("/individual", { id: selectedCardId })
   );
 
+  viewCard.appendChild(containerIndividualCard);
   return viewCard;
 };

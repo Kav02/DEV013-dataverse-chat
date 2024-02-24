@@ -918,7 +918,7 @@ footer {
         float: left;
     }
 
-    #cardStats,
+    /* #cardStats,
     #graph {
         font-size: 90%;
     }
@@ -942,7 +942,7 @@ footer {
 
     #title {
         margin-top: 50px;
-    }
+    } */
 
     /* el cuadrado pequeño 2 */
     #ContenedorDetails dd.contenedor3 {
@@ -950,7 +950,7 @@ footer {
     }
 }
 
-@media (max-width: 870px) {
+@media (max-width: 900px) {
 
 
     dd[itemprop="descriptionDetails"] {
@@ -1019,14 +1019,10 @@ footer {
         margin-top: 14px;
 
     }
-}
-
-@media(max-width: 768px) {
-
 
     #button-menu {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .select-menu {
@@ -1035,11 +1031,13 @@ footer {
 
     .menu-container.open {
         display: flex;
+        flex-direction: column;
 
     }
 
     .menu-container.open .select-menu {
         display: flex;
+        flex-direction: column;
 
 
     }
@@ -1071,6 +1069,32 @@ footer {
         width: 100%;
         align-items: center;
     }
+
+    .menu {
+        text-align: center;
+        height: 34px;
+        padding: 0 10px 0 10px;
+
+
+
+    }
+
+    #button-key,
+    #button-group {
+        font-size: 0;
+    }
+
+    .iconKey {
+        display: flex;
+        width: 30px;
+        height: 30px;
+
+
+    }
+}
+
+@media(max-width: 768px) {
+
 
     #header {
         height: 50px;
@@ -1109,27 +1133,7 @@ footer {
         width: 60%;
     }
 
-    .menu {
-        text-align: center;
-        height: 34px;
-        padding: 0 10px 0 10px;
 
-
-
-    }
-
-    #button-key,
-    #button-group {
-        font-size: 0;
-    }
-
-    .iconKey {
-        display: flex;
-        width: 30px;
-        height: 30px;
-
-
-    }
 }
 
 
