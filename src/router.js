@@ -31,9 +31,7 @@ const renderView = (pathname, props = {}) => {
     const template = ROUTES[pathname](props);
     root.appendChild(template);
   } else {
-
     root.appendChild(ROUTES["/error"]());
-
   }
 };
 
@@ -52,14 +50,15 @@ export const onURLChange = (location) => {
   renderView(location); // En este caso no estamos pasando los dos parámetros a la función. Por eso al definir renderView se define props de una vez como un elemento vacío.
 };
 
-//const queryStringToObject = (queryString) => {
-// convert query string to URLSearchParams
-// convert URLSearchParams to an object
-// return the object
-//};
+// const queryStringToObject = (queryString) => {
 
-/* const pageView = new View(props);
-  // render the correct view passing the value of props
-  const viewContent = pageView.render();
-  // add the view element to the DOM root element
-  rootElement.appendChild(viewContent);*/
+// // convert query string to URLSearchParams
+// // convert URLSearchParams to an object
+// // return the object
+// };
+
+// const pageView = new View(props);
+//   // render the correct view passing the value of props
+//   const viewContent = pageView.render();
+//   // add the view element to the DOM root element
+//   rootElement.appendChild(viewContent);

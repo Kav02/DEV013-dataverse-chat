@@ -1,10 +1,10 @@
-
-import { filterData, sortData } from "./../lib/dataFunctions.js";
+import { filterData, sortData, computeStats } from "./../lib/dataFunctions.js";
 import { renderItems } from "../functions.js";
 import { headerComponent } from "./../components/Header.js";
 import { bannerComponent } from "./../components/Banner.js";
 import data from "../data/dataset.js";
 import { navigateTo } from "../router.js";
+
 export const Home = () => {
   const viewHome = document.createElement("section");
   viewHome.id = "viewHome";
@@ -45,8 +45,10 @@ export const Home = () => {
   selectMenu.classList.add("select-menu");
   const buttonMenu = document.createElement("button");
   buttonMenu.id = "button-menu";
-  const iconMenu = document.createElement("span");
-  iconMenu.classList.add("material-symbols-outlined");
+  const iconMenu = document.createElement("img");
+  iconMenu.classList.add("icon-menu");
+  iconMenu.src = "./Imagenes/mdi--hamburger-menu.svg";
+  buttonMenu.appendChild(iconMenu);
   iconMenu.id = "icon-menu";
   iconMenu.textContent = "Menu";
   buttonMenu.appendChild(iconMenu);
@@ -88,23 +90,33 @@ export const Home = () => {
      <button data-testid="button-clear" id="button-clear">Limpiar
      </button>`;
   article.appendChild(buttons);
+  //Seccion de la Estadistica
+  const statsContainer = document.createElement("section");
+  statsContainer.id = "statsContainer";
+  statsContainer.innerHTML = `
+      <div id="title">Porcentaje de Obras por Corriente</div>
+      <div id="iconContainer">
+      <div id="stats"></div>
+      <div id="graphs"></div></div>
+    </section>`;
 
   // Genera las tarjetas a partir de renderItems
   const artWorkList = document.createElement("section");
   artWorkList.id = "cardBody";
   artWorkList.classList.add("cardBody");
+  artWorkList.classList.add("cardBody");
   let currentData = [...data];
   const shortCards = renderItems(data); // Agrega las tarjetas al elemento artWorkList
   artWorkList.appendChild(shortCards);
 
-  viewHome.append(article, artWorkList);
+  viewHome.append(article, statsContainer, artWorkList);
 
   // Crea la tarjeta detallada
   const cards = viewHome.querySelectorAll(".cardHome");
-  cards.forEach((painting)=> {
+  cards.forEach((painting) => {
     painting.addEventListener("click", () => {
       const cardId = painting.getAttribute("id");
-      navigateTo("/card",{ id:cardId });
+      navigateTo("/card", { id: cardId });
     });
   });
 
@@ -152,7 +164,7 @@ export const Home = () => {
     .querySelector("#alphabetical-order")
     .addEventListener("change", function (event) {
       const sortOrder = event.target.value;
-      const sortItems = sortData(currentData, "Ordenar", sortOrder);
+      const sortItems = sortData(currentData, "name", sortOrder);
       const sortedCards = renderItems(sortItems);
       const cardContainerSorted = document.querySelector("#cardBody");
       cardContainerSorted.innerHTML = ""; // .innerHTML = "" :se limpia el contenedor antes de agregar nuevas tarjetas
@@ -171,41 +183,47 @@ export const Home = () => {
   const buttonClear = viewHome.querySelector('[data-testid="button-clear"]');
   buttonClear.addEventListener("click", clear_filters);
 
-  // //Estadística
-  // const dataStats = computeStats(data);
-  // const selectStats = document.getElementById("movementEstadistic");
-  // document.querySelector("#button-stats").addEventListener("click", function () {
-  //   if (selectStats.style.display === "flex") {
-  //     selectStats.style.display = "none";
-  //     // selectEstadistic.innerHTML = "";
-  //   } else {
-  //     selectStats.style.display = "flex";
-  //     const stats = document.getElementById("stats");
-  //     const graphs = document.getElementById("graphs");
-  //     if (stats.childElementCount === 0) {
-  //       Object.entries(dataStats).forEach(([key, value]) => {
-  //         const cardStats = document.createElement("div");
-  //         cardStats.id = "cardStats";
-  //         cardStats.innerHTML = `${key}: ${value} %`;
+  //Estadística
 
-  //         const graph = document.createElement("div");
-  //         graph.id = "graph";
-  //         graph.innerHTML = graphIcon(value);
+  const dataStats = computeStats(data);
+  const selectStats = viewHome.querySelector("#statsContainer");
+  viewHome
+    .querySelector("#button-stats")
+    .addEventListener("click", function () {
+      if (selectStats.style.display === "flex") {
+        selectStats.style.display = "none";
+      } else {
+        selectStats.style.display = "flex";
+        const stats = viewHome.querySelector("#stats");
+        const graphs = viewHome.querySelector("#graphs");
+        if (stats.childElementCount === 0) {
+          Object.entries(dataStats).forEach(([key, value]) => {
+            const cardStats = document.createElement("div");
+            cardStats.id = "cardStats";
+            cardStats.innerHTML = `${key}: ${value} %`;
+            const graph = document.createElement("div");
+            graph.id = "graph";
+            graph.innerHTML = graphIcon(value);
+            stats.appendChild(cardStats);
+            graphs.appendChild(graph);
+          });
+        }
+      }
+    });
 
-  //         stats.appendChild(cardStats);
-  //         graphs.appendChild(graph);
-  //       });
-  //     }
-  //   }
-  // });
+  function graphIcon(count) {
+    let icon = "";
+    for (let i = 0; i < count; i++) {
+      icon += `<span class = "dots">■</span>`;
+    }
+    return icon;
+  }
 
-  // function graphIcon(count) {
-  //   let icon = "";
-  //   for (let i = 0; i < count; i++) {
-  //     icon += `<span class = "dots">■</span>`;
-  //   }
-  //   return icon;
-  // }
+  //Footer
 
+  const footer = document.createElement("section");
+  footer.innerHTML = `
+  <footer>Korin Amador y Diana Vilchez</footer>`;
+  viewHome.append(footer);
   return viewHome;
 };
