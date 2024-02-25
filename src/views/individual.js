@@ -5,17 +5,27 @@ import data from "../data/dataset.js";
 export const Individual = (props) => {
   const viewIndividual = document.createElement("section");
   viewIndividual.id = "view-individual";
+  const selectedCardId = props.id;
+  console.log(selectedCardId);
+  // Filtra los datos para obtener solo la tarjeta seleccionada
+  const selectedPainting = data.find(
+    (painting) => painting.id === selectedCardId
+  );
 
+  console.log(selectedPainting);
   //Header--------------
   const indChatHeader = document.createElement("header");
   indChatHeader.classList.add("chat-header");
   const profile = document.createElement("img");
-  profile.classList.add("smallLogo");
-  profile.src = "./Imagenes/blank-profile-picture.svg";
+  profile.src = `${selectedPainting.imageUrl}`;
+  profile.alt = selectedPainting.name;
+  profile.id = "profileImg";
+  console.log(profile);
+
   indChatHeader.appendChild(profile);
   const headerTitle = document.createElement("h1");
   headerTitle.id = "header-title";
-  headerTitle.innerHTML = `${props.id}`;
+  headerTitle.innerHTML = `${selectedPainting.name}`;
   indChatHeader.appendChild(headerTitle);
   const homeIcon = document.createElement("img");
   homeIcon.id = "home-icon";
@@ -34,15 +44,7 @@ export const Individual = (props) => {
   const chatInput = chatInputComponent();
   chatBody.appendChild(chatInput);
 
-  const selectedCardId = props.id;
-  console.log(selectedCardId);
-  // Filtra los datos para obtener solo la tarjeta seleccionada
-  const selectedPainting = data.find(
-    (painting) => painting.id === selectedCardId
-  );
-
-  const longCard = renderCards([selectedPainting]);
-  paintingInfo.appendChild(longCard);
+  //paintingInfo.appendChild(longCard);
   chatContainer.appendChild(chatBody);
   viewIndividual.appendChild(chatContainer);
   return viewIndividual;

@@ -21,7 +21,7 @@ export const Card = (props) => {
 
   // Obtén el nombre de la tarjeta seleccionada de los parámetros de la URL
   const selectedCardId = props.id;
-  console.log(selectedCardId);
+
   // Filtra los datos para obtener solo la tarjeta seleccionada
   const selectedPainting = data.find(
     (painting) => painting.id === selectedCardId
@@ -31,7 +31,6 @@ export const Card = (props) => {
   if (selectedPainting) {
     const longCard = renderCards([selectedPainting]);
     containerIndividualCard.appendChild(longCard);
-    console.log(longCard);
   } else {
     // Mensaje cuando no se encuentra la tarjeta
     const errorMessage = document.createElement("p");
@@ -41,7 +40,7 @@ export const Card = (props) => {
   //Ir al chat individual
   const buttonIndChat =
     containerIndividualCard.querySelector(".cardButtonChat");
-  console.log(buttonIndChat);
+
   buttonIndChat.addEventListener("click", () =>
     navigateTo("/individual", { id: selectedCardId })
   );
