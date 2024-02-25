@@ -70,7 +70,7 @@ html,
     /*distancia entre columnas*/
     display: inline-block;
     /* Asegura que las tarjetas se comporten como bloques en línea */
-    padding-right: 1vw;
+    /* padding-right: 1vw; */
     list-style: none;
     /*para que los puntitos desaparezcan*/
     margin-top: 20px;
@@ -1059,6 +1059,9 @@ footer {
     #button-stats:hover {
         background-color: #f7e4aa;
         transition: 0.3s;
+        border-color: #000000;
+        border-style: solid;
+        box-shadow: 0px -1px 0px 0px rgb(12, 12, 12);
     }
 
     #bar-chart {
