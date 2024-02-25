@@ -4,26 +4,44 @@ import { Menuinfcomponent } from "../components/Menuinferior.js";
 export const Apiregister = () => {
   const viewapiRegister = document.createElement("section");
   viewapiRegister.id = "viewapiRegister";
- 
-  const headerError=  headerComponent();
+
+  const headerError = headerComponent();
   viewapiRegister.append(headerError);
 
   const contentApi = document.createElement("section");
-  contentApi.id = "contentApi"
+  contentApi.id = "contentApi";
 
-  contentApi.innerHTML=`
-  <form method="post" id="containerApi">
+  contentApi.innerHTML = `
+  <form  id="containerApi">
   <label for="nombre" class="text nombre">Nombre</label>
-  <input type="text" class="input inputnombre" name="nombre" required>
+  <input type="text" class="input inputnombre" id="nombre" required>
   <label for="apikey" class="text apikey">Api Key</label>
-  <input type="tel" class="input inputapikey" name="apikey" required>
-  <input type="submit" value="Guardar" class="Guardar">
+  <input type="text" class="input inputapikey" id="textapikey" required>
+  <button class="Guardar" id="Guardar"> Guardar</button>
 </form>
 `;
+
   /*method="post" : se usa para que no se registre los datos puestos en la url */
 
   viewapiRegister.append(contentApi);
-  return viewapiRegister ;
+  const inputApiKey = viewapiRegister.querySelector("#textapikey");
+  const buttonGuardar = viewapiRegister.querySelector("#Guardar");
+
+  buttonGuardar.addEventListener("click", function () {
+    const apiKey = inputApiKey.value;
+    console.log(apiKey);
+    if (apiKey.trim() !== "") {
+      localStorage.setItem("x", apiKey);
+    } else {
+      alert("Debes ingresar un Api key)");
+    }
+   
+  });
+
+  const prueba = localStorage.getItem("apiKey");
+  console.log(prueba);
+  
+  return viewapiRegister;
 };
 
 //COMO PONER LA INFO EN LOCAL STORAGE

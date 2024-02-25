@@ -8,6 +8,7 @@ export const Card = (props) => {
   const viewCard = document.createElement("section");
   viewCard.id = "viewCard";
 
+
   /*------HEADER ART PLACE-----------------------------*/
   const headerCard = headerComponent();
   viewCard.appendChild(headerCard);
@@ -15,6 +16,26 @@ export const Card = (props) => {
   /*--------------------------------------------------*/
   const bannerCard = bannerComponent();
   viewCard.appendChild(bannerCard);
+
+  const buttons = document.createElement("div");
+  buttons.classList.add("buttons");
+  buttons.innerHTML = `
+     <button class= "menu" id="button-homeCard"> Home <span class="iconKey"><img src="./../Imagenes/groupchat.svg"></span>
+     </button>
+     <button class= "menu" id="button-key">API-Key <span class="iconKey"><img src="./../Imagenes/key.svg"></span>
+     </button>
+     <button class= "menu" id="button-group">Chat Grupal <span class="iconKey"><img src="./../Imagenes/groupchat.svg"></span>
+     </button>
+     `;
+     viewCard.appendChild(buttons);
+
+  const buttonApiKey = viewCard.querySelector("#button-key");
+  buttonApiKey.addEventListener("click", () => navigateTo("/apiregister"));
+  const buttonGroup = viewCard.querySelector("#button-group");
+  buttonGroup.addEventListener("click", () => navigateTo("/groupal"));
+  const buttonHomeCard = viewCard.querySelector("#button-homeCard");
+  buttonHomeCard.addEventListener("click", () => navigateTo("/home"));
+
 
   const containerIndividualCard = document.createElement("section");
   containerIndividualCard.id = "containerIndividualCard";
