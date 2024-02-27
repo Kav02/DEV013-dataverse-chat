@@ -2,12 +2,12 @@ import { headerComponent } from "../components/Header.js";
 import { bannerComponent } from "../components/Banner.js";
 import { renderCards } from "../functions.js";
 import { navigateTo } from "../router.js";
+import { getApiKey } from "./../lib/apiKey.js";
 import data from "../data/dataset.js";
 
 export const Card = (props) => {
   const viewCard = document.createElement("section");
   viewCard.id = "viewCard";
-
 
   /*------HEADER ART PLACE-----------------------------*/
   const headerCard = headerComponent();
@@ -27,15 +27,24 @@ export const Card = (props) => {
      <button class= "menu" id="button-group">Chat Grupal <span class="iconKey"><img src="./../Imagenes/groupchat.svg"></span>
      </button>
      `;
-     viewCard.appendChild(buttons);
-
+  viewCard.appendChild(buttons);
+  //Navegar al apiKey
   const buttonApiKey = viewCard.querySelector("#button-key");
   buttonApiKey.addEventListener("click", () => navigateTo("/apiregister"));
+  //Navegar al chat grupal
   const buttonGroup = viewCard.querySelector("#button-group");
-  buttonGroup.addEventListener("click", () => navigateTo("/groupal"));
+  buttonGroup.addEventListener("click", () => {
+    const keyCheck = getApiKey();
+    console.log(keyCheck);
+    if (keyCheck === null) {
+      navigateTo("/apiregister");
+    } else {
+      navigateTo("/groupal");
+    }
+  });
+  //Navegar a home
   const buttonHomeCard = viewCard.querySelector("#button-homeCard");
   buttonHomeCard.addEventListener("click", () => navigateTo("/home"));
-
 
   const containerIndividualCard = document.createElement("section");
   containerIndividualCard.id = "containerIndividualCard";
@@ -58,10 +67,9 @@ export const Card = (props) => {
     errorMessage.textContent = "Tarjeta no encontrada";
     viewCard.appendChild(errorMessage);
   }
-  //Ir al chat individual
+  // Ir al chat individual
   const buttonIndChat =
     containerIndividualCard.querySelector(".cardButtonChat");
-
   buttonIndChat.addEventListener("click", () =>
     navigateTo("/individual", { id: selectedCardId })
   );
