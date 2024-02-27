@@ -30,10 +30,8 @@ const renderView = (pathname, props = {}) => {
   const queryString = location.search;
   // Convertir la cadena de consulta a un objeto
   const urlParams = queryStringToObject(queryString);
-  console.log(urlParams);
   // Combinar los parámetros de consulta con las propiedades existentes
   const combinedProps = { ...props, ...urlParams };
-  console.log(combinedProps);
   if (ROUTES[pathname]) {
     const template = ROUTES[pathname](combinedProps);
     root.appendChild(template);
@@ -45,13 +43,11 @@ const renderView = (pathname, props = {}) => {
 const queryStringToObject = (queryString) => {
   // Convertir la cadena de consulta a URLSearchParams
   const urlParams = new URLSearchParams(queryString);
-  console.log(urlParams);
   // Convertir URLSearchParams a un objeto
   const queryParams = {};
   for (const [key, value] of urlParams) {
     queryParams[key] = value;
   }
-  console.log(queryParams);
   // Devolver el objeto
   return queryParams;
 };
