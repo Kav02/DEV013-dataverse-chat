@@ -12,10 +12,9 @@ export const Groupal = () => {
   chatContainer.appendChild(groupInfo);
   const chatBody = document.createElement("section");
   chatBody.classList.add("chat-body");
+  const chatInput = chatInputComponent();
+  chatBody.appendChild(chatInput);
   chatContainer.appendChild(chatBody);
   viewGroupal.appendChild(chatContainer);
-  const chatInput = chatInputComponent();
-  viewGroupal.appendChild(chatInput);
-
   return viewGroupal;
 };
