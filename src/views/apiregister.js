@@ -1,4 +1,6 @@
 import { headerComponent } from "../components/Header.js";
+import { setApiKey } from "./../lib/apiKey.js";
+
 export const Apiregister = () => {
   const viewapiRegister = document.createElement("section");
   viewapiRegister.id = "viewapiRegister";
@@ -23,25 +25,17 @@ export const Apiregister = () => {
   /*method="post" : se usa para que no se registre los datos puestos en la url */
 
   viewapiRegister.append(contentApi);
-  const inputApiKey = viewapiRegister.querySelector("#textapikey");
-  const buttonGuardar = viewapiRegister.querySelector("#Guardar");
 
+  const apiKey = viewapiRegister.querySelector("#textapikey");
+  const buttonGuardar = viewapiRegister.querySelector("#Guardar");
   buttonGuardar.addEventListener("click", function () {
-    const apiKey = inputApiKey.value;
-    console.log(apiKey);
-    if (apiKey.trim() !== "") {
-      localStorage.setItem("apiKey", apiKey);
-    } else {
-      alert("Debes ingresar un Api key)");
-    }
-   
+    const apiKeyValue = apiKey.value;
+    setApiKey(apiKeyValue);
   });
 
-  const prueba = localStorage.getItem("apiKey");
-  console.log(prueba);
-  
   return viewapiRegister;
 };
+
 
 //COMO PONER LA INFO EN LOCAL STORAGE
 // Obtener el formulario dentro del contenido dinámico

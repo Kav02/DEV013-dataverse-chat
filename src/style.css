@@ -401,7 +401,49 @@ option:hover {
 }
 
 /*Vista Chat individual*/
+.containerPicturetwo,
+.containerPictureone {
+  width: 50%; /* Cada div ocupa el 50% del ancho del contenedor padre */
+  height: 200px; /* Por ejemplo, establece la altura deseada en píxeles */
+  display: inline-block; /* Para que los divs se muestren en línea */
+  box-sizing: border-box; /* Para que el tamaño total incluya el padding y border */
+  padding: 10px; /* Ajusta el padding según sea necesario */
+  text-align: center; /* Centra horizontalmente el contenido dentro del div */
+}
 
+.picturetwo,
+.pictureone {
+  max-width: 100%; /* La imagen no se deformará y se ajustará al tamaño del div */
+  max-height: 100%; /* La imagen no se deformará y se ajustará al tamaño del div */
+  display: block; /* Para evitar posibles espacios en blanco debajo de las imágenes */
+  margin: 0 auto; /* Centra la imagen horizontalmente dentro del div */
+}
+/* .containerPicturetwo{
+    width:50%;
+    height: 45%;
+    overflow: hidden;
+}
+.containerPictureone{
+    width:50%;
+    height: 45%;
+    overflow: hidden;
+}
+.picturetwo{
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+    margin-top: 0;
+    padding-top: 0;
+}
+.pictureone{
+    object-fit: cover;
+    width:  100%;
+    height: auto;
+    
+    bottom: 0;
+    
+    right: 50%;
+    } */
 .pictureChat{
     width:20%;
     height: 40%;
@@ -412,10 +454,71 @@ option:hover {
     height: 100vh;
 }
 
+.chat-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px;
+    width: 100%;
+    height: 60px;
+}
+
 #painting-info {
     background-color: white;
     width: 50%;
     min-height: 100%;
+}
+
+#painting-chat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+}
+
+#menu-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 25%;
+    font-family: "JetBrains Mono";
+    color: white;
+    font-size: 18px;
+    width: 50%;
+
+
+}
+
+#home-icon,
+#group-icon {
+    display: none;
+}
+
+.chat-menu-options {
+    margin-right: 5%;
+
+}
+
+
+
+#profileImg {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin: 0 10px 0 10px;
+}
+
+
+
+#header-title {
+    font-family: "Ubuntu";
+    background-color: black;
+    color: white;
+    font-size: 2.5vh;
+    align-items: left;
+    font-weight: normal;
+    padding-left: 10px;
 }
 
 /* Vista Chat Grupal*/
@@ -424,40 +527,26 @@ option:hover {
     flex-direction: column;
 }
 
-.chat-header {
-    display: flex;
-    align-items: center;
+#home-title,
+#group-title {
     background-color: #000000;
-    justify-content: space-between;
-    padding: 2px;
-    width: 100%;
-    height: 50px;
+    border: none;
+    color: white;
+    font-size: 18px;
+
 }
 
+#home-title:hover,
+#group-title:hover {
+    text-shadow: 0 0 5px #6db4c7;
+    color: #80c0d2;
+}
 
 .smallLogo {
     background-color: black;
     width: 40px;
     height: auto;
     padding-left: 5px;
-
-}
-
-#header-title {
-    font-family: "Ubuntu";
-    background-color: black;
-    color: white;
-    font-size: 35px;
-    font-weight: normal;
-}
-
-#home-icon {
-    background-color: black;
-    fill: white;
-    width: 45px;
-    height: auto;
-    padding-right: 5px;
-
 
 }
 
@@ -1119,10 +1208,46 @@ footer {
         display: flex;
         width: 30px;
         height: 30px;
+    }
 
+    /*Del menu del chat individual*/
 
+    #home-icon {
+        display: block;
+        background-color: black;
+        fill: white;
+        width: 30px;
+        height: 30px;
+        padding-right: 5px;
+    }
+
+    #group-icon {
+        display: block;
+        background-color: black;
+        stroke: white;
+
+        height: 30px;
+        width: 30px
+    }
+
+    #home-title,
+    #group-title {
+        font-size: 0;
+    }
+
+    #painting-info {
+        display: none;
+    }
+
+    .chat-body,
+    #chat-input-container {
+        width: 100%
     }
 }
+
+
+
+
 
 @media(max-width: 768px) {
 

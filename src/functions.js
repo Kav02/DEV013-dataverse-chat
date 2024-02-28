@@ -97,12 +97,6 @@ export const renderCards = (data) => {
 
     // Agregar el div al dl después de divImage
     dlElement.appendChild(divContent);
-    const divChat = document.createElement("div");
-    divChat.innerHTML = `<button id="button-chatInd">Ir al chat </button>`;
-    listCard.appendChild(divChat);
-    // Agregar dl al listCard
-    // listCard.appendChild(dlElement);
-
     // Agregar listCard al contenedor principal
     longCard.appendChild(dlElement);
   });

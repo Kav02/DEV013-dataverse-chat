@@ -4,6 +4,7 @@ import { headerComponent } from "./../components/Header.js";
 import { bannerComponent } from "./../components/Banner.js";
 import data from "../data/dataset.js";
 import { navigateTo } from "../router.js";
+import { getApiKey } from "../lib/apiKey.js";
 
 export const Home = () => {
   const viewHome = document.createElement("section");
@@ -120,7 +121,6 @@ export const Home = () => {
 
   // Crea la tarjeta detallada
   const cards = viewHome.querySelectorAll(".cardHome");
-  console.log(cards);
   cards.forEach((painting) => {
     painting.addEventListener("click", () => {
       const cardId = painting.getAttribute("id");
@@ -230,8 +230,18 @@ export const Home = () => {
 
   const buttonApiKey = viewHome.querySelector("#button-key");
   buttonApiKey.addEventListener("click", () => navigateTo("/apiregister"));
+
+  //Navegar al chat grupal
   const buttonGroup = viewHome.querySelector("#button-group");
-  buttonGroup.addEventListener("click", () => navigateTo("/groupal"));
+  buttonGroup.addEventListener("click", () => {
+    const keyCheck = getApiKey();
+    console.log(keyCheck);
+    if (keyCheck === null) {
+      navigateTo("/apiregister");
+    } else {
+      navigateTo("/groupal");
+    }
+  });
 
   //Footer
 
