@@ -44,6 +44,6 @@ window.addEventListener("DOMContentLoaded", () => {
   navigateTo(pathname); // Use your router's navigation function
   // invocar onURLChange
   window.addEventListener("popstate", (event) => {
-    onURLChange(event.location);
+    onURLChange(event.currentTarget.location);
   });
 });

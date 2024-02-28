@@ -7,7 +7,7 @@ export const renderItems = (data) => {
 
     /* ` se utiliza para delimitar las plantillas de cadena, y ${}` se utiliza para insertar expresiones en esas plantillas de cadena.
     dt: description term y dd: description details. El dt está vacio porque no queremos mostrar el nombre de la caracteristica solo el dato*/
-    listItem.innerHTML += `<li class="cardHome" id="${painting.id}" itemscope itemtype="paintin">
+    listItem.innerHTML += `<li class="cardHome" id="${painting.id}" itemscope itemtype="painting">
     <dl id="cardContainer" class="cardContainer">
     <img itemprop="image" src="${painting.imageUrl}" alt="${painting.name}"></dd>
           <dt class="contenedor1"></dt><dd itemprop="name">${painting.name}</dd>
@@ -49,9 +49,9 @@ export const renderCards = (data) => {
   longCard.setAttribute("itemscope", "");
 
   data.forEach((painting) => {
-    // const listCard = document.createElement("li");
-    // listCard.setAttribute("itemscope", "");
-    // listCard.setAttribute("itemtype", "");
+    const listCard = document.createElement("li");
+    listCard.setAttribute("itemscope", "");
+    listCard.setAttribute("itemtype", "");
 
     const dlElement = document.createElement("dl");
     dlElement.id = "ContenedorDetails";
@@ -63,14 +63,14 @@ export const renderCards = (data) => {
     // Crear un div para la imagen
     const divImage = document.createElement("div");
     divImage.id = "imagenDetails"; // Agrega el id al div de la imagen
-    
+
     // Crear la imagen y agregarla al divImage
     const imageElement = document.createElement("img");
-    
+
     imageElement.setAttribute("itemprop", "imageDetails");
     imageElement.src = painting.imageUrl;
     imageElement.alt = painting.name;
-    imageElement.id="imageElementCard";
+    imageElement.id = "imageElementCard";
 
     // Agregar la imagen al divImage
     divImage.appendChild(imageElement);
@@ -97,14 +97,8 @@ export const renderCards = (data) => {
 
     // Agregar el div al dl después de divImage
     dlElement.appendChild(divContent);
-
-    // Agregar dl al listCard
-    // listCard.appendChild(dlElement);
-
     // Agregar listCard al contenedor principal
     longCard.appendChild(dlElement);
-
-    
   });
 
   return longCard;

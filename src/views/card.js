@@ -1,42 +1,100 @@
-import { headerComponent } from "../components/Header.js";
+import { headersecundaryComponent } from "../components/Headersecundary.js";
 import { bannerComponent } from "../components/Banner.js";
 import { renderCards } from "../functions.js";
+import { navigateTo } from "../router.js";
+import { getApiKey } from "./../lib/apiKey.js";
 import data from "../data/dataset.js";
 
-export const Card = (params) => {
-  const viewCard = document.createElement("main");
+export const Card = (props) => {
+  const viewCard = document.createElement("section");
   viewCard.id = "viewCard";
 
   /*------HEADER ART PLACE-----------------------------*/
-  const headerCard = headerComponent();
+  const headerCard = headersecundaryComponent();
   viewCard.appendChild(headerCard);
 
   /*--------------------------------------------------*/
   const bannerCard = bannerComponent();
   viewCard.appendChild(bannerCard);
 
-  const conteinerIndividualCard = document.createElement("section");
-  conteinerIndividualCard.id ="conteinerIndividualCard";
-  
+  const buttons = document.createElement("div");
+  buttons.classList.add("buttons");
+  buttons.innerHTML = `
+     <button class= "menu" id="button-homeCard"> Home <span class="iconKey"><img src="./../Imagenes/icon-home.svg"></span>
+     </button>
+     <button class= "menu" id="button-key">API-Key <span class="iconKey"><img src="./../Imagenes/key.svg"></span>
+     </button>
+     <button class= "menu" id="button-group">Chat Grupal <span class="iconKey"><img src="./../Imagenes/groupchat.svg"></span>
+     </button>
+     `;
+  viewCard.appendChild(buttons);
+  //Navegar al apiKey
+  const buttonApiKey = viewCard.querySelector("#button-key");
+  buttonApiKey.addEventListener("click", () => navigateTo("/apiregister"));
+  //Navegar al chat grupal
+  const buttonGroup = viewCard.querySelector("#button-group");
+  buttonGroup.addEventListener("click", () => {
+    const keyCheck = getApiKey();
+    console.log(keyCheck);
+    if (keyCheck === null) {
+      navigateTo("/apiregister");
+    } else {
+      navigateTo("/groupal");
+    }
+  });
+
+  //ir a chat 
+  // const irChat = viewCard.querySelector("#chatButton");
+  // viewCard.appendChild(irChat);
+  // irChat.addEventListener("click", () => {
+  //   const keyCheck = getApiKey();
+  //   console.log(keyCheck);
+  //   if (keyCheck === null) {
+  //     navigateTo("/apiregister");
+  //   } else {
+  //     navigateTo("/individual");
+  //   }
+  // });
+
+  //Navegar a home
+  const buttonHomeCard = viewCard.querySelector("#button-homeCard");
+  buttonHomeCard.addEventListener("click", () => navigateTo("/home"));
+
+  const containerIndividualCard = document.createElement("section");
+  containerIndividualCard.id = "containerIndividualCard";
+
   // Obtén el nombre de la tarjeta seleccionada de los parámetros de la URL
-  const selectedCardId = params.id;
-  console.log(selectedCardId);
+  const selectedCardId = props.id;
+
   // Filtra los datos para obtener solo la tarjeta seleccionada
   const selectedPainting = data.find(
     (painting) => painting.id === selectedCardId
   );
 
-  // Renderiza solo la tarjeta seleccionada
+  // Renderizar solo la tarjeta seleccionada
   if (selectedPainting) {
     const longCard = renderCards([selectedPainting]);
-    conteinerIndividualCard.appendChild(longCard);
+    containerIndividualCard.appendChild(longCard);
   } else {
-    // Puedes mostrar un mensaje o manejar la situación cuando no se encuentra la tarjeta
+    // Mensaje cuando no se encuentra la tarjeta
     const errorMessage = document.createElement("p");
     errorMessage.textContent = "Tarjeta no encontrada";
     viewCard.appendChild(errorMessage);
   }
-  viewCard.appendChild(conteinerIndividualCard);
+  // Ir al chat individual
+  const buttonIndChat =
+    containerIndividualCard.querySelector(".cardButtonChat");
+  buttonIndChat.addEventListener("click", () =>{
+    const keyCheck = getApiKey();
+    console.log(keyCheck);
+    if (keyCheck === null) {
+      navigateTo("/apiregister");
+    } else {
+      navigateTo("/individual", { id: selectedCardId });
+    }
+  }
+  );
 
+  viewCard.appendChild(containerIndividualCard);
   return viewCard;
 };
