@@ -6,7 +6,20 @@ export const getApiKey = () => {
  
  export const setApiKey = (key) => {
    // Implementa el código para guardar la API KEY en Local Storage
- };
+  //  const inputApiKey = document.querySelector("#textapikey");
+  //  const buttonGuardar = document.querySelector("#Guardar");
+ 
+  //  buttonGuardar.addEventListener("click", function () {
+  //    const apiKey = inputApiKey.value;
+  //    console.log(apiKey);
+  //    if (apiKey.trim() !== "") {
+  //      localStorage.setItem("apiKey", apiKey);
+  //    } else {
+  //      alert("Debes ingresar un Api key)");
+  //    }
+    
+  //  });
+  };
 
 
 //  const inputApiKey = viewapiRegister.querySelector("#textapikey");

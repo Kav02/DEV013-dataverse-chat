@@ -1,4 +1,4 @@
-import { headerComponent } from "../components/Header.js";
+import { headersecundaryComponent } from "../components/Headersecundary.js";
 import { bannerComponent } from "../components/Banner.js";
 import { renderCards } from "../functions.js";
 import { navigateTo } from "../router.js";
@@ -10,7 +10,7 @@ export const Card = (props) => {
 
 
   /*------HEADER ART PLACE-----------------------------*/
-  const headerCard = headerComponent();
+  const headerCard = headersecundaryComponent();
   viewCard.appendChild(headerCard);
 
   /*--------------------------------------------------*/
@@ -20,7 +20,7 @@ export const Card = (props) => {
   const buttons = document.createElement("div");
   buttons.classList.add("buttons");
   buttons.innerHTML = `
-     <button class= "menu" id="button-homeCard"> Home <span class="iconKey"><img src="./../Imagenes/groupchat.svg"></span>
+     <button class= "menu" id="button-homeCard"> Home <span class="iconKey"><img src="./../Imagenes/icon-home.svg"></span>
      </button>
      <button class= "menu" id="button-key">API-Key <span class="iconKey"><img src="./../Imagenes/key.svg"></span>
      </button>

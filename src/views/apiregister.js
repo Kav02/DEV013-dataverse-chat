@@ -1,6 +1,4 @@
 import { headerComponent } from "../components/Header.js";
-import { Menuinfcomponent } from "../components/Menuinferior.js";
-
 export const Apiregister = () => {
   const viewapiRegister = document.createElement("section");
   viewapiRegister.id = "viewapiRegister";
@@ -12,6 +10,7 @@ export const Apiregister = () => {
   contentApi.id = "contentApi";
 
   contentApi.innerHTML = `
+  <p> Para poder conversar con tus obras favoritas, por favor a continuación agrega tu Api Key.</p>
   <form  id="containerApi">
   <label for="nombre" class="text nombre">Nombre</label>
   <input type="text" class="input inputnombre" id="nombre" required>
@@ -31,7 +30,7 @@ export const Apiregister = () => {
     const apiKey = inputApiKey.value;
     console.log(apiKey);
     if (apiKey.trim() !== "") {
-      localStorage.setItem("x", apiKey);
+      localStorage.setItem("apiKey", apiKey);
     } else {
       alert("Debes ingresar un Api key)");
     }
