@@ -401,23 +401,33 @@ option:hover {
 }
 
 /*Vista Chat individual*/
-.containerPicturetwo,
-.containerPictureone {
-  width: 50%; /* Cada div ocupa el 50% del ancho del contenedor padre */
-  height: 200px; /* Por ejemplo, establece la altura deseada en píxeles */
-  display: inline-block; /* Para que los divs se muestren en línea */
-  box-sizing: border-box; /* Para que el tamaño total incluya el padding y border */
-  padding: 10px; /* Ajusta el padding según sea necesario */
-  text-align: center; /* Centra horizontalmente el contenido dentro del div */
-}
-
-.picturetwo,
-.pictureone {
-  max-width: 100%; /* La imagen no se deformará y se ajustará al tamaño del div */
-  max-height: 100%; /* La imagen no se deformará y se ajustará al tamaño del div */
-  display: block; /* Para evitar posibles espacios en blanco debajo de las imágenes */
-  margin: 0 auto; /* Centra la imagen horizontalmente dentro del div */
-}
+#painting-info {
+    position: relative; /* Establece la posición relativa para los divs hijos */
+    width: 100%;
+    height: 400px; /* Ajusta la altura según tus necesidades */
+  }
+  
+  .containerPicturetwo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 50%;
+  }
+  
+  .containerPictureone {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45%;
+    height: 50%;
+  }
+  
+  .picturetwo, .pictureone {
+    width: 100%; /* Para que la imagen ocupe todo el espacio del contenedor */
+    height: 100%; /* Para que la imagen ocupe todo el espacio del contenedor */
+    object-fit: cover; /* Escala la imagen para que cubra todo el contenedor */
+  }
 /* .containerPicturetwo{
     width:50%;
     height: 45%;

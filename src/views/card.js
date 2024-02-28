@@ -43,19 +43,6 @@ export const Card = (props) => {
     }
   });
 
-  //ir a chat 
-  // const irChat = viewCard.querySelector("#chatButton");
-  // viewCard.appendChild(irChat);
-  // irChat.addEventListener("click", () => {
-  //   const keyCheck = getApiKey();
-  //   console.log(keyCheck);
-  //   if (keyCheck === null) {
-  //     navigateTo("/apiregister");
-  //   } else {
-  //     navigateTo("/individual");
-  //   }
-  // });
-
   //Navegar a home
   const buttonHomeCard = viewCard.querySelector("#button-homeCard");
   buttonHomeCard.addEventListener("click", () => navigateTo("/home"));
