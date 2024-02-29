@@ -1,4 +1,5 @@
 import { headerComponent } from "../components/Header.js";
+import { navigateTo } from "../router.js";
 import { setApiKey } from "./../lib/apiKey.js";
 
 export const Apiregister = () => {
@@ -31,32 +32,15 @@ export const Apiregister = () => {
   buttonGuardar.addEventListener("click", function () {
     const apiKeyValue = apiKey.value;
     setApiKey(apiKeyValue);
+    const target = localStorage.getItem("apiKeyTarget");
+    console.log(target);
+    if (target === "chatIndividual") {
+      window.location.href = "/individual";
+    } else if (target === "viewGroupal") {
+      const pathname = "/grupal";
+      navigateTo(pathname);
+    }
   });
 
   return viewapiRegister;
 };
-
-
-//COMO PONER LA INFO EN LOCAL STORAGE
-// Obtener el formulario dentro del contenido dinámico
-// const formulario = contentApi.querySelector('#containerApi');
-
-// // Manejar el evento de envío del formulario
-// formulario.addEventListener('submit', function (event) {
-//     // Evitar que el formulario se envíe normalmente (recargando la página)
-//     event.preventDefault();
-
-//     // Obtener los valores del formulario
-//     const nombre = formulario.querySelector('[name="nombre"]').value;
-//     const apiKey = formulario.querySelector('[name="apikey"]').value;
-
-//     // Almacenar los valores en el Local Storage
-//     localStorage.setItem('nombre', nombre);
-//     localStorage.setItem('apiKey', apiKey);
-
-//     // Puedes mostrar un mensaje de confirmación o realizar otras acciones aquí
-//     alert('Datos guardados');
-// });
-
-// // Agregar el contenido dinámico al documento (por ejemplo, al body)
-// document.body.appendChild(contentApi);

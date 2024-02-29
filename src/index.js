@@ -23,21 +23,22 @@ const routes = {
   "/apiregister": Apiregister,
 };
 
-//2.- Pasar "root element" a router.
-const root = document.getElementById("root");
-setRootElement(root);
-setRoutes(routes);
+// //2.- Pasar "root element" a router.
+// const root = document.getElementById("root");
+// setRootElement(root);
+// setRoutes(routes);
 
-//3.- Invocar el router para renderizar la vista correcta.
-document.addEventListener("DOMContentLoaded", (event) => {
-  onURLChange(event.target.location.pathname);
-});
+// //3.- Invocar el router para renderizar la vista correcta.
+// document.addEventListener("DOMContentLoaded", (event) => {
+//   onURLChange(event.target.location.pathname);
+// });
 
-//Carga inicial
+//Carga de la página
 window.addEventListener("DOMContentLoaded", () => {
   // Establecer el elemento root
   const root = document.getElementById("root");
   setRootElement(root);
+  setRoutes(routes);
   //Accesar la url inicial
   const pathname = window.location.pathname;
   //Navegacion inicial

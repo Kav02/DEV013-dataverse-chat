@@ -24,7 +24,7 @@ export const Card = (props) => {
      </button>
      <button class= "menu" id="button-key">API-Key <span class="iconKey"><img src="./../Imagenes/key.svg"></span>
      </button>
-     <button class= "menu" id="button-group">Chat Grupal <span class="iconKey"><img src="./../Imagenes/groupchat.svg"></span>
+     <button data-target="groupal" class= "menu" id="button-group">Chat Grupal <span class="iconKey"><img src="./../Imagenes/groupchat.svg"></span>
      </button>
      `;
   viewCard.appendChild(buttons);
@@ -71,16 +71,16 @@ export const Card = (props) => {
   // Ir al chat individual
   const buttonIndChat =
     containerIndividualCard.querySelector(".cardButtonChat");
-  buttonIndChat.addEventListener("click", () =>{
+  buttonIndChat.addEventListener("click", () => {
+    const target = buttonGroup.getAttribute("data-target");
+    localStorage.setItem("apiKeyTarget", target);
     const keyCheck = getApiKey();
-    console.log(keyCheck);
     if (keyCheck === null) {
       navigateTo("/apiregister");
     } else {
       navigateTo("/individual", { id: selectedCardId });
     }
-  }
-  );
+  });
 
   viewCard.appendChild(containerIndividualCard);
   return viewCard;
