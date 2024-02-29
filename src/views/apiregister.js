@@ -12,7 +12,7 @@ export const Apiregister = () => {
   contentApi.id = "contentApi";
 
   contentApi.innerHTML = `
-  <p> Para poder conversar con tus obras favoritas, por favor a continuación agrega tu Api Key.</p>
+  <p class="textapi"> Para poder conversar con tus obras favoritas, por favor a continuación agrega tu Api Key.</p>
   <form  id="containerApi">
   <label for="nombre" class="text nombre">Nombre</label>
   <input type="text" class="input inputnombre" id="nombre" required>
