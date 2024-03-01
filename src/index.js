@@ -40,8 +40,8 @@ window.addEventListener("DOMContentLoaded", (e) => {
   setRootElement(root);
   setRoutes(routes);
   //Accesar la url inicial
-  const pathname = window.location.pathname;
   //Navegacion inicial
+  // navigateTo(pathname); // Use your router's navigation function
   // navigateTo(pathname); // Use your router's navigation function
   // invocar onURLChange
   onURLChange(e.currentTarget.location.pathname);
