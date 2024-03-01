@@ -28,13 +28,13 @@ const routes = {
 // setRootElement(root);
 // setRoutes(routes);
 
-// //3.- Invocar el router para renderizar la vista correcta.
+//3.- Invocar el router para renderizar la vista correcta.
 // document.addEventListener("DOMContentLoaded", (event) => {
 //   onURLChange(event.target.location.pathname);
 // });
 
-//Carga de la página
-window.addEventListener("DOMContentLoaded", () => {
+//Carga inicial
+window.addEventListener("DOMContentLoaded", (e) => {
   // Establecer el elemento root
   const root = document.getElementById("root");
   setRootElement(root);
@@ -42,9 +42,10 @@ window.addEventListener("DOMContentLoaded", () => {
   //Accesar la url inicial
   const pathname = window.location.pathname;
   //Navegacion inicial
-  navigateTo(pathname); // Use your router's navigation function
+  // navigateTo(pathname); // Use your router's navigation function
   // invocar onURLChange
-  window.addEventListener("popstate", (event) => {
-    onURLChange(event.currentTarget.location);
-  });
+  onURLChange(e.currentTarget.location.pathname);
+});
+window.addEventListener("popstate", (event) => {
+  onURLChange(event.currentTarget.location);
 });

@@ -13,7 +13,7 @@ export const Apiregister = () => {
   contentApi.id = "contentApi";
 
   contentApi.innerHTML = `
-  <p> Para poder conversar con tus obras favoritas, por favor a continuación agrega tu Api Key.</p>
+  <p class="textapi"> Para poder conversar con tus obras favoritas, por favor a continuación agrega tu Api Key.</p>
   <form  id="containerApi">
   <label for="nombre" class="text nombre">Nombre</label>
   <input type="text" class="input inputnombre" id="nombre" required>
@@ -33,12 +33,17 @@ export const Apiregister = () => {
     const apiKeyValue = apiKey.value;
     setApiKey(apiKeyValue);
     const target = localStorage.getItem("apiKeyTarget");
-    console.log(target);
     if (target === "chatIndividual") {
-      window.location.href = "/individual";
+      navigateTo("/individual");
     } else if (target === "viewGroupal") {
-      const pathname = "/grupal";
-      navigateTo(pathname);
+      navigateTo("/groupal");
+    } else if (location === "/home") {
+      navigateTo("/home");
+    } else if (location.href.includes("/card?id=")) {
+      const currentQueryParams = new URLSearchParams(location.search);
+      const id = currentQueryParams.get("id");
+      const newUrl = `/card?id=${id}`;
+      navigateTo(newUrl);
     }
   });
 

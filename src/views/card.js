@@ -34,8 +34,9 @@ export const Card = (props) => {
   //Navegar al chat grupal
   const buttonGroup = viewCard.querySelector("#button-group");
   buttonGroup.addEventListener("click", () => {
+    const target = buttonGroup.getAttribute("data-target");
+    localStorage.setItem("apiKeyTarget", target);
     const keyCheck = getApiKey();
-    console.log(keyCheck);
     if (keyCheck === null) {
       navigateTo("/apiregister");
     } else {
