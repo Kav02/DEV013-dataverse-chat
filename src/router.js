@@ -28,13 +28,11 @@ const renderView = (pathname, props = {}) => {
   root.innerHTML = "";
   // buscar en ROUTES el view para ese path
   const queryString = location.search;
-  console.log(location);
   // Convertir la cadena de consulta a un objeto
   const urlParams = queryStringToObject(queryString);
   // Combinar los parámetros de consulta con las propiedades existentes
   const combinedProps = { ...props, ...urlParams };
-  console.log(pathname)
-  console.log(combinedProps);
+
   if (ROUTES[pathname]) {
     const template = ROUTES[pathname](combinedProps);
     root.appendChild(template);
@@ -72,12 +70,7 @@ export const onURLChange = (location) => {
   // Renderizar la vista con el pathname y los parámetros de búsqueda
   // console.log(location);
   const urlSearch = window.location.search;
-  const newUrlSearch = `${location}${urlSearch}`
+  const newUrlSearch = `${location}${urlSearch}`;
   window.history.pushState({}, "", newUrlSearch);
-  console.log(urlSearch);
-  // const objectUrlSearch= queryStringToObject(urlSearch);
-  // const newUrlSearch = `${location}${objectUrlSearch}`
-  console.log(newUrlSearch);
   renderView(location);
-
 };
