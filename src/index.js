@@ -23,27 +23,29 @@ const routes = {
   "/apiregister": Apiregister,
 };
 
-//2.- Pasar "root element" a router.
-const root = document.getElementById("root");
-setRootElement(root);
-setRoutes(routes);
+// //2.- Pasar "root element" a router.
+// const root = document.getElementById("root");
+// setRootElement(root);
+// setRoutes(routes);
 
 //3.- Invocar el router para renderizar la vista correcta.
-document.addEventListener("DOMContentLoaded", (event) => {
-  onURLChange(event.target.location.pathname);
-});
+// document.addEventListener("DOMContentLoaded", (event) => {
+//   onURLChange(event.target.location.pathname);
+// });
 
 //Carga inicial
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", (e) => {
   // Establecer el elemento root
   const root = document.getElementById("root");
   setRootElement(root);
+  setRoutes(routes);
   //Accesar la url inicial
-  const pathname = window.location.pathname;
   //Navegacion inicial
-  navigateTo(pathname); // Use your router's navigation function
+  // navigateTo(pathname); // Use your router's navigation function
+  // navigateTo(pathname); // Use your router's navigation function
   // invocar onURLChange
-  window.addEventListener("popstate", (event) => {
-    onURLChange(event.currentTarget.location);
-  });
+  onURLChange(e.currentTarget.location.pathname);
+});
+window.addEventListener("popstate", (event) => {
+  onURLChange(event.currentTarget.location);
 });
