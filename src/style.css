@@ -122,19 +122,14 @@ dd[itemprop="name"] {
 }
 
 /* Barra de menu */
-article {
-    /*Filtros */
+#menuHome {
     background-color: rgba(255, 255, 255, 0.9);
-    /*para que la opacidad solo afecte al fondo y no todo lo de adentro*/
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
-    /*se alinea verticalmente*/
     height: auto;
     border-bottom-style: double;
     border-width: 1px;
-
-
 }
 
 .menu-container {
@@ -578,9 +573,48 @@ option:hover {
 }
 
 /* Vista Chat Grupal*/
+
+#chatMessage {
+    height: calc(100vh - 110px);
+}
+
+#send-button {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+}
+
+#participant-name {
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "JetBrains Mono";
+}
+
+#contParticipants {
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* border-color: #49403A; */
+    box-shadow: 0px 21px 0px -20px rgb(149, 145, 145);
+}
+
+#participant-image {
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    border-width: 2px;
+    border-style: solid;
+    object-fit: cover;
+}
+
+
 #view-groupal {
     display: flex;
     flex-direction: column;
+    overflow-y: hidden;
 }
 
 #home-title,
@@ -600,7 +634,7 @@ option:hover {
 
 .smallLogo {
     background-color: black;
-    width: 40px;
+    width: 50px;
     height: auto;
     padding-left: 5px;
 
@@ -608,7 +642,8 @@ option:hover {
 
 .chat-container {
     display: flex;
-    height: 100vh;
+    /* height: 100vh; */
+    height: calc(100vh - 60px);
 
 }
 
@@ -616,6 +651,7 @@ option:hover {
     background-color: white;
     width: 50%;
     min-height: 100%;
+    overflow-y: scroll;
 }
 
 .chat-body {
@@ -627,7 +663,7 @@ option:hover {
 
 #chat-input-container {
     display: flex;
-    background-color: rgb(176, 174, 174);
+    background-color: #727272;
     justify-content: center;
     align-items: center;
     margin-top: auto;
@@ -648,8 +684,8 @@ option:hover {
     padding-left: 5px;
 }
 
-#send-button {
-    width: 35px;
+#arrow {
+    width: 30px;
 
 }
 

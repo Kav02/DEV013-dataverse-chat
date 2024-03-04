@@ -15,7 +15,8 @@ export const communicateWithOpenAI = async () => {
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "system", content: "Dime un numero del 1 al 10." }],
+      messages: [{ role: "system", content: "dime un n umero del 1 al 10" }],
+      max_tokens: 30,
     }),
   });
 

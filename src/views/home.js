@@ -38,6 +38,7 @@ export const Home = () => {
 
   //Crear el menu de filtrado
   const article = document.createElement("article");
+  article.id="menuHome";
   const menuContainer = document.createElement("div");
   menuContainer.classList.add("menu-container");
   // const barMenu = document.createElement("div");
