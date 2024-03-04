@@ -2,7 +2,7 @@ import { headerComponent } from "../components/Header.js";
 import { navigateTo } from "../router.js";
 import { setApiKey } from "./../lib/apiKey.js";
 
-export const Apiregister = () => {
+export const apiRegister = () => {
   const viewapiRegister = document.createElement("section");
   viewapiRegister.id = "viewapiRegister";
 
@@ -33,8 +33,8 @@ export const Apiregister = () => {
     const apiKeyValue = apiKey.value;
     setApiKey(apiKeyValue);
     const target = localStorage.getItem("apiKeyTarget");
-    if (target === "chatIndividual") {
-      navigateTo("/individual");
+    if (target === "viewIndividual") {
+      window.history.back();
     } else if (target === "viewGroupal") {
       navigateTo("/groupal");
     } else if (location === "/home") {

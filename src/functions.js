@@ -64,7 +64,7 @@ export const renderCards = (data) => {
       <dt></dt><dd itemprop="descriptionDetails">${painting.description}</dd>
       <dt></dt><dd itemprop="styleDetails" class="contenedor3">Estilo: ${painting.additionalInformation.style}</dd>
       <dt></dt><dd itemprop="techniqueDetails" class="contenedor3">Técnica: ${painting.additionalInformation.technique}</dd>
-      <button class="cardButtonChat">Ir a chat  
+      <button data-target = "viewIndividual" class="cardButtonChat">Ir a chat  
       <img id="iconbuttoncard"src="./../imagenes/iconbuttoncard.svg"/>
       </button>
       

@@ -407,7 +407,7 @@ option:hover {
     display: flex;
     align-items: center;
 } */
-.chat{
+.chat {
     position: relative;
     display: block;
     top: 70%;
@@ -419,9 +419,10 @@ option:hover {
     align-items: center;
     justify-content: center;
 }
-.autorchat{
+
+.autorchat {
     font-size: 18px;
-    color:#000000;
+    color: #000000;
     position: absolute;
 
     font-size: 25px;
@@ -435,36 +436,44 @@ option:hover {
     text-transform: uppercase;
     width: 50%;
 }
+
 #painting-info {
-    position: relative; /* Establece la posición relativa para los divs hijos */
+    position: relative;
+    /* Establece la posición relativa para los divs hijos */
     width: 100%;
-    height: 400px; /* Ajusta la altura según tus necesidades */
+    height: 400px;
+    /* Ajusta la altura según tus necesidades */
     font-family: "JetBrains Mono";
     background-color: #F8F8F1;
-    border-right-style:solid ;
-  }
-  
-  .containerPicturetwo {
+    border-right-style: solid;
+}
+
+.containerPicturetwo {
     position: absolute;
     top: 0;
     left: 0;
     width: 45%;
     height: 50%;
-  }
-  
-  .containerPictureone {
+}
+
+.containerPictureone {
     position: absolute;
     bottom: 0;
     right: 0;
     width: 45%;
     height: 50%;
-  }
-  
-  .picturetwo, .pictureone {
-    width: 100%; /* Para que la imagen ocupe todo el espacio del contenedor */
-    height: 100%; /* Para que la imagen ocupe todo el espacio del contenedor */
-    object-fit: cover; /* Escala la imagen para que cubra todo el contenedor */
-  }
+}
+
+.picturetwo,
+.pictureone {
+    width: 100%;
+    /* Para que la imagen ocupe todo el espacio del contenedor */
+    height: 100%;
+    /* Para que la imagen ocupe todo el espacio del contenedor */
+    object-fit: cover;
+    /* Escala la imagen para que cubra todo el contenedor */
+}
+
 /* .containerPicturetwo{
     width:50%;
     height: 45%;
@@ -491,10 +500,11 @@ option:hover {
     
     right: 50%;
     } */
-.pictureChat{
-    width:20%;
+.pictureChat {
+    width: 20%;
     height: 40%;
 }
+
 #view-individual {
     display: flex;
     flex-direction: column;
@@ -638,11 +648,14 @@ option:hover {
     padding-left: 5px;
 }
 
-#arrow {
+#send-button {
     width: 35px;
 
 }
 
+#arrow {
+    width: 35px;
+}
 
 /*View Welcome*/
 #welcomeMain {
@@ -719,12 +732,13 @@ option:hover {
 
 /* VIEW CARD*/
 
-#logoReturn{
+#logoReturn {
     position: absolute;
     width: 40px;
     height: 40px;
-    left:2.5%;
+    left: 2.5%;
 }
+
 #iconbuttoncard {
     height: 20px;
     width: 20px;
@@ -886,10 +900,12 @@ dd[itemprop="nameDetails"] {
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
 }
-.textapi{
+
+.textapi {
     padding: 0 20% 12px 20%;
     font-size: 16px;
 }
+
 #contentApi {
     font-family: "JetBrains Mono";
     background-image: url("./Imagenes/apiKey.jpg");
@@ -1026,10 +1042,11 @@ footer {
     background-size: contain;
     /* font-size: 80%; */
 }
+
 @media (max-width: 1500px) {
     .cardButtonChat {
         font-family: "JetBrains Mono";
-        width:33%;
+        width: 33%;
         margin-left: 67%;
     }
 }
@@ -1037,7 +1054,7 @@ footer {
 @media (max-width: 1100px) {
     .cardButtonChat {
         font-family: "JetBrains Mono";
-        width:35%;
+        width: 35%;
         margin-left: 67%;
     }
 
@@ -1111,7 +1128,7 @@ footer {
 @media (max-width: 900px) {
     .cardButtonChat {
         font-family: "JetBrains Mono";
-        width:25%;
+        width: 25%;
         margin-left: 67%;
     }
 
@@ -1346,6 +1363,7 @@ footer {
         width: 36%;
         margin-left: 64%;
     }
+
     dd[itemprop="nameDetails"] {
         font-size: 19px;
 
@@ -1376,11 +1394,12 @@ footer {
 }
 
 @media(max-width: 400px) {
-    
+
     .cardButtonChat {
         font-family: "JetBrains Mono";
         width: 38%;
     }
+
     .input {
         width: 100%;
         height: 30px;

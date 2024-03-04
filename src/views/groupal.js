@@ -24,19 +24,29 @@ export const Groupal = () => {
   //Area del chat
   const chatBody = document.createElement("section");
   chatBody.classList.add("chat-body");
-  const prueba = async () => {
-    const response = await fetch(communicateWithOpenAI(data));
-    const result = await response.json();
-    console.log(prueba);
-    const respuesta = prueba;
-    console.log(respuesta);
-    chatBody.appendChild(respuesta);
-    return result;
-  };
-
   const chatInput = chatInputComponent();
   chatBody.appendChild(chatInput);
-  chatContainer.appendChild(chatBody);
-  viewGroupal.appendChild(chatContainer);
-  return viewGroupal;
+  const renderChatResponse = async (data) => {
+    const response = await fetch(communicateWithOpenAI(data));
+    const result = await response.json();
+
+    // Contenedor para la respuesta
+    const responseElement = document.createElement("div");
+    responseElement.classList.add("chat-response");
+    const chatResponse = `<p>${result.choices[0].text}</p>`;
+
+    responseElement.innerHTML = chatResponse;
+    chatBody.appendChild(responseElement);
+  };
+
+  const sendMessageButton = document.getElementById("send-button");
+
+  sendMessageButton.addEventListener("click", () => {
+    const userInput = document.getElementById("userInput").value;
+    renderChatResponse(userInput);
+
+    chatContainer.appendChild(chatBody);
+    viewGroupal.appendChild(chatContainer);
+    return viewGroupal;
+  });
 };
