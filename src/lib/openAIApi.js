@@ -1,10 +1,3 @@
-// src/lib/openAIApi.js
-
-// Importa la función para obtener la API KEY desde apiKey.js
-// import { getApiKey } from "./apiKey.js";
-
-// const apiKey = getApiKey();
-// console.log(localStorage.getItem(apiKey));
 import { getApiKey } from "./apiKey.js";
 
 const apiKey = getApiKey();
@@ -22,7 +15,8 @@ export const communicateWithOpenAI = async () => {
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "system", content: "Dime un numero del 1 al 10." }],
+      messages: [{ role: "system", content: "dime un n umero del 1 al 10" }],
+      max_tokens: 30,
     }),
   });
 
@@ -41,3 +35,18 @@ communicateWithOpenAI()
   .catch((error) => {
     console.error(error);
   });
+
+//   import OpenAI from "openai";
+
+//   const openai = new OpenAI();
+
+//   async function main() {
+//     const completion = await openai.chat.completions.create({
+//       messages: [{ role: "system", content: "You are a helpful assistant." }],
+//       model: "gpt-3.5-turbo",
+//     });
+
+//     console.log(completion.choices[0]);
+//   }
+
+//   main();

@@ -17,27 +17,6 @@ export const renderItems = (data) => {
           <dt class="contenedor1"></dt><dd itemprop="shortDescription">${painting.shortDescription}</dd>
         </dl>
         </li>`;
-    // Crea la tarjeta detallada
-    // listItem.querySelector("img").addEventListener("click", () => {
-    //   const longCard = renderCards([painting]); // Obtiene la tarjeta detallada para esa pintura
-    //   const detailCard = document.createElement("detailCard"); // Crea elemento detailCard del html
-    //   // const closeButton = document.createElement("button");
-    //   // closeButton.id = "close-button";
-    //   // closeButton.textContent = "Cerrar";
-    //   // longCard.appendChild(closeButton);
-    //   detailCard.innerHTML = longCard.outerHTML;
-    //   detailCard.classList.add("show");
-    // detailCard
-    //   .querySelector("#close-button")
-    //   .addEventListener("click", () => {
-    //     detailCard.classList.add("close");
-    //     setTimeout(() => {
-    //       detailCard.classList.remove("close");
-    //       detailCard.innerHTML = "";
-    //       detailCard.classList.remove("show");
-    //     }, 100);
-    //   });
-    // });
     artCard.appendChild(listItem); //Esta coloca todos los valores en la tarjeta
   });
   return artCard;
@@ -45,14 +24,12 @@ export const renderItems = (data) => {
 export const renderCards = (data) => {
   const longCard = document.createElement("ul");
   longCard.id = "tarjeta";
-
   longCard.setAttribute("itemscope", "");
 
   data.forEach((painting) => {
     const listCard = document.createElement("li");
     listCard.setAttribute("itemscope", "");
     listCard.setAttribute("itemtype", "");
-
     const dlElement = document.createElement("dl");
     dlElement.id = "ContenedorDetails";
 
@@ -75,8 +52,6 @@ export const renderCards = (data) => {
     // Agregar la imagen al divImage
     divImage.appendChild(imageElement);
 
-    // divImage.innerHTML+=
-    // `<button class="cardButtonChat">Ir a chat</button>`;
     // Agregar divImage al dl antes que el divContent
     dlElement.appendChild(divImage);
 
@@ -111,3 +86,25 @@ export const renderStats = (percentages) => {
     listMove.textContent = `${artMovement}: ${percentages[artMovement]}`;
   }
 };
+
+//Generar el chat grupal
+export const renderChatParticipants = (data) => {
+  const participantElement = document.createElement("section");
+  data.forEach((participant) => {
+    const contParticipants = document.createElement("article");
+    contParticipants.id="contParticipants";
+    const participantImg = document.createElement("img");
+    participantImg.src = participant.imageUrl;
+    participantImg.alt = participant.name;
+    participantImg.id = "participant-image";
+    const participantName = document.createElement("div");
+    participantName.id = "participant-name";
+    participantName.innerHTML = `${participant.name}`;
+    contParticipants.append(participantImg,participantName);
+    participantElement.appendChild(contParticipants);
+    
+  });
+
+  return participantElement;
+};
+

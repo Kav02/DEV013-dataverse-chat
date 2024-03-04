@@ -38,6 +38,7 @@ export const Home = () => {
 
   //Crear el menu de filtrado
   const article = document.createElement("article");
+  article.id="menuHome";
   const menuContainer = document.createElement("div");
   menuContainer.classList.add("menu-container");
   // const barMenu = document.createElement("div");
@@ -94,7 +95,7 @@ export const Home = () => {
      </button>
      <button class= "menu" id="button-key">API-Key <span class="iconKey"><img src="./../Imagenes/key.svg"></span>
      </button>
-     <button class= "menu" id="button-group">Chat Grupal <span class="iconKey"><img src="./../Imagenes/groupchat.svg"></span>
+     <button data-target="viewGroupal" class= "menu" id="button-group">Chat Grupal <span class="iconKey"><img src="./../Imagenes/groupchat.svg"></span>
      </button>
      `;
   article.appendChild(buttons);
@@ -234,8 +235,9 @@ export const Home = () => {
   //Navegar al chat grupal
   const buttonGroup = viewHome.querySelector("#button-group");
   buttonGroup.addEventListener("click", () => {
+    const target = buttonGroup.getAttribute("data-target");
+    localStorage.setItem("apiKeyTarget", target);
     const keyCheck = getApiKey();
-    console.log(keyCheck);
     if (keyCheck === null) {
       navigateTo("/apiregister");
     } else {

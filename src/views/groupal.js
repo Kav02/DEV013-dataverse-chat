@@ -1,8 +1,10 @@
 import { chatHeaderComponent } from "./../components/chatheader.js";
 import { chatInputComponent } from "./../components/chatinput.js";
-// import { renderChatParticipants } from "./../functions.js";
+import { renderChatParticipants } from "./../functions.js";
+
 import data from "./../data/dataset.js";
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
+
 export const Groupal = () => {
   //Crear el contenedor principal
   const viewGroupal = document.createElement("section");
@@ -22,6 +24,9 @@ export const Groupal = () => {
 //Area del chat
   const chatBody = document.createElement("section");
   chatBody.classList.add("chat-body");
+  const chatMessage = document.createElement("article");
+  chatMessage.id="chatMessage";
+  chatBody.appendChild(chatMessage);
   const prueba = async () => {
     const response = await fetch(communicateWithOpenAI(data));
     const result = await response.json();

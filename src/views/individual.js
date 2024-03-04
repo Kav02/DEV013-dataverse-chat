@@ -57,12 +57,18 @@ export const Individual = (props) => {
   const paintingInfo = document.createElement("section");
   paintingInfo.id = "painting-info";
   paintingInfo.innerHTML = `
+  <p class="autorchat">${selectedPainting.facts.artistName} </p>
   <div class="containerPicturetwo">
   <img class="picturetwo" src="${selectedPainting.imageUrl}">
   </div>
   <div class="containerPictureone">
   <img class="pictureone" src="${selectedPainting.relatedimageUrl}">
   </div>
+  
+  <p class="chat">Artista: ${selectedPainting.facts.artistName}</p>
+  <p class="chat">Corriente: ${selectedPainting.facts.artMovement}</p>
+  <p class="chat">Año: ${selectedPainting.facts.creationYear}</p>
+  
   `;
   chatContainer.appendChild(paintingInfo);
   //Area de Chat

@@ -1,4 +1,5 @@
 import { headerComponent } from "../components/Header.js";
+import { navigateTo } from "../router.js";
 import { setApiKey } from "./../lib/apiKey.js";
 
 export const Apiregister = () => {
@@ -12,7 +13,7 @@ export const Apiregister = () => {
   contentApi.id = "contentApi";
 
   contentApi.innerHTML = `
-  <p> Para poder conversar con tus obras favoritas, por favor a continuación agrega tu Api Key.</p>
+  <p class="textapi"> Para poder conversar con tus obras favoritas, por favor a continuación agrega tu Api Key.</p>
   <form  id="containerApi">
   <label for="nombre" class="text nombre">Nombre</label>
   <input type="text" class="input inputnombre" id="nombre" required>
@@ -31,32 +32,20 @@ export const Apiregister = () => {
   buttonGuardar.addEventListener("click", function () {
     const apiKeyValue = apiKey.value;
     setApiKey(apiKeyValue);
+    const target = localStorage.getItem("apiKeyTarget");
+    if (target === "chatIndividual") {
+      navigateTo("/individual");
+    } else if (target === "viewGroupal") {
+      navigateTo("/groupal");
+    } else if (location === "/home") {
+      navigateTo("/home");
+    } else if (location.href.includes("/card?id=")) {
+      const currentQueryParams = new URLSearchParams(location.search);
+      const id = currentQueryParams.get("id");
+      const newUrl = `/card?id=${id}`;
+      navigateTo(newUrl);
+    }
   });
 
   return viewapiRegister;
 };
-
-
-//COMO PONER LA INFO EN LOCAL STORAGE
-// Obtener el formulario dentro del contenido dinámico
-// const formulario = contentApi.querySelector('#containerApi');
-
-// // Manejar el evento de envío del formulario
-// formulario.addEventListener('submit', function (event) {
-//     // Evitar que el formulario se envíe normalmente (recargando la página)
-//     event.preventDefault();
-
-//     // Obtener los valores del formulario
-//     const nombre = formulario.querySelector('[name="nombre"]').value;
-//     const apiKey = formulario.querySelector('[name="apikey"]').value;
-
-//     // Almacenar los valores en el Local Storage
-//     localStorage.setItem('nombre', nombre);
-//     localStorage.setItem('apiKey', apiKey);
-
-//     // Puedes mostrar un mensaje de confirmación o realizar otras acciones aquí
-//     alert('Datos guardados');
-// });
-
-// // Agregar el contenido dinámico al documento (por ejemplo, al body)
-// document.body.appendChild(contentApi);

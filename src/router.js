@@ -32,6 +32,7 @@ const renderView = (pathname, props = {}) => {
   const urlParams = queryStringToObject(queryString);
   // Combinar los parámetros de consulta con las propiedades existentes
   const combinedProps = { ...props, ...urlParams };
+
   if (ROUTES[pathname]) {
     const template = ROUTES[pathname](combinedProps);
     root.appendChild(template);
@@ -67,5 +68,9 @@ export const navigateTo = (pathname, props = {}) => {
 
 export const onURLChange = (location) => {
   // Renderizar la vista con el pathname y los parámetros de búsqueda
-  renderView(location.pathname);
+  // console.log(location);
+  const urlSearch = window.location.search;
+  const newUrlSearch = `${location}${urlSearch}`;
+  window.history.pushState({}, "", newUrlSearch);
+  renderView(location);
 };
