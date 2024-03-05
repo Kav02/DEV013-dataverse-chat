@@ -73,7 +73,7 @@ export const Card = (props) => {
   const buttonIndChat =
     containerIndividualCard.querySelector(".cardButtonChat");
   buttonIndChat.addEventListener("click", () => {
-    const target = buttonGroup.getAttribute("data-target");
+    const target = buttonIndChat.getAttribute("data-target");
     localStorage.setItem("apiKeyTarget", target);
     const keyCheck = getApiKey();
     if (keyCheck === null) {
