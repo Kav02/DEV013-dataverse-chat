@@ -8,5 +8,7 @@ export const chatInputComponent = () => {
   <img id="arrow" src="./../Imagenes/right.png">
   </button>
   `
+ 
+
   return chatInputContainer;
 };

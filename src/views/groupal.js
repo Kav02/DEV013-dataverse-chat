@@ -26,6 +26,7 @@ export const Groupal = () => {
   chatBody.classList.add("chat-body");
   const chatMessage = document.createElement("article");
   chatMessage.id="chatMessage";
+  
   chatBody.appendChild(chatMessage);
   const prueba = async () => {
     const response = await fetch(communicateWithOpenAI(data));
@@ -41,5 +42,6 @@ export const Groupal = () => {
   chatBody.appendChild(chatInput);
   chatContainer.appendChild(chatBody);
   viewGroupal.appendChild(chatContainer);
+  
   return viewGroupal;
 };
