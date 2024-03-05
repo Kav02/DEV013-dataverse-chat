@@ -2,9 +2,9 @@ import { getApiKey } from "./apiKey.js";
 
 const apiKey = getApiKey();
 console.log(apiKey);
-export const communicateWithOpenAI = async () => {
+export const communicateWithOpenAI = async (userInput, selectedPainting) => {
   const apiKey = getApiKey();
-
+  const paintingName = selectedPainting.name;
   const url = "https://api.openai.com/v1/chat/completions";
 
   const response = await fetch(url, {
@@ -15,7 +15,16 @@ export const communicateWithOpenAI = async () => {
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "system", content: "dime un n umero del 1 al 10" }],
+      messages: [
+        {
+          role: "system",
+          content: `Eres la pintura famosa ${paintingName}, los usuarios te escriben para saber mas de ti, quién te pintó, a qué corriente artistica perteneces, y otros datos relevantes. Responde de manera concisa y precisa a sus preguntas`,
+        },
+        {
+          role: "user",
+          content: `${userInput}`,
+        },
+      ],
       max_tokens: 30,
     }),
   });
@@ -28,10 +37,10 @@ export const communicateWithOpenAI = async () => {
   return result.choices[0].message.content;
 };
 
-communicateWithOpenAI()
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+// communicateWithOpenAI()
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });

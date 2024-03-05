@@ -27,29 +27,37 @@ export const Groupal = () => {
   const chatMessage = document.createElement("article");
   chatMessage.id = "chatMessage";
   chatBody.appendChild(chatMessage);
+  //Chat input
+  const chatInput = chatInputComponent();
+  chatBody.appendChild(chatInput);
   //Insertar los componentes a la vista
   chatContainer.appendChild(chatBody);
   viewGroupal.appendChild(chatContainer);
 
-  const renderChatResponse = async (data) => {
-    const response = await fetch(communicateWithOpenAI(data));
-    const result = await response.json();
+  const messageSending = async () => {
+    const userInput = document.getElementById("chat-input").value;
+    const userMessageElement = document.createElement("div");
+    userMessageElement.classList.add("user-message");
+    userMessageElement.innerHTML = `<p>${userInput}</p>`;
+    chatMessage.appendChild(userMessageElement);
 
-    // Contenedor para la respuesta
+    //Renderizar la respuesta del chat
+    //const response = await communicateWithOpenAI(userInput);
+
+    const response = await communicateWithOpenAI();
+    // const responseText = response.message;
+    // console.log(response);
     const responseElement = document.createElement("div");
     responseElement.classList.add("chat-response");
-    const chatResponse = `<p>${result.choices[0].text}</p>`;
-
-    responseElement.innerHTML = chatResponse;
-    chatBody.appendChild(responseElement);
+    responseElement.innerHTML = `<p>${response}</p>`;
+    //Limpiar el input
+    chatInput.querySelector("#chat-input").value = "";
+    chatMessage.appendChild(responseElement);
   };
 
-  const sendMessageButton = chatContainer.getElementById("send-button");
+  // Funcion para activar el chat
+  const sendMessageButton = chatBody.querySelector("#send-button");
+  sendMessageButton.addEventListener("click", messageSending);
 
-  sendMessageButton.addEventListener("click", () => {
-    const userInput = document.getElementById("chat-input").value;
-    renderChatResponse(userInput);
-
-    return viewGroupal;
-  });
+  return viewGroupal;
 };

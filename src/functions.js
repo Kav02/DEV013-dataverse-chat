@@ -92,7 +92,7 @@ export const renderChatParticipants = (data) => {
   const participantElement = document.createElement("section");
   data.forEach((participant) => {
     const contParticipants = document.createElement("article");
-    contParticipants.id="contParticipants";
+    contParticipants.id = "contParticipants";
     const participantImg = document.createElement("img");
     participantImg.src = participant.imageUrl;
     participantImg.alt = participant.name;
@@ -100,11 +100,9 @@ export const renderChatParticipants = (data) => {
     const participantName = document.createElement("div");
     participantName.id = "participant-name";
     participantName.innerHTML = `${participant.name}`;
-    contParticipants.append(participantImg,participantName);
+    contParticipants.append(participantImg, participantName);
     participantElement.appendChild(contParticipants);
-    
   });
 
   return participantElement;
 };
-
