@@ -1,8 +1,9 @@
 import { chatHeaderComponent } from "./../components/chatheader.js";
 import { chatInputComponent } from "./../components/chatinput.js";
-import { renderChatParticipants } from "./../functions.js";
+import { renderChatParticipants,renderChatMessage } from "./../functions.js";
 
 import data from "./../data/dataset.js";
+
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
 export const Groupal = () => {
@@ -34,6 +35,9 @@ export const Groupal = () => {
   chatContainer.appendChild(chatBody);
   viewGroupal.appendChild(chatContainer);
 
+  const participantName = renderChatMessage(data);
+  console.log(participantName);
+
   const messageSending = async () => {
     const userInput = document.getElementById("chat-input").value;
     const userMessageElement = document.createElement("div");
@@ -43,8 +47,9 @@ export const Groupal = () => {
 
     //Renderizar la respuesta del chat
     //const response = await communicateWithOpenAI(userInput);
-
+    
     const response = await communicateWithOpenAI();
+
     // const responseText = response.message;
     // console.log(response);
     const responseElement = document.createElement("div");

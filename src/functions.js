@@ -106,3 +106,14 @@ export const renderChatParticipants = (data) => {
 
   return participantElement;
 };
+
+
+export const renderChatMessage = (data) => {
+  const participantList = [];
+  for (const artwork of data) {
+    const paintingName = artwork.name;
+    participantList.push(paintingName); //Push para agregar en el array
+  }
+  console.log(participantList);
+  return participantList;
+};

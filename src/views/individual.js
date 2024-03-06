@@ -91,7 +91,7 @@ export const Individual = (props) => {
     const userInput = document.getElementById("chat-input").value;
     const userMessageElement = document.createElement("div");
     userMessageElement.classList.add("user-message");
-    userMessageElement.innerHTML = `<p>${userInput}</p>`;
+    userMessageElement.innerHTML = `<p id="chat-box">${userInput}</p>`;
     chatMessage.appendChild(userMessageElement);
 
     //Renderizar la respuesta del chat
