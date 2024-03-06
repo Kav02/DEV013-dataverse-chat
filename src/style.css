@@ -409,6 +409,7 @@ option:hover {
     height: calc(100vh - 110px);
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 .user-message{
     background: #8dd3e7;
@@ -536,6 +537,7 @@ option:hover {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow-y: hidden;
 }
 
 .chat-header {
