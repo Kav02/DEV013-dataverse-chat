@@ -1,7 +1,5 @@
 import { getApiKey } from "./apiKey.js";
 
-const apiKey = getApiKey();
-console.log(apiKey);
 export const communicateWithOpenAI = async (userInput, selectedPainting) => {
   const apiKey = getApiKey();
   const paintingName = selectedPainting.name;
