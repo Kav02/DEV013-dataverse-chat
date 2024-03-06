@@ -1,16 +1,19 @@
-export const setApiKey = (key) => {
-  // Implementa el código para guardar la API KEY en Local Storage
+export const setApiKey = async (key) => {
   if (key.trim() !== "") {
+    //const apiKey = key;
+
+    // const keyValid = await validateKey(apiKey);
+    // if (keyValid === true) {
     localStorage.setItem("apiKey", key);
+    // } else {
+    //   alert("La clave de API ingresada no es válida.");
+    // }
   } else {
-    alert("Debes ingresar un Api key)");
+    alert("Debes ingresar una clave de API.");
   }
-  console.log(key);
 };
 
 export const getApiKey = () => {
-  // Implementa el código para obtener la API KEY desde Local Storage
-
   const getKey = localStorage.getItem("apiKey");
   console.log(getKey);
   return getKey;

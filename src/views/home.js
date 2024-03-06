@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { filterData, sortData, computeStats } from "./../lib/dataFunctions.js";
 import { renderItems } from "../functions.js";
 import { headerComponent } from "./../components/Header.js";
@@ -38,7 +39,7 @@ export const Home = () => {
 
   //Crear el menu de filtrado
   const article = document.createElement("article");
-  article.id="menuHome";
+  article.id = "menuHome";
   const menuContainer = document.createElement("div");
   menuContainer.classList.add("menu-container");
   // const barMenu = document.createElement("div");

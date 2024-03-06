@@ -1,5 +1,6 @@
 import { chatInputComponent } from "../components/chatinput.js";
 import { navigateTo } from "../router.js";
+import { communicateWithOpenAI } from "../lib/openAIApi.js";
 import data from "../data/dataset.js";
 
 export const Individual = (props) => {
@@ -28,6 +29,7 @@ export const Individual = (props) => {
   paintingChat.appendChild(profile);
   paintingChat.appendChild(headerTitle);
   indChatHeader.appendChild(paintingChat);
+
   //Sección menú
   const menuOptions = document.createElement("section");
   menuOptions.id = "menu-options";
@@ -71,15 +73,55 @@ export const Individual = (props) => {
   
   `;
   chatContainer.appendChild(paintingInfo);
+
   //Area de Chat
   const chatBody = document.createElement("section");
   chatBody.classList.add("chat-body");
+  const chatMessage = document.createElement("article");
+  chatMessage.id = "chatMessage";
+  chatBody.appendChild(chatMessage);
+  //Chat input
   const chatInput = chatInputComponent();
   chatBody.appendChild(chatInput);
+  //Insertar los componentes a la vista
+  chatContainer.appendChild(chatBody);
+  viewIndividual.appendChild(chatContainer);
+
+  const messageSending = async () => {
+    const userInput = document.getElementById("chat-input").value;
+    const userMessageElement = document.createElement("div");
+    userMessageElement.classList.add("user-message");
+    userMessageElement.innerHTML = `<p>${userInput}</p>`;
+    chatMessage.appendChild(userMessageElement);
+
+    //Renderizar la respuesta del chat
+    const response = await communicateWithOpenAI(userInput, selectedPainting);
+    console.log(userInput);
+    //const response = await communicateWithOpenAI("La noche estrellada");
+    //const responseText = response.message;
+    // console.log(response);
+    const responseElement = document.createElement("div");
+    responseElement.classList.add("chat-response");
+    responseElement.innerHTML = `<p>${response}</p>`;
+    //Limpiar el input
+    chatInput.querySelector("#chat-input").value = "";
+    chatMessage.appendChild(responseElement);
+  };
 
   //paintingInfo.appendChild(longCard);
   chatContainer.appendChild(chatBody);
   viewIndividual.appendChild(chatContainer);
+
+  // Funcion para activar el chat
+  const sendMessageButton = chatBody.querySelector("#send-button");
+  sendMessageButton.addEventListener("click", messageSending);
+  const sendMessage = chatBody.querySelector("#chat-input");
+  sendMessage.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      messageSending();
+    }
+  });
 
   //Navegar al Inicio y al Chat Groupal
   const homeButton = viewIndividual.querySelector("#home-title");

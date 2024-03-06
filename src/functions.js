@@ -64,7 +64,7 @@ export const renderCards = (data) => {
       <dt></dt><dd itemprop="descriptionDetails">${painting.description}</dd>
       <dt></dt><dd itemprop="styleDetails" class="contenedor3">Estilo: ${painting.additionalInformation.style}</dd>
       <dt></dt><dd itemprop="techniqueDetails" class="contenedor3">Técnica: ${painting.additionalInformation.technique}</dd>
-      <button class="cardButtonChat">Ir a chat  
+      <button data-target = "viewIndividual" class="cardButtonChat">Ir a chat  
       <img id="iconbuttoncard"src="./../imagenes/iconbuttoncard.svg"/>
       </button>
       
@@ -92,7 +92,7 @@ export const renderChatParticipants = (data) => {
   const participantElement = document.createElement("section");
   data.forEach((participant) => {
     const contParticipants = document.createElement("article");
-    contParticipants.id="contParticipants";
+    contParticipants.id = "contParticipants";
     const participantImg = document.createElement("img");
     participantImg.src = participant.imageUrl;
     participantImg.alt = participant.name;
@@ -100,11 +100,19 @@ export const renderChatParticipants = (data) => {
     const participantName = document.createElement("div");
     participantName.id = "participant-name";
     participantName.innerHTML = `${participant.name}`;
-    contParticipants.append(participantImg,participantName);
+    contParticipants.append(participantImg, participantName);
     participantElement.appendChild(contParticipants);
-    
   });
 
   return participantElement;
 };
 
+export const renderChatMessage = (data) => {
+  const participantList = [];
+  for (const artwork of data) {
+    const paintingName = artwork.name;
+    participantList.push(paintingName); //Push para agregar en el array
+  }
+  console.log(participantList);
+  return participantList;
+};
