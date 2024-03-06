@@ -396,11 +396,22 @@ option:hover {
 }
 
 /*Vista Chat individual*/
+#messageHello {
+    background: rgb(109, 108, 108);
+    align-self: flex-start;
+    border-radius: 0 .75rem .75rem .75rem;
+    color: white;
+}
+
+#chat-box {
+    /* text-overflow:ellipsis; */
+}
 
 #chatMessage {
     height: calc(100vh - 110px);
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 .user-message {
@@ -417,13 +428,14 @@ option:hover {
 }
 
 .user-message,
-.chat-response {
+.chat-response,
+#messageHello {
     margin: 10px;
-    padding: 7px;
+    padding: 10px;
     font-family: "JetBrains Mono";
     word-wrap: break-word;
     max-height: 70%;
-    width: 60%;
+    width: 50%;
     font-size: 14px;
 }
 
@@ -532,6 +544,7 @@ option:hover {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    overflow-y: hidden;
 }
 
 .chat-header {
