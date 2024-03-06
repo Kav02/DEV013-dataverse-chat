@@ -11,6 +11,7 @@ export const Groupal = () => {
   //Encabezado
   const chatHeader = chatHeaderComponent();
   viewGroupal.appendChild(chatHeader);
+
   //Contenedor general
   const chatContainer = document.createElement("section");
   chatContainer.classList.add("chat-container");
@@ -33,9 +34,6 @@ export const Groupal = () => {
   chatContainer.appendChild(chatBody);
   viewGroupal.appendChild(chatContainer);
 
-  const participantName = renderChatMessage(data);
-  console.log(participantName);
-
   const messageSending = async () => {
     const userInput = document.getElementById("chat-input").value;
     const userMessageElement = document.createElement("div");
@@ -44,19 +42,18 @@ export const Groupal = () => {
     chatMessage.appendChild(userMessageElement);
 
     //Renderizar la respuesta del chat
-    //const response = await communicateWithOpenAI(userInput);
-
-    const response = await communicateWithOpenAI();
-    // const responseText = response.message;
-    // console.log(response);
-    const responseElement = document.createElement("div");
-    responseElement.classList.add("chat-response");
-    responseElement.innerHTML = `<p>${response}</p>`;
-    //Limpiar el input
-    chatInput.querySelector("#chat-input").value = "";
-    chatMessage.appendChild(responseElement);
+    const participantName = renderChatMessage(data);
+    console.log(participantName);
+    for (const participant of participantName) {
+      const response = await communicateWithOpenAI(userInput, participant);
+      const responseElement = document.createElement("div");
+      responseElement.classList.add("chat-response");
+      responseElement.innerHTML = `<p>${response}</p>`;
+      //Limpiar el input
+      chatInput.querySelector("#chat-input").value = "";
+      chatMessage.appendChild(responseElement);
+    }
   };
-
   // Funcion para activar el chat
   const sendMessageButton = chatBody.querySelector("#send-button");
   sendMessageButton.addEventListener("click", messageSending);
@@ -67,5 +64,6 @@ export const Groupal = () => {
       messageSending();
     }
   });
+
   return viewGroupal;
 };

@@ -38,7 +38,7 @@ export const Individual = (props) => {
   homeTitle.id = "home-title";
   homeTitle.innerHTML = "Inicio";
   const homeIcon = document.createElement("img");
-  homeIcon.id = "home-icon";
+  homeIcon.classList.add("home-icon");
   homeIcon.src = "./../Imagenes/homeheader.svg";
   homeTitle.appendChild(homeIcon);
   menuOptions.appendChild(homeTitle);
@@ -96,10 +96,6 @@ export const Individual = (props) => {
 
     //Renderizar la respuesta del chat
     const response = await communicateWithOpenAI(userInput, selectedPainting);
-    console.log(userInput);
-    //const response = await communicateWithOpenAI("La noche estrellada");
-    //const responseText = response.message;
-    // console.log(response);
     const responseElement = document.createElement("div");
     responseElement.classList.add("chat-response");
     responseElement.innerHTML = `<p>${response}</p>`;
