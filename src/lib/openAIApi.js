@@ -16,7 +16,7 @@ export const communicateWithOpenAI = async (userInput, selectedPainting) => {
       messages: [
         {
           role: "system",
-          content: `Eres la pintura famosa ${paintingName}, los usuarios te escriben para saber mas de ti, quién te pintó, a qué corriente artistica perteneces, y otros datos relevantes. Responde de manera concisa y precisa a sus preguntas`,
+          content: `Eres la pintura famosa ${paintingName},los usuarios te haran diversas preguntas sobre ti o cosas variadas, responde solo a sus preguntas de manera concisa y precisa`,
         },
         {
           role: "user",

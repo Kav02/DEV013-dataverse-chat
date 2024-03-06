@@ -79,6 +79,11 @@ export const Individual = (props) => {
   chatBody.classList.add("chat-body");
   const chatMessage = document.createElement("article");
   chatMessage.id = "chatMessage";
+  const messageHello = document.createElement("div");
+  messageHello.id ="messageHello";
+  messageHello.innerHTML = `
+    <p>¡Hola! soy la famosa obra de arte "${selectedPainting.name}" ¿en qué puedo ayudarte?</p>`;
+  chatMessage.appendChild(messageHello);
   chatBody.appendChild(chatMessage);
   //Chat input
   const chatInput = chatInputComponent();
@@ -86,6 +91,8 @@ export const Individual = (props) => {
   //Insertar los componentes a la vista
   chatContainer.appendChild(chatBody);
   viewIndividual.appendChild(chatContainer);
+
+  
 
   const messageSending = async () => {
     const userInput = document.getElementById("chat-input").value;
@@ -100,11 +107,16 @@ export const Individual = (props) => {
     //const response = await communicateWithOpenAI("La noche estrellada");
     //const responseText = response.message;
     // console.log(response);
+    // const messageHello = document.createElement("div");
+    // messageHello.innerHTML = `
+    // <p>¡Hola! soy ${selectedPainting.name} ¿en qué puedo ayudarte?</p>`
     const responseElement = document.createElement("div");
     responseElement.classList.add("chat-response");
-    responseElement.innerHTML = `<p>${response}</p>`;
+    responseElement.innerHTML = `
+    <p>${response}</p>`;
     //Limpiar el input
     chatInput.querySelector("#chat-input").value = "";
+   
     chatMessage.appendChild(responseElement);
   };
 
