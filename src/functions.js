@@ -107,7 +107,6 @@ export const renderChatParticipants = (data) => {
   return participantElement;
 };
 
-
 export const renderChatMessage = (data) => {
   const participantList = [];
   for (const artwork of data) {
@@ -117,3 +116,4 @@ export const renderChatMessage = (data) => {
   console.log(participantList);
   return participantList;
 };
+

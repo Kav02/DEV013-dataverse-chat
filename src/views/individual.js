@@ -115,6 +115,13 @@ export const Individual = (props) => {
   // Funcion para activar el chat
   const sendMessageButton = chatBody.querySelector("#send-button");
   sendMessageButton.addEventListener("click", messageSending);
+  const sendMessage = chatBody.querySelector("#chat-input");
+  sendMessage.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      messageSending();
+    }
+  });
 
   //Navegar al Inicio y al Chat Groupal
   const homeButton = viewIndividual.querySelector("#home-title");

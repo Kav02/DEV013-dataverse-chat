@@ -1,9 +1,5 @@
-import {
-  setRoutes,
-  navigateTo,
-  setRootElement,
-  onURLChange,
-} from "./router.js";
+import { setRoutes, setRootElement, onURLChange } from "./router.js";
+
 import { Home } from "./views/home.js";
 import { Error } from "./views/error.js";
 import { Welcome } from "./views/welcome.js";
