@@ -1,4 +1,4 @@
-import { headersecundaryComponent } from "../components/Headersecundary.js";
+import { headerSecondaryComponent } from "../components/Headersecundary.js";
 import { bannerComponent } from "../components/Banner.js";
 import { renderCards } from "../functions.js";
 import { navigateTo } from "../router.js";
@@ -10,7 +10,7 @@ export const Card = (props) => {
   viewCard.id = "viewCard";
 
   /*------HEADER ART PLACE-----------------------------*/
-  const headerCard = headersecundaryComponent();
+  const headerCard = headerSecondaryComponent();
   viewCard.appendChild(headerCard);
 
   /*--------------------------------------------------*/

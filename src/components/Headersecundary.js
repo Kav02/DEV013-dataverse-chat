@@ -1,21 +1,17 @@
-export const headersecundaryComponent = () => {
-    const headerSecundary = document.createElement("header");
-    headerSecundary.id = "headerSecundary";
-  
-    const logoHeader = document.createElement("img");
-    logoHeader.id = "logoHeader";
-    logoHeader.src = "./Imagenes/logo.png";
-    // Crear un elemento de imagen
-    const logoReturn = document.createElement("img");
-    logoReturn.id = "logoReturn";
-    logoReturn.src = "./Imagenes/return header.svg";
-    headerSecundary.appendChild(logoReturn);
-    headerSecundary.appendChild(logoHeader);
+export const headerSecondaryComponent = () => {
+  const headerSecondary = document.createElement("header");
+  headerSecondary.id = "headerSecondary";
 
-    headerSecundary.innerHTML += `
+  const logoHeader = document.createElement("img");
+  logoHeader.id = "logoHeader";
+  logoHeader.src = "./Imagenes/logo.png";
+  // Crear un elemento de imagen
+
+  headerSecondary.appendChild(logoHeader);
+
+  headerSecondary.innerHTML += `
       ART PLACE`; /* += : para concatenar */
-    // console.log(header);
-    
-    return headerSecundary;
-  };
-  
+  // console.log(header);
+
+  return headerSecondary;
+};

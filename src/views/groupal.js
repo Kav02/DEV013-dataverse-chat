@@ -1,7 +1,6 @@
 import { chatHeaderComponent } from "./../components/chatheader.js";
 import { chatInputComponent } from "./../components/chatinput.js";
-import { renderChatParticipants } from "./../functions.js";
-
+import { renderChatParticipants, renderChatMessage } from "./../functions.js";
 import data from "./../data/dataset.js";
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
@@ -34,6 +33,9 @@ export const Groupal = () => {
   chatContainer.appendChild(chatBody);
   viewGroupal.appendChild(chatContainer);
 
+  const participantName = renderChatMessage(data);
+  console.log(participantName);
+
   const messageSending = async () => {
     const userInput = document.getElementById("chat-input").value;
     const userMessageElement = document.createElement("div");
@@ -58,6 +60,12 @@ export const Groupal = () => {
   // Funcion para activar el chat
   const sendMessageButton = chatBody.querySelector("#send-button");
   sendMessageButton.addEventListener("click", messageSending);
-
+  const sendMessage = chatBody.querySelector("#chat-input");
+  sendMessage.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      messageSending();
+    }
+  });
   return viewGroupal;
 };

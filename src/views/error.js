@@ -1,10 +1,10 @@
-import { headersecundaryComponent } from "./../components/Headersecundary.js";
+import { headerSecondaryComponent } from "./../components/Headersecundary.js";
 
 export const Error = () => {
   const viewError = document.createElement("section");
   viewError.id = "viewError";
 
-  const headerError = headersecundaryComponent();
+  const headerError = headerSecondaryComponent();
   const contentError = document.createElement("section");
   contentError.id = "contentError";
 
