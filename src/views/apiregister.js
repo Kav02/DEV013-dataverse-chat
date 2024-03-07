@@ -1,5 +1,5 @@
 import { headerComponent } from "../components/Header.js";
-import { navigateTo, queryStringToObject } from "../router.js";
+import { navigateTo } from "../router.js";
 import { setApiKey } from "./../lib/apiKey.js";
 
 export const apiRegister = () => {
@@ -22,34 +22,34 @@ export const apiRegister = () => {
   <button class="Guardar" id="Guardar"> Guardar</button>
 </form>
 `;
-
   /*method="post" : se usa para que no se registre los datos puestos en la url */
-
   viewapiRegister.append(contentApi);
 
   const apiKey = viewapiRegister.querySelector("#textapikey");
   const buttonGuardar = viewapiRegister.querySelector("#Guardar");
   buttonGuardar.addEventListener("click", function () {
+    //Guardar el nombre de usuario
+    const name = viewapiRegister.querySelector("#nombre");
+    const nameValue = name.value;
+    localStorage.setItem("userName", nameValue);
     const apiKeyValue = apiKey.value;
     setApiKey(apiKeyValue);
     const target = localStorage.getItem("apiKeyTarget");
-    const currentLocation = location.href;
-    console.log(currentLocation);
-    if (currentLocation === "/home" && target === null) {
+    const previousLocation = localStorage.getItem("previousQueryParams");
+
+    const previousPage = document.referrer;
+
+    console.log(previousPage);
+    if (previousPage.pathname === "/home" && target === null) {
       navigateTo("/home");
     } else if (target === "viewGroupal") {
       navigateTo("/groupal");
     } else if (target === "viewIndividual") {
-      const queryString = currentLocation.search;
-      const urlParams = new URLSearchParams(queryString);
-      const queryParams = urlParams.toString(); // Convertir los parámetros de consulta a una cadena
-      const newUrl = `/individual?${queryParams}`;
+      const newUrl = `/individual${previousLocation.queryParams}`;
+      console.log(newUrl);
       navigateTo(newUrl);
-    } else if (currentLocation.includes("/card?id=")) {
-      const currentQueryParams = new URLSearchParams(location.search);
-      const id = currentQueryParams.get("id");
-      const newUrl = `/card?id=${id}`;
-      navigateTo(newUrl);
+    } else if (previousPage.includes("/card?id=")) {
+      window.history.back();
     }
     // else {
     //   navigateTo("/home");

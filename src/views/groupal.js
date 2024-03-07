@@ -22,10 +22,16 @@ export const Groupal = () => {
   groupInfo.appendChild(participants);
   chatContainer.appendChild(groupInfo);
   //Area del chat
+  const getName = localStorage.getItem("userName");
   const chatBody = document.createElement("section");
   chatBody.classList.add("chat-body");
   const chatMessage = document.createElement("article");
   chatMessage.id = "chatMessage";
+  const messageHello = document.createElement("div");
+  messageHello.id = "messageHello";
+  messageHello.innerHTML = `
+    <p>¡Hola ${getName}!<br> Bienvenido al chat de pinturas famosas! ¿En qué podemos ayudarte?</p>`;
+  chatMessage.appendChild(messageHello);
   chatBody.appendChild(chatMessage);
   //Chat input
   const chatInput = chatInputComponent();
@@ -42,15 +48,13 @@ export const Groupal = () => {
     chatMessage.appendChild(userMessageElement);
 
     //Renderizar la respuesta del chat
-    //const participantName = renderChatMessage(data);
-    //console.log(participantName);
     for (const selectedPainting of data) {
       const paintingName = selectedPainting.name;
       const response = await communicateWithOpenAI(userInput, selectedPainting);
 
       const responseElement = document.createElement("div");
       responseElement.classList.add("chat-response");
-      responseElement.innerHTML = `<p>${paintingName}<p>${response}</p>`;
+      responseElement.innerHTML = `<p class= "paintingName">${paintingName}<p>${response}</p>`;
       //Limpiar el input
       chatInput.querySelector("#chat-input").value = "";
       chatMessage.appendChild(responseElement);

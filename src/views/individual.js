@@ -75,6 +75,8 @@ export const Individual = (props) => {
   chatContainer.appendChild(paintingInfo);
 
   //Area de Chat
+  const getName = localStorage.getItem("userName");
+
   const chatBody = document.createElement("section");
   chatBody.classList.add("chat-body");
   const chatMessage = document.createElement("article");
@@ -82,7 +84,7 @@ export const Individual = (props) => {
   const messageHello = document.createElement("div");
   messageHello.id = "messageHello";
   messageHello.innerHTML = `
-    <p>¡Hola! soy la famosa obra de arte "${selectedPainting.name}" ¿en qué puedo ayudarte?</p>`;
+    <p>¡Hola ${getName}!<br> Soy la famosa obra de arte "${selectedPainting.name}" ¿En qué puedo ayudarte?</p>`;
   chatMessage.appendChild(messageHello);
   chatBody.appendChild(chatMessage);
   //Chat input
