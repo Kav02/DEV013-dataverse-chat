@@ -75,6 +75,7 @@ export const Card = (props) => {
   buttonIndChat.addEventListener("click", () => {
     const target = buttonIndChat.getAttribute("data-target");
     localStorage.setItem("apiKeyTarget", target);
+
     const keyCheck = getApiKey();
     if (keyCheck === null) {
       navigateTo("/apiregister");

@@ -42,19 +42,21 @@ export const Groupal = () => {
     chatMessage.appendChild(userMessageElement);
 
     //Renderizar la respuesta del chat
-    const participantName = renderChatMessage(data);
-    console.log(participantName);
-    for (const participant of participantName) {
-      const response = await communicateWithOpenAI(userInput, participant);
+    //const participantName = renderChatMessage(data);
+    //console.log(participantName);
+    for (const selectedPainting of data) {
+      const paintingName = selectedPainting.name;
+      const response = await communicateWithOpenAI(userInput, selectedPainting);
+
       const responseElement = document.createElement("div");
       responseElement.classList.add("chat-response");
-      responseElement.innerHTML = `<p>${response}</p>`;
+      responseElement.innerHTML = `<p>${paintingName}<p>${response}</p>`;
       //Limpiar el input
       chatInput.querySelector("#chat-input").value = "";
       chatMessage.appendChild(responseElement);
     }
   };
-  // Funcion para activar el chat
+  // Funcion para activar el chat--------------------
   const sendMessageButton = chatBody.querySelector("#send-button");
   sendMessageButton.addEventListener("click", messageSending);
   const sendMessage = chatBody.querySelector("#chat-input");

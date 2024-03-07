@@ -1,5 +1,5 @@
 import { headerComponent } from "../components/Header.js";
-import { navigateTo } from "../router.js";
+import { navigateTo, queryStringToObject } from "../router.js";
 import { setApiKey } from "./../lib/apiKey.js";
 
 export const apiRegister = () => {
@@ -33,18 +33,29 @@ export const apiRegister = () => {
     const apiKeyValue = apiKey.value;
     setApiKey(apiKeyValue);
     const target = localStorage.getItem("apiKeyTarget");
-    if (target === "viewIndividual") {
-      window.history.back();
+    const currentLocation = location.href;
+    console.log(currentLocation);
+    if (currentLocation === "/home" && target === null) {
+      navigateTo("/home");
     } else if (target === "viewGroupal") {
       navigateTo("/groupal");
-    } else if (location === "/home") {
-      navigateTo("/home");
-    } else if (location.href.includes("/card?id=")) {
+    } else if (target === "viewIndividual") {
+      const queryString = currentLocation.search;
+      const urlParams = new URLSearchParams(queryString);
+      const queryParams = urlParams.toString(); // Convertir los parámetros de consulta a una cadena
+      const newUrl = `/individual?${queryParams}`;
+      navigateTo(newUrl);
+    } else if (currentLocation.includes("/card?id=")) {
       const currentQueryParams = new URLSearchParams(location.search);
       const id = currentQueryParams.get("id");
       const newUrl = `/card?id=${id}`;
       navigateTo(newUrl);
     }
+    // else {
+    //   navigateTo("/home");
+    // }
+
+    localStorage.removeItem("apiKeyTarget");
   });
 
   return viewapiRegister;

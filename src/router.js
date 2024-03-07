@@ -41,7 +41,7 @@ const renderView = (pathname, props = {}) => {
   }
 };
 
-const queryStringToObject = (queryString) => {
+export const queryStringToObject = (queryString) => {
   // Convertir la cadena de consulta a URLSearchParams
   const urlParams = new URLSearchParams(queryString);
   // Convertir URLSearchParams a un objeto
