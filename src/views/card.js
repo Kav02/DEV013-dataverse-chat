@@ -59,6 +59,7 @@ export const Card = (props) => {
     (painting) => painting.id === selectedCardId
   );
 
+  localStorage.setItem("previousQueryParams", window.location.search);
   // Renderizar solo la tarjeta seleccionada
   if (selectedPainting) {
     const longCard = renderCards([selectedPainting]);

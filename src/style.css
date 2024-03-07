@@ -713,6 +713,10 @@ option:hover {
 
 }
 
+.paintingName {
+    color: aquamarine;
+}
+
 #group-info {
     background-color: white;
     width: 50%;
@@ -1232,6 +1236,10 @@ footer {
         font-family: "JetBrains Mono";
         width: 25%;
         margin-left: 67%;
+    }
+
+    #group-info {
+        display: none;
     }
 
     dd[itemprop="descriptionDetails"] {
