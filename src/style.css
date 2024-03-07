@@ -436,7 +436,7 @@ option:hover {
     word-wrap: break-word;
     max-height: 70%;
     width: 50%;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 
@@ -714,7 +714,8 @@ option:hover {
 }
 
 .paintingName {
-    color: aquamarine;
+    color: rgb(238, 200, 104);
+    font-size: 14px;
 }
 
 #group-info {

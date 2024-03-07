@@ -1,6 +1,6 @@
 import { chatHeaderComponent } from "./../components/chatheader.js";
 import { chatInputComponent } from "./../components/chatinput.js";
-import { renderChatParticipants, renderChatMessage } from "./../functions.js";
+import { renderChatParticipants } from "./../functions.js";
 import data from "./../data/dataset.js";
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
