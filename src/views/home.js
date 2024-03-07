@@ -89,14 +89,15 @@ export const Home = () => {
   const buttons = document.createElement("div");
   buttons.classList.add("buttons");
   buttons.innerHTML = `
+     
+     <button class= "menu" id="button-key">API-Key <span class="iconKey"><img src="./../Imagenes/key.svg"></span>
+     </button>
+     <button data-target="viewGroupal" class= "menu" id="button-group">Chat Grupal <span class="iconKey"><img src="./../Imagenes/groupchat.svg"></span>
+     </button>
      <button data-testid="button-stats" class= "menu" id="button-stats">Estadística
      <span class="material-symbols-outlined" id="bar-chart">
          bar_chart
        </span>
-     </button>
-     <button class= "menu" id="button-key">API-Key <span class="iconKey"><img src="./../Imagenes/key.svg"></span>
-     </button>
-     <button data-target="viewGroupal" class= "menu" id="button-group">Chat Grupal <span class="iconKey"><img src="./../Imagenes/groupchat.svg"></span>
      </button>
      `;
   article.appendChild(buttons);
@@ -238,6 +239,7 @@ export const Home = () => {
   buttonGroup.addEventListener("click", () => {
     const target = buttonGroup.getAttribute("data-target");
     localStorage.setItem("apiKeyTarget", target);
+    console.log(target);
     const keyCheck = getApiKey();
     if (keyCheck === null) {
       navigateTo("/apiregister");

@@ -13,10 +13,11 @@ export const communicateWithOpenAI = async (userInput, selectedPainting) => {
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
+      temperature: 0.3,
       messages: [
         {
           role: "system",
-          content: `Eres la pintura famosa ${paintingName}, los usuarios te escriben para saber mas de ti, quién te pintó, a qué corriente artistica perteneces, y otros datos relevantes. Responde de manera concisa y precisa a sus preguntas`,
+          content: `Eres la pintura famosa ${paintingName}, los usuarios te haran diversas preguntas sobre ti o cosas variadas, responde a sus preguntas con información real y  manera concisa y precisa sin dar informacion adicional a la solicitada`,
         },
         {
           role: "user",

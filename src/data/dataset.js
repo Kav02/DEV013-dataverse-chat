@@ -246,7 +246,8 @@ export default [
       "Composición VII es una obra icónica de Wassily Kandinsky, destacando su enfoque abstracto y la búsqueda de armonía en medio del caos. La pintura presenta formas geométricas y líneas dinámicas que crean una sensación de movimiento y energía. Kandinsky, un pionero del arte abstracto, utiliza colores vibrantes y contrastes para transmitir emociones profundas. Esta obra es representativa de su interés en la espiritualidad y la conexión entre arte y emoción, evidenciando su capacidad para plasmar la complejidad de la experiencia humana a través de una expresión visual rica y vibrante.",
     imageUrl:
       "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/Composicion-VII.jpeg",
-    relatedimageUrl: "",
+    relatedimageUrl:
+      "https://cdn.jsdelivr.net/gh/kav02/DEV013-dataverse-chat/src/Imagenes/Composition-VII_Analysis.jpg",
     facts: {
       artistName: "Wassily Kandinsky",
       creationYear: 1913,

@@ -116,4 +116,3 @@ export const renderChatMessage = (data) => {
   console.log(participantList);
   return participantList;
 };
-

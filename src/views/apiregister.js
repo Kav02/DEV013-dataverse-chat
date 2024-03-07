@@ -22,29 +22,40 @@ export const apiRegister = () => {
   <button class="Guardar" id="Guardar"> Guardar</button>
 </form>
 `;
-
   /*method="post" : se usa para que no se registre los datos puestos en la url */
-
   viewapiRegister.append(contentApi);
 
   const apiKey = viewapiRegister.querySelector("#textapikey");
   const buttonGuardar = viewapiRegister.querySelector("#Guardar");
   buttonGuardar.addEventListener("click", function () {
+    //Guardar el nombre de usuario
+    const name = viewapiRegister.querySelector("#nombre");
+    const nameValue = name.value;
+    localStorage.setItem("userName", nameValue);
     const apiKeyValue = apiKey.value;
     setApiKey(apiKeyValue);
     const target = localStorage.getItem("apiKeyTarget");
-    if (target === "viewIndividual") {
-      window.history.back();
+    const previousLocation = localStorage.getItem("previousQueryParams");
+
+    const previousPage = document.referrer;
+
+    console.log(previousPage);
+    if (previousPage.pathname === "/home" && target === null) {
+      navigateTo("/home");
     } else if (target === "viewGroupal") {
       navigateTo("/groupal");
-    } else if (location === "/home") {
-      navigateTo("/home");
-    } else if (location.href.includes("/card?id=")) {
-      const currentQueryParams = new URLSearchParams(location.search);
-      const id = currentQueryParams.get("id");
-      const newUrl = `/card?id=${id}`;
+    } else if (target === "viewIndividual") {
+      const newUrl = `/individual${previousLocation.queryParams}`;
+      console.log(newUrl);
       navigateTo(newUrl);
+    } else if (previousPage.includes("/card?id=")) {
+      window.history.back();
     }
+    // else {
+    //   navigateTo("/home");
+    // }
+
+    localStorage.removeItem("apiKeyTarget");
   });
 
   return viewapiRegister;

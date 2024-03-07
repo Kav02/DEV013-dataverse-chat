@@ -19,26 +19,13 @@ const routes = {
   "/apiregister": apiRegister,
 };
 
-// //2.- Pasar "root element" a router.
-// const root = document.getElementById("root");
-// setRootElement(root);
-// setRoutes(routes);
-
-//3.- Invocar el router para renderizar la vista correcta.
-// document.addEventListener("DOMContentLoaded", (event) => {
-//   onURLChange(event.target.location.pathname);
-// });
-
 //Carga inicial
 window.addEventListener("DOMContentLoaded", (e) => {
   // Establecer el elemento root
   const root = document.getElementById("root");
   setRootElement(root);
   setRoutes(routes);
-  //Accesar la url inicial
-  //Navegacion inicial
-  // navigateTo(pathname); // Use your router's navigation function
-  // navigateTo(pathname); // Use your router's navigation function
+
   // invocar onURLChange
   onURLChange(e.currentTarget.location.pathname);
 });
