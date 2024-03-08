@@ -1,14 +1,21 @@
-import { headerComponent } from "../components/Header.js";
-import { navigateTo } from "../router.js";
+//import { headerComponent } from "../components/Header.js";
+import { navigateTo, queryStringToObject } from "../router.js";
 import { setApiKey } from "./../lib/apiKey.js";
 
 export const apiRegister = () => {
   const viewapiRegister = document.createElement("section");
   viewapiRegister.id = "viewapiRegister";
 
-  const headerError = headerComponent();
-  viewapiRegister.append(headerError);
-
+  //Crear header
+  const headerRegister = document.createElement("header");
+  headerRegister.classList.add("register-header");
+  headerRegister.innerHTML = `
+  <button class="arrow-back" id="arrow-back"><span class="arrow-icon"><img src="./../Imagenes/return header.svg"></span></button>
+  <section class="header-title">
+  <img class="smallLogo" src="./Imagenes/Small-Logo.png" alt="Art Place Logo">
+  <h1 id="header-name">ART PLACE</h1></section>
+  `;
+  viewapiRegister.append(headerRegister);
   const contentApi = document.createElement("section");
   contentApi.id = "contentApi";
 
@@ -24,7 +31,8 @@ export const apiRegister = () => {
 `;
   /*method="post" : se usa para que no se registre los datos puestos en la url */
   viewapiRegister.append(contentApi);
-
+  // const buttonBack = headerRegister.querySelector("#arrow-back");
+  // buttonBack.addEventListener("click", window.history.back());
   const apiKey = viewapiRegister.querySelector("#textapikey");
   const buttonGuardar = viewapiRegister.querySelector("#Guardar");
   buttonGuardar.addEventListener("click", function () {
@@ -35,25 +43,21 @@ export const apiRegister = () => {
     const apiKeyValue = apiKey.value;
     setApiKey(apiKeyValue);
     const target = localStorage.getItem("apiKeyTarget");
-    const previousLocation = localStorage.getItem("previousQueryParams");
-
-    const previousPage = document.referrer;
-
-    console.log(previousPage);
-    if (previousPage.pathname === "/home" && target === null) {
-      navigateTo("/home");
-    } else if (target === "viewGroupal") {
+    const previousPageParams = localStorage.getItem("previousQueryParams");
+    const previousQueryParams = queryStringToObject(previousPageParams);
+    const idCard = previousQueryParams.id;
+    console.log(idCard);
+    if (target === "viewGroupal") {
       navigateTo("/groupal");
     } else if (target === "viewIndividual") {
-      const newUrl = `/individual${previousLocation.queryParams}`;
-      console.log(newUrl);
-      navigateTo(newUrl);
-    } else if (previousPage.includes("/card?id=")) {
-      window.history.back();
+      navigateTo("/individual", { id: idCard });
     }
-    // else {
-    //   navigateTo("/home");
-    // }
+    // else if (previousPage.includes("/card?id=")) {
+    //    window.history.back();
+    //  }
+    else {
+      navigateTo("/home");
+    }
 
     localStorage.removeItem("apiKeyTarget");
   });

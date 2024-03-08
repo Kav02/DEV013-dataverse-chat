@@ -8,7 +8,6 @@ export const headerComponent = () => {
 
   logoHeader.src = "./../Imagenes/logo.png";
 
-
   header.appendChild(logoHeader);
 
   header.innerHTML += `
