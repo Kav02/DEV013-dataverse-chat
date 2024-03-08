@@ -51,7 +51,7 @@ export const Card = (props) => {
   const containerIndividualCard = document.createElement("section");
   containerIndividualCard.id = "containerIndividualCard";
 
-  // Obtén el nombre de la tarjeta seleccionada de los parámetros de la URL
+  // Obtener el Id de la tarjeta seleccionada de los parámetros de la URL
   const selectedCardId = props.id;
 
   // Filtra los datos para obtener solo la tarjeta seleccionada
