@@ -32,12 +32,3 @@ export const computeStats = (data) => {
   }
   return percentage;
 };
-
-/*No se está usando
-const artName = [];
-for (const list of data) {
-  const artworkName = list.name;
-  artName.push(artworkName);
-  artName.sort();
-}
-console.log(artName);*/

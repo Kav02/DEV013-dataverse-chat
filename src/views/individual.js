@@ -76,7 +76,6 @@ export const Individual = (props) => {
 
   //Area de Chat
   const getName = localStorage.getItem("userName");
-
   const chatBody = document.createElement("section");
   chatBody.classList.add("chat-body");
   const chatMessage = document.createElement("article");
@@ -103,13 +102,6 @@ export const Individual = (props) => {
 
     //Renderizar la respuesta del chat
     const response = await communicateWithOpenAI(userInput, selectedPainting);
-    console.log(userInput);
-    //const response = await communicateWithOpenAI("La noche estrellada");
-    //const responseText = response.message;
-    // console.log(response);
-    // const messageHello = document.createElement("div");
-    // messageHello.innerHTML = `
-    // <p>¡Hola! soy ${selectedPainting.name} ¿en qué puedo ayudarte?</p>`
     const responseElement = document.createElement("div");
     responseElement.classList.add("chat-response");
     responseElement.innerHTML = `

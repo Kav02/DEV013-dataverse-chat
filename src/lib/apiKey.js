@@ -3,7 +3,7 @@ export const setApiKey = (key) => {
   if (key.trim() !== "") {
     localStorage.setItem("apiKey", key);
   } else {
-    alert("Debes ingresar un Api key)");
+    alert("Debes ingresar un Api key");
   }
   console.log(key);
 };

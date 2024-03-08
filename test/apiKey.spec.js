@@ -1,5 +1,5 @@
 import { getApiKey, setApiKey } from "../src/lib/apiKey.js";
-
+global.alert = jest.fn();
 describe("getApiKey", () => {
   it("debería devolver el valor de la API Key", () => {
     // Desarrolla el test correspondiente aquí
@@ -14,11 +14,16 @@ describe("getApiKey", () => {
 
 describe("setApiKey", () => {
   it("debería establecer correctamente la API Key", () => {
-    // Desarrolla el test correspondiente aquí
     localStorage.removeItem("apiKey");
     const apiKeyValue = "TestApiKey";
     setApiKey(apiKeyValue);
     const storedApiKey = localStorage.getItem("apiKey");
     expect(storedApiKey).toBe(apiKeyValue);
+  });
+  it("debería mostrar la alerta si está vacío", () => {
+    const apiKeyValue = "";
+    setApiKey(apiKeyValue);
+    getApiKey();
+    expect(global.alert).toHaveBeenCalled();
   });
 });
