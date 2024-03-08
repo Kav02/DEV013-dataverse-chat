@@ -375,7 +375,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### HTML
 
-- [ ] **Uso de HTML semántico**
+- [X] **Uso de HTML semántico**
 
   <details><summary>Links</summary><p>
 
@@ -385,7 +385,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### CSS
 
-- [ ] **Uso de selectores de CSS**
+- [X] **Uso de selectores de CSS**
 
   <details><summary>Links</summary><p>
 
@@ -393,7 +393,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
 </p></details>
 
-- [ ] **Modelo de caja (box model): borde, margen, padding**
+- [X] **Modelo de caja (box model): borde, margen, padding**
 
   <details><summary>Links</summary><p>
 
@@ -404,7 +404,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
 </p></details>
 
-- [ ] **Uso de flexbox en CSS**
+- [X] **Uso de flexbox en CSS**
 
   <details><summary>Links</summary><p>
 
@@ -423,21 +423,21 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### Web APIs
 
-- [ ] **Ruteado (History API, evento hashchange, window.location)**
+- [X] **Ruteado (History API, evento hashchange, window.location)**
 
   <details><summary>Links</summary><p>
 
   * [Manipulando el historial del navegador - MDN](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
 </p></details>
 
-- [ ] **Browser storage (localStorage, sessionStorage)**
+- [X] **Browser storage (localStorage, sessionStorage)**
 
   <details><summary>Links</summary><p>
 
   * [Window.localStorage - MDN](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)
 </p></details>
 
-- [ ] **Fetch API**
+- [X] **Fetch API**
 
   <details><summary>Links</summary><p>
 
@@ -446,7 +446,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 #### DOM (Document Object Model)
 
-- [ ] **Uso de selectores del DOM**
+- [X] **Uso de selectores del DOM**
 
   <details><summary>Links</summary><p>
 
@@ -455,7 +455,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Localizando elementos DOM usando selectores - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
 </p></details>
 
-- [ ] **Manejo de eventos del DOM (listeners, propagación, delegación)**
+- [X] **Manejo de eventos del DOM (listeners, propagación, delegación)**
 
   <details><summary>Links</summary><p>
 
@@ -465,7 +465,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [El objeto Event](https://developer.mozilla.org/es/docs/Web/API/Event)
 </p></details>
 
-- [ ] **Manipulación dinámica del DOM**
+- [X] **Manipulación dinámica del DOM**
 
   <details><summary>Links</summary><p>
 
@@ -479,9 +479,9 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### JavaScript
 
-- [ ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
+- [X] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
 
-- [ ] **Variables (declaración, asignación, ámbito)**
+- [X] **Variables (declaración, asignación, ámbito)**
 
   <details><summary>Links</summary><p>
 
@@ -489,7 +489,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Variables](https://curriculum.laboratoria.la/es/topics/javascript/basics/variables)
 </p></details>
 
-- [ ] **Funciones (params, args, return)**
+- [X] **Funciones (params, args, return)**
 
   <details><summary>Links</summary><p>
 
@@ -499,7 +499,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Funciones — bloques de código reutilizables - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Functions)
 </p></details>
 
-- [ ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
+- [X] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
 
   <details><summary>Links</summary><p>
 
@@ -507,9 +507,9 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Tomando decisiones en tu código — condicionales - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals)
 </p></details>
 
-- [ ] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
+- [X] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
 
-- [ ] **Uso de bucles/ciclos (while, for, for..of)**
+- [X] **Uso de bucles/ciclos (while, for, for..of)**
 
   <details><summary>Links</summary><p>
 
@@ -519,14 +519,14 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 #### Asincronía
 
-- [ ] **Callbacks**
+- [X] **Callbacks**
 
   <details><summary>Links</summary><p>
 
   * [Función Callback - MDN](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
 </p></details>
 
-- [ ] **Promesas**
+- [X] **Promesas**
 
   <details><summary>Links</summary><p>
 
@@ -536,9 +536,9 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 #### Tipos de datos
 
-- [ ] **Diferenciar entre tipos de datos primitivos y no primitivos**
+- [X] **Diferenciar entre tipos de datos primitivos y no primitivos**
 
-- [ ] **Arrays (arreglos)**
+- [X] **Arrays (arreglos)**
 
   <details><summary>Links</summary><p>
 
@@ -551,7 +551,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
 </p></details>
 
-- [ ] **Objetos (key, value)**
+- [X] **Objetos (key, value)**
 
   <details><summary>Links</summary><p>
 
@@ -560,7 +560,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 #### Módulos
 
-- [ ] **Módulos de ECMAScript (ES Modules)**
+- [X] **Módulos de ECMAScript (ES Modules)**
 
   <details><summary>Links</summary><p>
 
@@ -570,7 +570,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 #### Testing en Javascript
 
-- [ ] **Pruebas unitarias (unit tests)**
+- [X] **Pruebas unitarias (unit tests)**
 
   <details><summary>Links</summary><p>
 
@@ -584,7 +584,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Tests de código asincrónico con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/asynchronous)
 </p></details>
 
-- [ ] **Uso de mocks y espías**
+- [X] **Uso de mocks y espías**
 
   <details><summary>Links</summary><p>
 
@@ -600,7 +600,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [HTTP headers - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Headers)
 </p></details>
 
-- [ ] **Consulta o petición (request) y respuesta (response).**
+- [X] **Consulta o petición (request) y respuesta (response).**
 
   <details><summary>Links</summary><p>
 
@@ -608,7 +608,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages)
 </p></details>
 
-- [ ] **Códigos de status de HTTP**
+- [X] **Códigos de status de HTTP**
 
   <details><summary>Links</summary><p>
 
@@ -618,14 +618,14 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 ### AI Prompting
 
-- [ ] **Priming Chatbots**
+- [X] **Priming Chatbots**
 
   <details><summary>Links</summary><p>
 
   * [Priming Chatbots | Learn Prompting: Your Guide to Communicating with AI](https://learnprompting.org/es/docs/basics/priming_prompt)
 </p></details>
 
-- [ ] **OpenAI API**
+- [X] **OpenAI API**
 
   <details><summary>Links</summary><p>
 
@@ -639,38 +639,38 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 #### Git
 
-- [ ] **Git: Instalación y configuración**
+- [X] **Git: Instalación y configuración**
 
-- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+- [X] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
 
-- [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
+- [X] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
 
 #### GitHub
 
-- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
+- [X] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
 
-- [ ] **GitHub: Despliegue con GitHub Pages**
+- [X] **GitHub: Despliegue con GitHub Pages**
 
   <details><summary>Links</summary><p>
 
   * [Sitio oficial de GitHub Pages](https://pages.github.com/)
 </p></details>
 
-- [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
+- [X] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
 
 ### Centrado en el usuario
 
-- [ ] **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
+- [X] **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
 
 ### Diseño de producto
 
-- [ ] **Crear prototipos de alta fidelidad que incluyan interacciones**
+- [X] **Crear prototipos de alta fidelidad que incluyan interacciones**
 
-- [ ] **Seguir los principios básicos de diseño visual**
+- [X] **Seguir los principios básicos de diseño visual**
 
 ### Investigación
 
-- [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
+- [] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
 
   <details><summary>Links</summary><p>
 
@@ -784,7 +784,7 @@ Antes de agendar tu Project Feedback con un coach, asegúrate que tu proyecto:
 * [ ] Cumple con todas las pruebas unitarias al ejecutar `npm run test` y
   que tienen una cobertura del 70% de _statements_ (_sentencias_),
   _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
-* [ ] Esta libre de _errores_ de `eslint` al ejecutar `npm run pretest`
+* [X] Esta libre de _errores_ de `eslint` al ejecutar `npm run pretest`
 * [ ] Está subido a GitHub y desplegado en Netlify o Vercel.
 * Tiene un `README.md` con la siguiente:
   - [ ] _Definición del producto_ clara e informativa
@@ -794,15 +794,15 @@ Antes de agendar tu Project Feedback con un coach, asegúrate que tu proyecto:
   - [ ] El listado de problemas que detectaste a través de tests
     de usabilidad en el `README.md`
 * Tiene un UI que cumple las funcionalidades:
-  - [ ] Permite ver toda la data en la pantalla principal con opciones para
+  - [X] Permite ver toda la data en la pantalla principal con opciones para
     filtrar y ordenar.
-  - [ ] Permite ingresar un API Key a través de un formulario.
-  - [ ] Permite ver una página con más detalles de cada entidad. En esta página
+  - [X] Permite ingresar un API Key a través de un formulario.
+  - [X] Permite ver una página con más detalles de cada entidad. En esta página
     se puede iniciar el chat.
-  - [ ] Permite conversar con el personaje o entidad de la data a través
+  - [X] Permite conversar con el personaje o entidad de la data a través
     de un chat.
-  - [ ] Permite chatear de forma grupal con todas las entidades de la data.
-  - [ ] Es responsive y fue realizado usando la metodología mobile first.
+  - [X] Permite chatear de forma grupal con todas las entidades de la data.
+  - [X] Es responsive y fue realizado usando la metodología mobile first.
 
 Recuerda que debes hacer una autoevaluación de _objetivos de aprendizaje_ y
 _life skills_ desde tu dashboard de estudiante.
