@@ -31,11 +31,7 @@
     "node": ">=16.x"
   },
   "jest": {
-    "testEnvironment": "jsdom",
-    "automock": false,
-    "setupFiles": [
-      "./setupJest.js"
-    ]
+    "testEnvironment": "jsdom"
   },
   "bootcamp": {
     "createdAt": "2024-01-24T14:12:42.297Z",

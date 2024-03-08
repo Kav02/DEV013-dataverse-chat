@@ -326,23 +326,7 @@ option:hover {
     color: brown;
 } */
 
-#header {
-    font-family: "Ubuntu";
-    background-color: black;
-    color: white;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 45px;
-    padding: 5px;
-}
 
-#logoHeader {
-    width: 50px;
-    height: auto;
-    padding-right: 10px;
-}
 
 #contentError {
     background-image: url("./Imagenes/ERROR.jpg");
@@ -1007,6 +991,64 @@ dd[itemprop="nameDetails"] {
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
 }
+
+.register-header {
+    font-family: "Ubuntu";
+    background-color: black;
+    color: white;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 45px;
+    padding: 5px;
+}
+
+.header-title {
+    font-family: "Ubuntu";
+    background-color: black;
+    color: white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    padding: 5px;
+}
+
+#logo-register {
+    width: 50px;
+    height: auto;
+    padding-right: 10px;
+}
+
+.arrow-back {
+    height: 40px;
+    width: 40px;
+    background-color: #000000;
+    border-style: solid;
+    color: white;
+    font-size: 18px;
+    padding-right: 10px;
+    margin: 10px 0px 10px 0px;
+
+}
+
+#arrow-icon {
+    width: 100%;
+}
+
+#header-name {
+    display: flex;
+    flex-direction: row;
+    font-family: "Ubuntu";
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+
+}
+
 
 .textapi {
     padding: 0 20% 12px 20%;
