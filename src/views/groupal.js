@@ -1,8 +1,7 @@
 import { chatHeaderComponent } from "./../components/chatheader.js";
 import { chatInputComponent } from "./../components/chatinput.js";
-import { renderChatParticipants, renderChatMessage } from "./../functions.js";
+import { renderChatParticipants } from "./../functions.js";
 import data from "./../data/dataset.js";
-
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 
 export const Groupal = () => {
@@ -12,6 +11,7 @@ export const Groupal = () => {
   //Encabezado
   const chatHeader = chatHeaderComponent();
   viewGroupal.appendChild(chatHeader);
+
   //Contenedor general
   const chatContainer = document.createElement("section");
   chatContainer.classList.add("chat-container");
@@ -22,10 +22,16 @@ export const Groupal = () => {
   groupInfo.appendChild(participants);
   chatContainer.appendChild(groupInfo);
   //Area del chat
+  const getName = localStorage.getItem("userName");
   const chatBody = document.createElement("section");
   chatBody.classList.add("chat-body");
   const chatMessage = document.createElement("article");
   chatMessage.id = "chatMessage";
+  const messageHello = document.createElement("div");
+  messageHello.id = "messageHello";
+  messageHello.innerHTML = `
+    <p>¡Hola ${getName}!<br> Bienvenido al chat de pinturas famosas! ¿En qué podemos ayudarte?</p>`;
+  chatMessage.appendChild(messageHello);
   chatBody.appendChild(chatMessage);
   //Chat input
   const chatInput = chatInputComponent();
@@ -33,9 +39,6 @@ export const Groupal = () => {
   //Insertar los componentes a la vista
   chatContainer.appendChild(chatBody);
   viewGroupal.appendChild(chatContainer);
-
-  const participantName = renderChatMessage(data);
-  console.log(participantName);
 
   const messageSending = async () => {
     const userInput = document.getElementById("chat-input").value;
@@ -45,21 +48,19 @@ export const Groupal = () => {
     chatMessage.appendChild(userMessageElement);
 
     //Renderizar la respuesta del chat
-    //const response = await communicateWithOpenAI(userInput);
-    
-    const response = await communicateWithOpenAI();
+    for (const selectedPainting of data) {
+      const paintingName = selectedPainting.name;
+      const response = await communicateWithOpenAI(userInput, selectedPainting);
 
-    // const responseText = response.message;
-    // console.log(response);
-    const responseElement = document.createElement("div");
-    responseElement.classList.add("chat-response");
-    responseElement.innerHTML = `<p>${response}</p>`;
-    //Limpiar el input
-    chatInput.querySelector("#chat-input").value = "";
-    chatMessage.appendChild(responseElement);
+      const responseElement = document.createElement("div");
+      responseElement.classList.add("chat-response");
+      responseElement.innerHTML = `<p class= "paintingName">${paintingName}<p>${response}</p>`;
+      //Limpiar el input
+      chatInput.querySelector("#chat-input").value = "";
+      chatMessage.appendChild(responseElement);
+    }
   };
-
-  // Funcion para activar el chat
+  // Funcion para activar el chat--------------------
   const sendMessageButton = chatBody.querySelector("#send-button");
   sendMessageButton.addEventListener("click", messageSending);
   const sendMessage = chatBody.querySelector("#chat-input");
@@ -69,5 +70,6 @@ export const Groupal = () => {
       messageSending();
     }
   });
+
   return viewGroupal;
 };

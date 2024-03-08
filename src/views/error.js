@@ -1,5 +1,5 @@
 import { headerSecondaryComponent } from "./../components/Headersecundary.js";
-
+import { navigateTo } from "../router.js";
 export const Error = () => {
   const viewError = document.createElement("section");
   viewError.id = "viewError";
@@ -11,7 +11,12 @@ export const Error = () => {
   contentError.innerHTML = `
 <h1 class=titleError> Error </h1>
 <br>
-<p class=textError> Página no encontrada </p>`;
+<p class=textError> Página no encontrada </p>
+<button class="buttonReturn"> Ir a inicio </button>`;
+
+  const buttonReturn = contentError.querySelector(".buttonReturn")
+  buttonReturn.addEventListener("click", () => navigateTo("/home")
+  );
 
   // const menuinfError=  Menuinfcomponent();
   // viewError.appendChild(menuinfError);

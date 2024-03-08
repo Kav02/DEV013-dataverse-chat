@@ -14,10 +14,11 @@ export const communicateWithOpenAI = async (userInput, selectedPainting) => {
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
+        temperature: 0.3,
         messages: [
           {
             role: "system",
-            content: `Eres la pintura famosa ${paintingName}, los usuarios te escriben para saber mas de ti, quién te pintó, a qué corriente artistica perteneces, y otros datos relevantes. Responde de manera concisa y precisa a sus preguntas`,
+            content: `Eres la pintura famosa ${paintingName}, los usuarios te haran diversas preguntas sobre ti o cosas variadas, responde a sus preguntas con información real y  manera concisa y precisa sin dar informacion adicional a la solicitada`,
           },
           {
             role: "user",
@@ -27,26 +28,27 @@ export const communicateWithOpenAI = async (userInput, selectedPainting) => {
         max_tokens: 30,
       }),
     });
-
+    // await new Promise(resolve => setTimeout(resolve, 21000)); 
     if (!response.ok) {
       throw new Error("Error en la solicitud a OpenAI");
     }
 
     const result = await response.json();
-    
-    return result.choices[0].message.content;
 
-    
+    return result.choices[0].message.content;
   } catch (error) {
     if (error.message.includes("Token Overflow")) {
-      console.error(
-        "Error: Exceso de Tokens (Token Overflow). La entrada es demasiado larga."
-      );
+      const Errormessage = 'Exceso de Tokens (Token Overflow). La entrada es demasiado larga.';
+      alert(Errormessage);
+      
     } else {
-      console.error("Error en la comunicación con OpenAI:", error.message);
+      const ErrorSreen = 'Error en la comunicación con OpenAI:'+ error.message;
+      alert(ErrorSreen);
+      // throw Error (ErrorSreen);
+      
     }
 
-    // throw error; // Puedes decidir si quieres relanzar la excepción o manejarla de alguna otra manera
+    throw error; // Puedes decidir si quieres relanzar la excepción o manejarla de alguna otra manera
   }
 };
 

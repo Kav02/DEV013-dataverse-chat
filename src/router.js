@@ -28,6 +28,7 @@ const renderView = (pathname, props = {}) => {
   root.innerHTML = "";
   // buscar en ROUTES el view para ese path
   const queryString = location.search;
+  console.log(queryString);
   // Convertir la cadena de consulta a un objeto
   const urlParams = queryStringToObject(queryString);
   // Combinar los parámetros de consulta con las propiedades existentes
@@ -41,7 +42,7 @@ const renderView = (pathname, props = {}) => {
   }
 };
 
-const queryStringToObject = (queryString) => {
+export const queryStringToObject = (queryString) => {
   // Convertir la cadena de consulta a URLSearchParams
   const urlParams = new URLSearchParams(queryString);
   // Convertir URLSearchParams a un objeto
@@ -56,7 +57,7 @@ export const navigateTo = (pathname, props = {}) => {
   if (props.id) {
     const newURL = `${pathname}?id=${props.id}`;
 
-    //console.log(newURL);
+    console.log(newURL);
     //Parámetros de pushState: state, title, URL. El estado se pasa vacío porque no interesa asociarlo a nada.
     window.history.pushState({}, "", newURL);
   } else {
