@@ -67,11 +67,12 @@ export const navigateTo = (pathname, props = {}) => {
   renderView(pathname, props);
 };
 
-export const onURLChange = (location) => {
+export const onURLChange = (pathname) => {
   // Renderizar la vista con el pathname y los parámetros de búsqueda
   // console.log(location);
   const urlSearch = window.location.search;
-  const newUrlSearch = `${location}${urlSearch}`;
-  window.history.pushState({}, "", newUrlSearch);
-  renderView(location);
+  const newProps = queryStringToObject(urlSearch);
+  //const newUrlSearch = `${location}${urlSearch}`;
+  //window.history.pushState({}, "", newUrlSearch);
+  renderView(pathname, newProps);
 };

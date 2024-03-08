@@ -1,5 +1,5 @@
 import { headerComponent } from "../components/Header.js";
-import { navigateTo } from "../router.js";
+import { navigateTo, queryStringToObject } from "../router.js";
 import { setApiKey } from "./../lib/apiKey.js";
 
 export const apiRegister = () => {
@@ -35,25 +35,21 @@ export const apiRegister = () => {
     const apiKeyValue = apiKey.value;
     setApiKey(apiKeyValue);
     const target = localStorage.getItem("apiKeyTarget");
-    const previousLocation = localStorage.getItem("previousQueryParams");
-
-    const previousPage = document.referrer;
-
-    console.log(previousPage);
-    if (previousPage.pathname === "/home" && target === null) {
-      navigateTo("/home");
-    } else if (target === "viewGroupal") {
+    const previousPageParams = localStorage.getItem("previousQueryParams");
+    const previousQueryParams = queryStringToObject(previousPageParams);
+    const idCard = previousQueryParams.id;
+    console.log(idCard);
+    if (target === "viewGroupal") {
       navigateTo("/groupal");
     } else if (target === "viewIndividual") {
-      const newUrl = `/individual${previousLocation.queryParams}`;
-      console.log(newUrl);
-      navigateTo(newUrl);
-    } else if (previousPage.includes("/card?id=")) {
-      window.history.back();
+      navigateTo("/individual", { id: idCard });
     }
-    // else {
-    //   navigateTo("/home");
-    // }
+    // else if (previousPage.includes("/card?id=")) {
+    //    window.history.back();
+    //  }
+    else {
+      navigateTo("/home");
+    }
 
     localStorage.removeItem("apiKeyTarget");
   });

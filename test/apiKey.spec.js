@@ -14,11 +14,17 @@ describe("getApiKey", () => {
 
 describe("setApiKey", () => {
   it("debería establecer correctamente la API Key", () => {
-    // Desarrolla el test correspondiente aquí
     localStorage.removeItem("apiKey");
     const apiKeyValue = "TestApiKey";
     setApiKey(apiKeyValue);
     const storedApiKey = localStorage.getItem("apiKey");
     expect(storedApiKey).toBe(apiKeyValue);
+  });
+  it("debería mostrar la alerta si está vacío", () => {
+    const alertMessage = "Debes ingresar un Api key";
+    const apiKeyValue = "";
+    setApiKey(apiKeyValue);
+    getApiKey();
+    expect(alertMessage).toBe("Debes ingresar un Api key");
   });
 });
