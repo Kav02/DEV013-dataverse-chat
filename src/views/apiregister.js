@@ -31,8 +31,11 @@ export const apiRegister = () => {
 `;
   /*method="post" : se usa para que no se registre los datos puestos en la url */
   viewapiRegister.append(contentApi);
-  // const buttonBack = headerRegister.querySelector("#arrow-back");
-  // buttonBack.addEventListener("click", window.history.back());
+  const buttonBack = viewapiRegister.querySelector("#arrow-back");
+  buttonBack.addEventListener("click", function (event) {
+    event.preventDefault();
+    window.history.back();
+  });
   const apiKey = viewapiRegister.querySelector("#textapikey");
   const buttonGuardar = viewapiRegister.querySelector("#Guardar");
   buttonGuardar.addEventListener("click", function () {
