@@ -1,10 +1,10 @@
-import { headerSecondaryComponent } from "./../components/Headersecundary.js";
+import { headerComponent } from "./../components/Header.js";
 import { navigateTo } from "../router.js";
 export const Error = () => {
   const viewError = document.createElement("section");
   viewError.id = "viewError";
 
-  const headerError = headerSecondaryComponent();
+  const headerError = headerComponent();
   const contentError = document.createElement("section");
   contentError.id = "contentError";
 

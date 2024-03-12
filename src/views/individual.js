@@ -2,6 +2,7 @@ import { chatInputComponent } from "../components/chatinput.js";
 import { navigateTo } from "../router.js";
 import { communicateWithOpenAI } from "../lib/openAIApi.js";
 import data from "../data/dataset.js";
+import { chatHeaderComponent } from "./../components/chatheader.js";
 
 export const Individual = (props) => {
   const viewIndividual = document.createElement("section");
@@ -13,35 +14,13 @@ export const Individual = (props) => {
   );
 
   //Header--------------
-  //Contenedor
-  const indChatHeader = document.createElement("header");
-  indChatHeader.classList.add("chat-header");
-  //Sección del Perfil
-  const paintingChat = document.createElement("section");
-  paintingChat.id = "painting-chat";
-  const profile = document.createElement("img");
-  profile.src = `${selectedPainting.imageUrl}`;
-  profile.alt = selectedPainting.name;
-  profile.id = "profileImg";
-  const headerTitle = document.createElement("h1");
-  headerTitle.id = "header-title";
-  headerTitle.innerHTML = `${selectedPainting.name}`;
-  paintingChat.appendChild(profile);
-  paintingChat.appendChild(headerTitle);
-  indChatHeader.appendChild(paintingChat);
+  const chatHeader = chatHeaderComponent();
+  const title = chatHeader.querySelector("#header-title");
+  title.textContent=`${selectedPainting.name}`; 
+  const imgGroupal = chatHeader.querySelector(".smallLogo");
+  imgGroupal.src=`${selectedPainting.imageUrl}`;
 
-  //Sección menú
-  const menuOptions = document.createElement("section");
-  menuOptions.id = "menu-options";
-  const homeTitle = document.createElement("button");
-  homeTitle.classList.add("chat-menu-options");
-  homeTitle.id = "home-title";
-  homeTitle.innerHTML = "Inicio";
-  const homeIcon = document.createElement("img");
-  homeIcon.classList.add("home-icon");
-  homeIcon.src = "./../Imagenes/homeheader.svg";
-  homeTitle.appendChild(homeIcon);
-  menuOptions.appendChild(homeTitle);
+  const menuChat=chatHeader.querySelector(".chat-home")
   const groupTitle = document.createElement("button");
   groupTitle.classList.add("chat-menu-options");
   groupTitle.id = "group-title";
@@ -49,10 +28,22 @@ export const Individual = (props) => {
   const groupIcon = document.createElement("img");
   groupIcon.id = "group-icon";
   groupIcon.src = "./../Imagenes/groupchat.png";
+  
   groupTitle.appendChild(groupIcon);
-  menuOptions.appendChild(groupTitle);
-  indChatHeader.appendChild(menuOptions);
-  viewIndividual.appendChild(indChatHeader);
+  menuChat.appendChild(groupTitle);
+  chatHeader.appendChild(menuChat);
+  
+  viewIndividual.appendChild(chatHeader);
+
+
+  //Contenedor
+  const indChatHeader = document.createElement("header");
+  indChatHeader.classList.add("chat-header");
+  //Sección del Perfil
+  const paintingChat = document.createElement("section");
+  paintingChat.id = "painting-chat";
+  indChatHeader.appendChild(paintingChat);
+
   //Información de la obra
   const chatContainer = document.createElement("section");
   chatContainer.classList.add("chat-container");
@@ -127,9 +118,6 @@ export const Individual = (props) => {
     }
   });
 
-  //Navegar al Inicio y al Chat Groupal
-  const homeButton = viewIndividual.querySelector("#home-title");
-  homeButton.addEventListener("click", () => navigateTo("/home"));
   const groupButton = viewIndividual.querySelector("#group-title");
   groupButton.addEventListener("click", () => navigateTo("/groupal"));
 

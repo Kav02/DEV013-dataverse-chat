@@ -10,6 +10,10 @@ export const Groupal = () => {
   viewGroupal.id = "view-groupal";
   //Encabezado
   const chatHeader = chatHeaderComponent();
+  const title = chatHeader.querySelector("#header-title");
+  title.textContent="ART PLACE"; 
+  const imgGroupal = chatHeader.querySelector(".smallLogo");
+  imgGroupal.src="./Imagenes/Small-Logo.png";
   viewGroupal.appendChild(chatHeader);
 
   //Contenedor general
