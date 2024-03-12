@@ -2,7 +2,6 @@ import { getApiKey, setApiKey } from "../src/lib/apiKey.js";
 global.alert = jest.fn();
 describe("getApiKey", () => {
   it("debería devolver el valor de la API Key", () => {
-    // Desarrolla el test correspondiente aquí
     localStorage.removeItem("apiKey");
     const apiKeyValue = "TestApiKey";
     setApiKey(apiKeyValue);

@@ -1,11 +1,18 @@
-// describe("headerComponent", () => {
-//   it("debería tener ", () => {
-//     // Desarrolla el test correspondiente aquí
-//     localStorage.removeItem("apiKey");
-//     const apiKeyValue = "TestApiKey";
-//     setApiKey(apiKeyValue);
-//     const storedApiKey = getApiKey();
-//     // Comprobar si el valor devuelto es el mismo que el valor establecido previamente
-//     expect(storedApiKey).toBe(apiKeyValue);
-//   });
-// });
+import { chatInputComponent } from "../src/components/chatinput";
+import { bannerComponent } from "../src/components/Banner";
+
+describe("chatInputComponent", () => {
+  it("debería tener un elemento input", () => {
+    const chatInputContainer = chatInputComponent();
+    const inputElement = chatInputContainer.querySelector("input");
+    expect(inputElement).toBeDefined();
+  });
+});
+
+describe("bannerComponent", () => {
+  it("debería tener un elemento h2", () => {
+    const bannerContainer = bannerComponent();
+    const bannerElement = bannerContainer.querySelector("h2");
+    expect(bannerElement).toBeDefined();
+  });
+});
