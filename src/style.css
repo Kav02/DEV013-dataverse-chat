@@ -57,10 +57,6 @@ html,
     height: fit-content;
 }
 
-.bar-menu {
-    display: none;
-}
-
 #cardBody {
     /*todo el cuerpo donde estan las tarjetas*/
     background-color: white;
@@ -104,6 +100,7 @@ dd {
     margin: 1px 0px;
     text-align: center;
     font-size: 15px;
+    padding: 0 2px;
     /* Centra el texto horizontalmente */
 }
 
@@ -270,9 +267,9 @@ option:hover {
 }
 
 #iconClear {
-    width: 25px;
+    width: 18px;
     height: auto;
-    margin-right: 10px;
+    margin: 0 10px 0 10px;
 }
 
 #bar-chart {
@@ -316,18 +313,6 @@ option:hover {
     display: flex;
 }
 
-
-
-
-/* #iconhomeHeader{
-    width: fit-content;
-}
-#titleHeader{
-    color: brown;
-} */
-
-
-
 #contentError {
     background-image: url("./Imagenes/ERROR.jpg");
     margin: 0;
@@ -335,7 +320,6 @@ option:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     height: 100%;
 }
 
@@ -376,7 +360,6 @@ option:hover {
         'wght' 400,
         'GRAD' 0,
         'opsz' 24;
-    /* font-size: 37px; */
 }
 
 /*Vista Chat individual*/
@@ -387,9 +370,6 @@ option:hover {
     color: white;
 }
 
-#chat-box {
-    /* text-overflow:ellipsis; */
-}
 
 #chatMessage {
     height: calc(100vh - 110px);
@@ -419,17 +399,10 @@ option:hover {
     font-family: "JetBrains Mono";
     word-wrap: break-word;
     max-height: 70%;
-    width: 50%;
+    width: 60%;
     font-size: 16px;
 }
 
-
-/* .contenedorDetailschat{
-    width: fit-content;
-    background-color: #000000;
-    display: flex;
-    align-items: center;
-} */
 .chat {
     position: relative;
     display: block;
@@ -493,32 +466,6 @@ option:hover {
     /* Escala la imagen para que cubra todo el contenedor */
 }
 
-/* .containerPicturetwo{
-    width:50%;
-    height: 45%;
-    overflow: hidden;
-}
-.containerPictureone{
-    width:50%;
-    height: 45%;
-    overflow: hidden;
-}
-.picturetwo{
-    object-fit: cover;
-    width: auto;
-    height: 100%;
-    margin-top: 0;
-    padding-top: 0;
-}
-.pictureone{
-    object-fit: cover;
-    width:  100%;
-    height: auto;
-    
-    bottom: 0;
-    
-    right: 50%;
-    } */
 .pictureChat {
     width: 20%;
     height: 40%;
@@ -569,8 +516,6 @@ option:hover {
     color: white;
     font-size: 18px;
     width: 50%;
-
-
 }
 
 .home-icon {
@@ -581,21 +526,12 @@ option:hover {
     display: none;
 }
 
-.chat-menu-options {
-    margin-right: 5%;
-
-}
-
-
-
 #profileImg {
     height: 45px;
     width: 45px;
     border-radius: 100%;
     margin: 0 10px 0 10px;
 }
-
-
 
 #header-title {
     font-family: "Ubuntu";
@@ -616,15 +552,12 @@ option:hover {
     padding-right: 10px;
 }
 
-
 #chat-box {
     align-self: flex-end;
     background: var(--blue);
     color: var(--white);
     border-radius: .75rem 0 .75rem .75rem;
 }
-
-
 
 #send-button {
     width: 40px;
@@ -645,7 +578,6 @@ option:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* border-color: #49403A; */
     box-shadow: 0px 21px 0px -20px rgb(149, 145, 145);
 }
 
@@ -926,7 +858,7 @@ option:hover {
 }
 
 dd[itemprop="descriptionDetails"] {
-    text-align: justify;
+    text-align: left;
     display: flex;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -993,28 +925,20 @@ dd[itemprop="nameDetails"] {
 }
 
 .register-header {
-    font-family: "Ubuntu";
     background-color: black;
-    color: white;
     height: 70px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    font-size: 45px;
-    padding: 5px;
+
 }
 
 .header-title {
-    font-family: "Ubuntu";
-    background-color: black;
-    color: white;
-    height: 70px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 45px;
-    padding: 5px;
+    width: 90%;
+    justify-content: center;
 }
 
 #logo-register {
@@ -1029,10 +953,12 @@ dd[itemprop="nameDetails"] {
     background-color: #000000;
     border-style: solid;
     color: white;
-    font-size: 18px;
     padding-right: 10px;
     margin: 10px 0px 10px 0px;
+}
 
+.arrow-back:hover {
+    color: #afaecc;
 }
 
 #arrow-icon {
@@ -1040,12 +966,11 @@ dd[itemprop="nameDetails"] {
 }
 
 #header-name {
-    display: flex;
-    flex-direction: row;
     font-family: "Ubuntu";
-    justify-content: center;
-    align-items: center;
+    color: white;
     font-size: 45px;
+    font-weight: lighter;
+    padding: 10px;
 
 }
 
@@ -1218,7 +1143,6 @@ footer {
     }
 
     dd[itemprop="descriptionDetails"] {
-        text-align: justify;
         display: flex;
         word-wrap: break-word;
         overflow-wrap: break-word;
@@ -1241,32 +1165,6 @@ footer {
         left: 0;
         float: left;
     }
-
-    /* #cardStats,
-    #graph {
-        font-size: 90%;
-    }
-
-    .select-menu {
-        flex-basis: 100%;
-        order: 1;
-    }
-
-    .buttons {
-        width: 100%;
-        order: 2;
-        margin-top: 10px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #button-stats {
-        margin-right: 50%;
-    }
-
-    #title {
-        margin-top: 50px;
-    } */
 
     /* el cuadrado pequeño 2 */
     #ContenedorDetails dd.contenedor3 {
@@ -1446,16 +1344,11 @@ footer {
         width: 30px
     }
 
-    .chat-menu-options {
-        font-size: 0;
-    }
-
-    #home-title {
-        font-size: 0;
-    }
-
+    .chat-menu-options,
+    #home-title,
     #group-title {
         font-size: 0;
+        border: none;
     }
 
     #painting-info {

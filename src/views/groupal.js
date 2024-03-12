@@ -51,7 +51,6 @@ export const Groupal = () => {
     for (const selectedPainting of data) {
       const paintingName = selectedPainting.name;
       const response = await communicateWithOpenAI(userInput, selectedPainting);
-
       const responseElement = document.createElement("div");
       responseElement.classList.add("chat-response");
       responseElement.innerHTML = `<p class= "paintingName">${paintingName}<p>${response}</p>`;

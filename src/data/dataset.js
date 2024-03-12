@@ -1,6 +1,64 @@
 export default [
   {
-    //Obras de Picasso
+    id: "noche-estrellada",
+    name: "La Noche Estrellada",
+    shortDescription: "Paisaje nocturno con cielo estrellado",
+    description:
+      "La Noche Estrellada es una obra maestra que captura la belleza del cielo nocturno. Con pinceladas intensas y ondulantes, Van Gogh representa un paisaje estrellado sobre un pueblo tranquilo. La obra refleja la fascinación del artista por el cosmos y su habilidad para transmitir emociones a través del color. Esta pintura es un testimonio de la genialidad de Van Gogh en la representación de la naturaleza. La combinación de colores vibrantes y la expresividad de las formas revela la profunda conexión de Van Gogh con la belleza celestial, marcando esta obra como un hito en la historia del arte.",
+    imageUrl:
+      "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/La-noche-estrellada.jpg",
+    relatedimageUrl: "https://i.ibb.co/Kj2mTgW/la-noche-estrellada-IR.jpg",
+    facts: {
+      artistName: "Vincent van Gogh",
+      creationYear: 1889,
+      artMovement: "Postimpresionismo",
+    },
+    additionalInformation: {
+      style: "Expresionismo",
+      technique: "Óleo sobre lienzo",
+    },
+  },
+  {
+    id: "escena-de-te",
+    name: "La taza de Té",
+    shortDescription: "Acuarela que captura la elegancia de una reunión social",
+    description:
+      "La taza de té de Mary Cassatt es una obra impresionista que representa a dos mujeres elegantemente vestidas disfrutando de un té en una sala de estar lujosamente amueblada. La composición es elegante y equilibrada, y los colores son suaves y armoniosos. La acuarela utilizada por Cassatt crea una atmósfera íntima y acogedora. La pintura es una celebración de la vida cotidiana de la burguesía francesa del siglo XIX. La taza de té es una obra maestra que captura la elegancia y la sofisticación de la vida de las mujeres de la época.",
+    imageUrl:
+      "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/Cassatt_Mary_The_Cup_of_Tea.jpg",
+    relatedimageUrl: "https://i.ibb.co/yY0Kp09/tea-IR.jpg",
+    facts: {
+      artistName: "Mary Cassatt",
+      creationYear: 1900,
+      artMovement: "Impresionismo",
+    },
+    additionalInformation: {
+      style: "Escena Social",
+      technique: "Acuarela sobre papel",
+    },
+  },
+  {
+    id: "Ninos-en-la-playa",
+    name: "Niños en la Playa",
+    shortDescription:
+      "Dos niñas juegan con cubos y palas intentando meter arena en ellos",
+    description:
+      "Es uno de sus cuadros más entrañables en la que demostró su genialidad a la hora de pintar niños , quizá una de las facetas más difíciles de la pintura. La brillantez de la piel infantil en la que destacan los mofletes rosados o los brazos enrojecidos por el sol ha sido perfectamente interpretados por la artista. La delicadeza y el detallismo de las dos niñas contrastan con la soltura de los elementos que las rodean ,realizadas con una pincelada rápida sin prestar atención a los detalles.",
+    imageUrl:
+      "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/ninos-en-la-ducha.jpg",
+    relatedimageUrl: "https://i.ibb.co/z5mf30w/ninos-en-la-playa-IR.jpg",
+    facts: {
+      artistName: "Mary Cassatt",
+      creationYear: 1884,
+      artMovement: "Impresionismo",
+    },
+    additionalInformation: {
+      style: "Vida Cotidiana",
+      technique: "Acuarela sobre papel",
+    },
+  },
+
+  {
     id: "Desnudo-y-Naturaleza-Muerta",
     name: "Desnudo y Naturaleza Muerta",
     shortDescription:
@@ -59,7 +117,25 @@ export default [
       technique: "Óleo sobre lienzo",
     },
   },
-  //Obras de Frida Kahlo
+  {
+    id: "amanecer-en-el-puente-japones",
+    name: "Amanecer en el Puente Japonés",
+    shortDescription: "Impresión matutina de un puente rodeado de flores",
+    description:
+      "Amanecer en el Puente Japonés es una obra impresionista que resalta la fascinación de Monet por los efectos de la luz en distintos momentos del día. La escena presenta un puente japonés rodeado de flores en un jardín vibrante. Monet utiliza pinceladas rápidas y colores brillantes para capturar la frescura y el encanto de la mañana. Esta pintura forma parte de la serie de paisajes de Giverny, donde Monet exploró la belleza de su propio entorno, demostrando su maestría en la representación de la atmósfera y la luminosidad característica del impresionismo.",
+    imageUrl:
+      "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/Puente-japones.jpg",
+    relatedimageUrl: "https://i.ibb.co/q7stwdb/puente-japones-IR.jpg",
+    facts: {
+      artistName: "Claude Monet",
+      creationYear: 1899,
+      artMovement: "Impresionismo",
+    },
+    additionalInformation: {
+      style: "Paisaje Floral",
+      technique: "Óleo sobre lienzo",
+    },
+  },
   {
     id: "autoretrato-en-la-frontera",
     name: "Autoretrato en la Frontera",
@@ -81,6 +157,27 @@ export default [
     },
   },
   {
+    id: "arco-y-punta",
+    name: "Arco y punta",
+    shortDescription:
+      "Es una obra abstracta que fusiona colores vibrantes y formas geométricas expresando emociones visuales.",
+    description:
+      "Arco y Punta es una obra maestra abstracta del artista Wassily Kandinsky, creada en 1927. La pintura cautiva con su vibrante paleta de colores y formas geométricas, desafiando la realidad figurativa. Kandinsky, pionero en el arte abstracto, utiliza líneas curvas, arcos y puntos para transmitir emociones y experiencias espirituales. La composición dinámica invita a la contemplación, llevando al espectador a un viaje introspectivo donde la abstracción se convierte en un medio para expresar lo inefable. Esta obra representa la visión innovadora de Kandinsky, explorando la sinergia entre forma y emoción en la pintura abstracta.",
+    imageUrl:
+      "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/arco-punta-kandinsky.jpg",
+    relatedimageUrl:
+      "https://i.ibb.co/z2cs7F5/arco-y-punta-imagen-relacionada.jpg",
+    facts: {
+      artistName: "Wassily Kandinsky",
+      creationYear: 1929,
+      artMovement: "Abstraccionismo",
+    },
+    additionalInformation: {
+      style: "Abstracción lírica",
+      technique: "Tinta, acuarela y lápiz",
+    },
+  },
+  {
     id: "las-dos-fridas-modernas",
     name: "Las Dos Fridas Modernas",
     shortDescription: "Representación contemporánea de la dualidad interior",
@@ -99,6 +196,7 @@ export default [
       technique: "Óleo sobre lienzo",
     },
   },
+
   {
     id: "viva-la-vida",
     name: "Viva la Vida",
@@ -118,26 +216,7 @@ export default [
       technique: "Óleo sobre madera",
     },
   },
-  //Obras de van Gogh
-  {
-    id: "noche-estrellada",
-    name: "La Noche Estrellada",
-    shortDescription: "Paisaje nocturno con cielo estrellado",
-    description:
-      "La Noche Estrellada es una obra maestra que captura la belleza del cielo nocturno. Con pinceladas intensas y ondulantes, Van Gogh representa un paisaje estrellado sobre un pueblo tranquilo. La obra refleja la fascinación del artista por el cosmos y su habilidad para transmitir emociones a través del color. Esta pintura es un testimonio de la genialidad de Van Gogh en la representación de la naturaleza. La combinación de colores vibrantes y la expresividad de las formas revela la profunda conexión de Van Gogh con la belleza celestial, marcando esta obra como un hito en la historia del arte.",
-    imageUrl:
-      "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/La-noche-estrellada.jpg",
-    relatedimageUrl: "https://i.ibb.co/Kj2mTgW/la-noche-estrellada-IR.jpg",
-    facts: {
-      artistName: "Vincent van Gogh",
-      creationYear: 1889,
-      artMovement: "Postimpresionismo",
-    },
-    additionalInformation: {
-      style: "Expresionismo",
-      technique: "Óleo sobre lienzo",
-    },
-  },
+
   {
     id: "los-girasoles",
     name: "Los Girasoles",
@@ -177,7 +256,7 @@ export default [
       technique: "Óleo sobre lienzo",
     },
   },
-  //Obras de Monet
+
   {
     id: "nenufares-en-el-estanque",
     name: "Nenúfares en el Estanque",
@@ -197,25 +276,7 @@ export default [
       technique: "Óleo sobre lienzo",
     },
   },
-  {
-    id: "amanecer-en-el-puente-japones",
-    name: "Amanecer en el Puente Japonés",
-    shortDescription: "Impresión matutina de un puente rodeado de flores",
-    description:
-      "Amanecer en el Puente Japonés es una obra impresionista que resalta la fascinación de Monet por los efectos de la luz en distintos momentos del día. La escena presenta un puente japonés rodeado de flores en un jardín vibrante. Monet utiliza pinceladas rápidas y colores brillantes para capturar la frescura y el encanto de la mañana. Esta pintura forma parte de la serie de paisajes de Giverny, donde Monet exploró la belleza de su propio entorno, demostrando su maestría en la representación de la atmósfera y la luminosidad característica del impresionismo.",
-    imageUrl:
-      "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/Puente-japones.jpg",
-    relatedimageUrl: "https://i.ibb.co/q7stwdb/puente-japones-IR.jpg",
-    facts: {
-      artistName: "Claude Monet",
-      creationYear: 1899,
-      artMovement: "Impresionismo",
-    },
-    additionalInformation: {
-      style: "Paisaje Floral",
-      technique: "Óleo sobre lienzo",
-    },
-  },
+
   {
     id: "catedral-de-rouen-al-atardecer",
     name: "Catedral de Rouen al Atardecer",
@@ -237,7 +298,7 @@ export default [
       technique: "Óleo sobre lienzo",
     },
   },
-  //Obras de Kandinsky
+
   {
     id: "composicion-vii",
     name: "Composición VII",
@@ -255,6 +316,26 @@ export default [
     },
     additionalInformation: {
       style: "Abstracto Geométrico",
+      technique: "Óleo sobre lienzo",
+    },
+  },
+  {
+    id: "persistencia_memoria_dali",
+    name: "La Persistencia de la Memoria",
+    shortDescription: "Relojes derretidos en un paisaje surrealista",
+    description:
+      "La Persistencia de la Memoria, pintada por Salvador Dalí en 1931, es una obra surrealista que presenta relojes derretidos en un paisaje onírico. La obra simboliza la relatividad del tiempo y la fugacidad de la existencia. Dalí utiliza la técnica del realismo detallado para dar vida a los objetos en un estado fluido, desafiando las leyes convencionales de la física y la percepción del tiempo. Esta pieza maestra de Dalí es un testimonio de su genialidad artística al explorar conceptos filosóficos y desafiar las nociones tradicionales, creando un impacto duradero en la historia del arte surrealista.",
+    imageUrl:
+      "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/La-Persistencia-de-la-Memoria.jpg",
+    relatedimageUrl:
+      "https://i.ibb.co/RGXm6RC/La-Persistencia-de-la-Memoria-IR.jpg",
+    facts: {
+      artistName: "Salvador Dalí",
+      creationYear: 1931,
+      artMovement: "Surrealismo",
+    },
+    additionalInformation: {
+      style: "Realismo detallado",
       technique: "Óleo sobre lienzo",
     },
   },
@@ -277,48 +358,7 @@ export default [
       technique: "Óleo sobre lienzo",
     },
   },
-  {
-    id: "arco-y-punta",
-    name: "Arco y punta",
-    shortDescription:
-      "Es una obra abstracta que fusiona colores vibrantes y formas geométricas expresando emociones visuales.",
-    description:
-      "Arco y Punta es una obra maestra abstracta del artista Wassily Kandinsky, creada en 1927. La pintura cautiva con su vibrante paleta de colores y formas geométricas, desafiando la realidad figurativa. Kandinsky, pionero en el arte abstracto, utiliza líneas curvas, arcos y puntos para transmitir emociones y experiencias espirituales. La composición dinámica invita a la contemplación, llevando al espectador a un viaje introspectivo donde la abstracción se convierte en un medio para expresar lo inefable. Esta obra representa la visión innovadora de Kandinsky, explorando la sinergia entre forma y emoción en la pintura abstracta.",
-    imageUrl:
-      "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/arco-punta-kandinsky.jpg",
-    relatedimageUrl:
-      "https://i.ibb.co/z2cs7F5/arco-y-punta-imagen-relacionada.jpg",
-    facts: {
-      artistName: "Wassily Kandinsky",
-      creationYear: 1929,
-      artMovement: "Abstraccionismo",
-    },
-    additionalInformation: {
-      style: "Abstracción lírica",
-      technique: "Tinta, acuarela y lápiz",
-    },
-  },
-  //Obras de Dali
-  {
-    id: "persistencia_memoria_dali",
-    name: "La Persistencia de la Memoria",
-    shortDescription: "Relojes derretidos en un paisaje surrealista",
-    description:
-      "La Persistencia de la Memoria, pintada por Salvador Dalí en 1931, es una obra surrealista que presenta relojes derretidos en un paisaje onírico. La obra simboliza la relatividad del tiempo y la fugacidad de la existencia. Dalí utiliza la técnica del realismo detallado para dar vida a los objetos en un estado fluido, desafiando las leyes convencionales de la física y la percepción del tiempo. Esta pieza maestra de Dalí es un testimonio de su genialidad artística al explorar conceptos filosóficos y desafiar las nociones tradicionales, creando un impacto duradero en la historia del arte surrealista.",
-    imageUrl:
-      "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/La-Persistencia-de-la-Memoria.jpg",
-    relatedimageUrl:
-      "https://i.ibb.co/RGXm6RC/La-Persistencia-de-la-Memoria-IR.jpg",
-    facts: {
-      artistName: "Salvador Dalí",
-      creationYear: 1931,
-      artMovement: "Surrealismo",
-    },
-    additionalInformation: {
-      style: "Realismo detallado",
-      technique: "Óleo sobre lienzo",
-    },
-  },
+
   {
     id: "los-elefantes",
     name: "Los Elefantes",
@@ -420,28 +460,7 @@ export default [
       technique: "Carboncillo sobre papel",
     },
   },
-  //Obras de Mary Cassat
 
-  {
-    id: "Ninos-en-la-playa",
-    name: "Niños en la Playa",
-    shortDescription:
-      "Dos niñas juegan con cubos y palas intentando meter arena en ellos",
-    description:
-      "Es uno de sus cuadros más entrañables en la que demostró su genialidad a la hora de pintar niños , quizá una de las facetas más difíciles de la pintura. La brillantez de la piel infantil en la que destacan los mofletes rosados o los brazos enrojecidos por el sol ha sido perfectamente interpretados por la artista. La delicadeza y el detallismo de las dos niñas contrastan con la soltura de los elementos que las rodean ,realizadas con una pincelada rápida sin prestar atención a los detalles.",
-    imageUrl:
-      "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/ninos-en-la-ducha.jpg",
-    relatedimageUrl: "https://i.ibb.co/z5mf30w/ninos-en-la-playa-IR.jpg",
-    facts: {
-      artistName: "Mary Cassatt",
-      creationYear: 1884,
-      artMovement: "Impresionismo",
-    },
-    additionalInformation: {
-      style: "Vida Cotidiana",
-      technique: "Acuarela sobre papel",
-    },
-  },
   {
     id: "nina-con-muneca",
     name: "Niña con Muñeca",
@@ -459,25 +478,6 @@ export default [
     },
     additionalInformation: {
       style: "Retrato Infantil",
-      technique: "Acuarela sobre papel",
-    },
-  },
-  {
-    id: "escena-de-te",
-    name: "La taza de Té",
-    shortDescription: "Acuarela que captura la elegancia de una reunión social",
-    description:
-      "La taza de té de Mary Cassatt es una obra impresionista que representa a dos mujeres elegantemente vestidas disfrutando de un té en una sala de estar lujosamente amueblada. La composición es elegante y equilibrada, y los colores son suaves y armoniosos. La acuarela utilizada por Cassatt crea una atmósfera íntima y acogedora. La pintura es una celebración de la vida cotidiana de la burguesía francesa del siglo XIX. La taza de té es una obra maestra que captura la elegancia y la sofisticación de la vida de las mujeres de la época.",
-    imageUrl:
-      "https://cdn.jsdelivr.net/gh/Kav02/DEV013-dataverse/src/Imagenes/Cassatt_Mary_The_Cup_of_Tea.jpg",
-    relatedimageUrl: "https://i.ibb.co/yY0Kp09/tea-IR.jpg",
-    facts: {
-      artistName: "Mary Cassatt",
-      creationYear: 1900,
-      artMovement: "Impresionismo",
-    },
-    additionalInformation: {
-      style: "Escena Social",
       technique: "Acuarela sobre papel",
     },
   },
