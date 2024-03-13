@@ -1,7 +1,6 @@
 import { chatHeaderComponent } from "./../src/components/chatheader.js";
-// import { navigateTo } from "./../src/router.js";
-import { router} from "./../src/router.js"
-import {expect, jest} from '@jest/globals';
+import * as router from "./../src/router.js"
+
 describe("chatHeaderComponent", () => {
   it("chatHeaderComponent crea el componente correctamente", () => {
     const headerChat = chatHeaderComponent();
@@ -10,11 +9,27 @@ describe("chatHeaderComponent", () => {
   });
   it("navigaTo direcciona a la view home", () => {
     const headerChat = chatHeaderComponent();
-    const button = headerChat.querySelector("#opcionInicio");
-    
-    button.dispatchEvent(new Event("click"));
-    const navigateSpy = jest.spyOn(router, "navigateTo");
-    expect(navigateSpy).toHaveBeenCalledWith(["/home"]);
+    const pathname = "/home";
+
+    const spyOn = jest.spyOn(router, "navigateTo");
+    spyOn.mockImplementation((pathname) => {
+      history.pushState({}, "", pathname);
+    });
+    headerChat.querySelector("#home-title").dispatchEvent(new Event("click"));
+
+    expect(router.navigateTo).toHaveBeenCalledWith(pathname);
+
+    //   // OTRA FORMA DE HACER EL TEST AL NAVIGATE TO
+
+    //   const headerChat = chatHeaderComponent();
+    //   const pathname = "/home";
+
+    //   const router = require("../src/router.js");
+    //   const spyOn = jest.spyOn(router, "navigateTo");
+    //   spyOn.mockImplementation((pathname) => {
+    //     history.pushState({}, "", pathname);
+    //   });
+    //   headerChat.querySelector("#home-title").dispatchEvent(new Event("click"));
+    //   expect(window.location.pathname).toBe(pathname);
   });
 });
-

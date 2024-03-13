@@ -12,7 +12,7 @@ export const apiRegister = () => {
   headerRegister.innerHTML = `
   <button class="arrow-back" id="arrow-back"><span class="arrow-icon"><img src="./../Imagenes/return header.svg"></span></button>
   <section class="header-title">
-  <img class="smallLogo" src="./Imagenes/Small-Logo.png" alt="Art Place Logo">
+  <img class="logoHeader" src="./../Imagenes/logo.png" alt="Art Place Logo">
   <h1 id="header-name">ART PLACE</h1></section>
   `;
   viewapiRegister.append(headerRegister);
@@ -31,8 +31,11 @@ export const apiRegister = () => {
 `;
   /*method="post" : se usa para que no se registre los datos puestos en la url */
   viewapiRegister.append(contentApi);
-  // const buttonBack = headerRegister.querySelector("#arrow-back");
-  // buttonBack.addEventListener("click", window.history.back());
+  const buttonBack = viewapiRegister.querySelector("#arrow-back");
+  buttonBack.addEventListener("click", function (event) {
+    event.preventDefault();
+    window.history.back();
+  });
   const apiKey = viewapiRegister.querySelector("#textapikey");
   const buttonGuardar = viewapiRegister.querySelector("#Guardar");
   buttonGuardar.addEventListener("click", function () {

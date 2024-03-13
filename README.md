@@ -2,18 +2,18 @@
 
 ## Índice
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Consideraciones generales](#3-consideraciones-generales)
-* [4. Funcionalidades](#4-funcionalidades)
-* [5. Consideraciones técnicas](#5-consideraciones-técnicas)
-* [6. Hitos](#6-hitos)
-* [7. Criterios de aceptación mínimos del proyecto](#7-criterios-de-aceptación-mínimos-del-proyecto)
-* [8. Objetivos de aprendizaje](#8-objetivos-de-aprendizaje)
-* [9. Pistas, tips y lecturas complementarias](#9-pistas-tips-y-lecturas-complementarias)
-* [10. Consideraciones para pedir tu Project Feedback](#10-consideraciones-para-pedir-tu-project-feedback)
+- [1. Preámbulo](#1-preámbulo)
+- [2. Resumen del proyecto](#2-resumen-del-proyecto)
+- [3. Consideraciones generales](#3-consideraciones-generales)
+- [4. Funcionalidades](#4-funcionalidades)
+- [5. Consideraciones técnicas](#5-consideraciones-técnicas)
+- [6. Hitos](#6-hitos)
+- [7. Criterios de aceptación mínimos del proyecto](#7-criterios-de-aceptación-mínimos-del-proyecto)
+- [8. Objetivos de aprendizaje](#8-objetivos-de-aprendizaje)
+- [9. Pistas, tips y lecturas complementarias](#9-pistas-tips-y-lecturas-complementarias)
+- [10. Consideraciones para pedir tu Project Feedback](#10-consideraciones-para-pedir-tu-project-feedback)
 
-***
+---
 
 ## 1. Preámbulo
 
@@ -31,7 +31,7 @@ como por ejemplo planetas o animales? La inteligencia artificial nos
 puede ayudar a entender el pasado y a conectarnos con figuras
 históricas, así como a sumergirnos en mundos ficticios.
 
-![Preview app](https://github-production-user-asset-6210df.s3.amazonaws.com/123121338/271433237-2bd1477b-15ef-49d4-9fcb-226b3263c46a.png)
+![Preview app]![alt text](image-2.png)
 
 ## 2. Resumen del proyecto
 
@@ -47,34 +47,34 @@ a través de un sistema de chat impulsado por la
 
 ### Los objetivos generales de este proyecto son los siguientes
 
-* Desarrollar una [Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-* Aplicar los conceptos de responsividad en el desarrollo de las vistas
-* Implementar un router para la navegación entre las diferentes
-vistas de la aplicación
-* Integrar una API externa
-* Entender la asincronía en JavaScript
-* Crear una suite de pruebas unitarias que permitan testear código asíncrono
+- Desarrollar una [Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
+- Aplicar los conceptos de responsividad en el desarrollo de las vistas
+- Implementar un router para la navegación entre las diferentes
+  vistas de la aplicación
+- Integrar una API externa
+- Entender la asincronía en JavaScript
+- Crear una suite de pruebas unitarias que permitan testear código asíncrono
 
 ## 3. Consideraciones generales
 
-* Este proyecto se debe resolver en duplas.
+- ### Este proyecto se resolvió en duplas.
 
-* El rango de tiempo estimado para completar el proyecto es de 4 a 5 Sprints.
+- ### El proyecto se terminó en 6 Sprints.
 
-* La lógica del proyecto debe estar implementada completamente en JavaScript
+- La lógica del proyecto debe estar implementada completamente en JavaScript
   (ES6+), HTML y CSS. Para este proyecto **no está permitido** utilizar
   _frameworks_ o librerías de CSS y JS.
 
-* Reutilizar cierta parte del código del proyecto Dataverse, sobre todo el dataset.
+- Reutilizar cierta parte del código del proyecto Dataverse, sobre todo el dataset.
   Además debes refactorizar el código para que sea más modular y reutilizable
   implementando nuevas funciones para lograr las funcionalidades requeridas
   en este proyecto.
 
-* El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
+- El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
   interfaz será desplegada usando cualquiera de estas opciones:
   [Vercel](https://vercel.com/) o [Netlify](https://www.netlify.com/).
 
-* La división y organización del trabajo debe permitir, sin excepciones, que
+- La división y organización del trabajo debe permitir, sin excepciones, que
   **cada integrante** del equipo practique el aprendizaje de todo lo involucrado
   en **cada historia**. _No se dividan el trabajo como en una fábrica._
   - ¿Hasta acá has avanzado en tus proyectos con cierta fluidez y sin mayores
@@ -85,7 +85,7 @@ vistas de la aplicación
   - ¿Se te está haciendo difícil y te cuesta un poco más avanzar? No te quedes
     con las partes "fáciles" del proyecto, conversa, negocia, exige tu oportunidad
     para practicar y aprender lo que se te hace más difícil.
-  Para comenzar tendrás que hacer un _fork_ y _clonar_ este repositorio.
+    Para comenzar tendrás que hacer un _fork_ y _clonar_ este repositorio.
 
 ## 4. Funcionalidades
 
@@ -97,8 +97,8 @@ los personajes o entidades del set de data que utilizaste anteriormente.
 
 Aquí definimos en más detalle las funcionalidades mínimas que debe tener:
 
-* La aplicación debe ser _responsive_
-* La aplicación debe ser una SPA con múltiples vistas:
+- La aplicación debe ser _responsive_
+- La aplicación debe ser una SPA con múltiples vistas:
   - Implementar un sistema de enrutamiento que permita la navegación
     dentro de la aplicación.
   - Cada vista de la aplicación debe ser cargada dinámicamente
@@ -107,14 +107,14 @@ Aquí definimos en más detalle las funcionalidades mínimas que debe tener:
     cargada al igual que el `title` del documento (la pestaña del navegador).
   - La aplicación debe ser capaz de cargar la vista correspondiente a
     la URL actual al iniciar la aplicación.
-* La aplicación debe mantener las funcionalidades de Dataverse: visualizar,
+- La aplicación debe mantener las funcionalidades de Dataverse: visualizar,
   filtrar, ordenar y calcular estadística de la data.
-* Al hacer clic en una tarjeta de personaje/entidad, la aplicación debe
+- Al hacer clic en una tarjeta de personaje/entidad, la aplicación debe
   redirigirse a una vista **con su propia URL** que muestre la información
   detallada sobre ese personaje/entidad en particular
-* La aplicación debe permitir a la usuaria configurar la API Key para
+- La aplicación debe permitir a la usuaria configurar la API Key para
   interactuar con la API de Open AI
-* Usando la API de Open AI, la aplicación debe permitir al usuario
+- Usando la API de Open AI, la aplicación debe permitir al usuario
   interactuar con un personaje/entidad a través de un chat.
   Por ejemplo, si usamos la data de ejemplo de Dataverse, correspondiente
   a las mujeres con mayores contribuciones a la programación en la historia,
@@ -145,7 +145,7 @@ matemáticas y ciencias. Sin embargo, mi pasión por la matemática y la visión
 de lo que estas máquinas podrían lograr me impulsaron a seguir adelante."
 ```
 
-* La aplicación debe  permitir al usuario interactuar de manera simultánea
+- La aplicación debe permitir al usuario interactuar de manera simultánea
   con **todos** los personajes/entidades a través de un chat:
   - Esta funcionalidad debe cargarse en la URL `/panel`
   - La usuaria puede ingresar su pregunta o mensaje para todos los
@@ -157,7 +157,7 @@ de lo que estas máquinas podrían lograr me impulsaron a seguir adelante."
     respuesta.
   - Indicar visualmente cuando uno o varios personajes/entidades esten
     generando una respuesta al mensaje enviado
-* La aplicación debe informar a la usuaria los errores que puedan surgir al
+- La aplicación debe informar a la usuaria los errores que puedan surgir al
   interactuar con la API, como por ejemplo alcanzar la cuota de tokens por
   minuto o cualquier otro error relacionado con la API. Debería
   proporcionarse una descripción clara de la causa del problema y posibles
@@ -224,7 +224,7 @@ o los datos que generarías con ayuda de la inteligencia artificial).
 En esta carpeta, crearás módulos que contengan funcionalidades no relacionadas
 al DOM. Aquí podrás incluir el archivo
 `dataFunctions.js` que contiene las funciones que te permiten filtrar,
-ordenar y hacer cálculos agregados. También podrás crear  archivos con
+ordenar y hacer cálculos agregados. También podrás crear archivos con
 las funciones que
 interactúen con la API de inteligencia artificial o utilidades destinadas
 a almacenar datos en el local storage.
@@ -278,11 +278,11 @@ hacer un seguimiento de tu progreso.
 A continuación, te presentamos un cronograma de hitos que
 te puede ayudar a organizar tu trabajo.
 
-* [Hito 1](./docs/01-milestone.md)
-* [Hito 2](./docs/02-milestone.md)
-* [Hito 3](./docs/03-milestone.md)
-* [Hito 4](./docs/04-milestone.md)
-* [Hito 5](./docs/05-milestone.md)
+- [Hito 1](./docs/01-milestone.md)
+- [Hito 2](./docs/02-milestone.md)
+- [Hito 3](./docs/03-milestone.md)
+- [Hito 4](./docs/04-milestone.md)
+- [Hito 5](./docs/05-milestone.md)
 
 ## 7. Criterios de aceptación mínimos del proyecto
 
@@ -291,392 +291,415 @@ Además de las funcionalidades que definimos en la sección de
 siguientes requisitos:
 
 ### Definición del producto
+***
 
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
-contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuaria.
+Chat de una Galería de Obras de arte
+
+Necesidades de los usuarios
+Los usuarios quieren una página donde puedan apreciar pinturas, tambien poder filtrarlas y ordenarlas , ademas tambien tener la oportunidad de chatear con sus obras favoritas para poder preguntar cualquier duda.
 
 ### Historias de usuaria
+***
 
-Una vez que entiendas las necesidades de tus usuarias, escribe las [Historias
-de Usuaria](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que la usuaria necesita hacer/ver. Las **Historias de Usuaria** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarias.
+Se crearon las historias de usuario para ir trabajando por sprint. Ejemplo de la una historia de usuario:
+Historia 3
+Como persona interesada en el arte
+Quiero poder chatear con las obras de arte (individualmente).
+Para (beneficio): solventar mas dudas o saber mas detalles.
 
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
+Criterios de aceptación
+-Escribir un mensaje y obtener una respuesta.
 
-Usa tus historias de usuaria para planificar tus sprints dividiendo
-cada historia en tareas.
+Definición de hecho
 
-En la medida de lo posible, termina una Historia de Usuaria antes de pasar
-a la siguiente (cumpliendo con la Definición de Terminado y los Criterios
-de Aceptación).
+Que el API acepte la llave y se conecte con la IA
+Obtener respuestas con sentido*(personificacion)*.
+Que los elementos del chat se adecuen segun la interacción*(nubes de chat, el icono de obra, el input de chat)*.
 
 ### Diseño de la Interfaz de Usuaria
+***
+Se continuo con la idea de trabajar con tonos neutrales, esta vez agregando otro colores a la paleta para que se puedan usar en la nuevas vistas creadas.
+![alt text](image-4.png)
 
 #### Prototipo de baja fidelidad
+***
 
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
-
-Recuerda pedir feedback de tu prototipo a tus compañeras y/o coaches.
+Trabajamos en base al prototipo de Data Verse ajustandolo y organizandolo de manera que nos permitiera trabajar en SPA, para esto tambien creamos nuevas vista.
+![alt text](image-6.png)
 
 #### Prototipo de alta fidelidad
 
-Lo siguiente es diseñar tu Interfaz de Usuaria (UI por sus siglas en inglés -
-_User Interface_). Para eso debes aprender a utilizar alguna herramienta de
-diseño visual. Nosotros te recomendamos [Figma](https://www.figma.com/) que es
-una herramienta que funciona en el navegador y, además, puedes crear una cuenta
-gratis. Sin embargo, eres libre de utilizar otros editores gráficos como
-Illustrator, Photoshop, etc.
+Para la creación del prototipo usamos la aplicación Figma. Primero creamos el prototipo mobile, ya que esto nos permitia tener en cuenta lo responsive, asi podrimos ir agregando en vez de ir quitando al momento de hacer resonsive la pagina.
 
-El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
-desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
-diseño debe seguir los fundamentos de _visual design_.
+![alt text](image-5.png)
 
-Recuerda pedir feedback de tu prototipo a tus compañeras y/o coaches.
+Luego continuamos con el prototipo de escritorio, donde pudimos darle mayor detalle a los iconos ademas de poder agregar algunas imagene complementarias.
+
+![alt text](image.png)
 
 ### Testeos de usabilidad
+***
 
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarias,
-y con base en los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
-
-### Implementación de la Interfaz de Usuaria (HTML/CSS/JS)
-
-Luego de diseñar tu interfaz de usuaria deberás trabajar en su implementación.
-**No** es necesario que construyas la interfaz exactamente como la diseñaste.
-Tu tiempo de hacking es escaso, así que deberás priorizar.
-
-Revisa [las funcionalidades](#4-funcionalidades) que el proyecto pide del interfaz.
+Durante los tests de usabilidad los usuarios nos comentaron sobre el diseño del menú. También recibimos feedback con respecto a la navegación entre las páginas por lo que agregamos algunas nuevas rutas para moverse del chat individual al grupal directamente y para regresar del registro del Api en caso de que el usuario decida no usar esa funcionalidad.
 
 ### Pruebas unitarias
+***
 
-El _boilerplate_ de este proyecto no incluye Pruebas Unitarias (_tests_), así es
-que  tendrás que escribirlas tú para las funciones encargadas de  _procesar_,
-_filtrar_ y _ordenar_ la data, así como _calcular_ estadísticas.
-Te recomendamos usar
-el framework [Jest](https://jestjs.io/) para ejecutar las pruebas unitarias.
-Consultar su documentación.
-
-Tus _pruebas unitarias_ deben dar una cobertura del 70% de _statements_
-(_sentencias_), _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
-(_ramas_) del archivo `src/dataFunctions.js` que contenga tus funciones y
-está detallado en la sección de [Consideraciones técnicas](#5-consideraciones-técnicas).
+Las pruebas unitarias se realizaron obteniendo el siguiente resultado:
+![alt text](image-1.png)
 
 ## 8. Objetivos de aprendizaje
-
 
 Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
 
 ### HTML
 
-- [ ] **Uso de HTML semántico**
 
-  <details><summary>Links</summary><p>
+- [X] **Uso de HTML semántico**
 
-  * [HTML semántico](https://curriculum.laboratoria.la/es/topics/html/html5/semantic-html)
-  * [Semantics - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-</p></details>
+
+    <details><summary>Links</summary><p>
+
+  - [HTML semántico](https://curriculum.laboratoria.la/es/topics/html/html5/semantic-html)
+  - [Semantics - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
+  </p></details>
 
 ### CSS
 
-- [ ] **Uso de selectores de CSS**
 
-  <details><summary>Links</summary><p>
+- [X] **Uso de selectores de CSS**
 
-  * [Intro a CSS](https://curriculum.laboratoria.la/es/topics/css/css/intro-css)
-  * [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
-</p></details>
 
-- [ ] **Modelo de caja (box model): borde, margen, padding**
+    <details><summary>Links</summary><p>
 
-  <details><summary>Links</summary><p>
+  - [Intro a CSS](https://curriculum.laboratoria.la/es/topics/css/css/intro-css)
+  - [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
+  </p></details>
 
-  * [Box Model & Display](https://curriculum.laboratoria.la/es/topics/css/css/boxmodel-and-display)
-  * [The box model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
-  * [Introduction to the CSS box model - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
-  * [CSS display - MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display)
-  * [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
-</p></details>
+- [X] **Modelo de caja (box model): borde, margen, padding**
 
-- [ ] **Uso de flexbox en CSS**
 
-  <details><summary>Links</summary><p>
+    <details><summary>Links</summary><p>
 
-  * [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-  * [Flexbox Froggy](https://flexboxfroggy.com/#es)
-  * [Flexbox - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
-</p></details>
+  - [Box Model & Display](https://curriculum.laboratoria.la/es/topics/css/css/boxmodel-and-display)
+  - [The box model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
+  - [Introduction to the CSS box model - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - [CSS display - MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display)
+  - [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
+  </p></details>
 
-- [ ] **Uso de CSS Grid Layout**
+- [X] **Uso de flexbox en CSS**
 
-  <details><summary>Links</summary><p>
 
-  * [A Complete Guide to Grid - CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
-  * [Grids - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
-</p></details>
+    <details><summary>Links</summary><p>
+
+  - [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+  - [Flexbox Froggy](https://flexboxfroggy.com/#es)
+  - [Flexbox - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+  </p></details>
+
+- [x] **Uso de CSS Grid Layout**
+
+    <details><summary>Links</summary><p>
+
+  - [A Complete Guide to Grid - CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
+  - [Grids - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
+  </p></details>
 
 ### Web APIs
 
-- [ ] **Ruteado (History API, evento hashchange, window.location)**
 
-  <details><summary>Links</summary><p>
+- [X] **Ruteado (History API, evento hashchange, window.location)**
 
-  * [Manipulando el historial del navegador - MDN](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
-</p></details>
 
-- [ ] **Browser storage (localStorage, sessionStorage)**
+    <details><summary>Links</summary><p>
 
-  <details><summary>Links</summary><p>
+  - [Manipulando el historial del navegador - MDN](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
+  </p></details>
 
-  * [Window.localStorage - MDN](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)
-</p></details>
+- [X] **Browser storage (localStorage, sessionStorage)**
 
-- [ ] **Fetch API**
 
-  <details><summary>Links</summary><p>
+    <details><summary>Links</summary><p>
 
-  * [Fetch API - MDN](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
-</p></details>
+  - [Window.localStorage - MDN](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)
+  </p></details>
+
+
+- [X] **Fetch API**
+
+
+    <details><summary>Links</summary><p>
+
+  - [Fetch API - MDN](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
+  </p></details>
 
 #### DOM (Document Object Model)
 
-- [ ] **Uso de selectores del DOM**
 
-  <details><summary>Links</summary><p>
+- [X] **Uso de selectores del DOM**
 
-  * [Manipulación del DOM](https://curriculum.laboratoria.la/es/topics/browser/dom/1-dom-methods-selection)
-  * [Introducción al DOM - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction)
-  * [Localizando elementos DOM usando selectores - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
-</p></details>
 
-- [ ] **Manejo de eventos del DOM (listeners, propagación, delegación)**
+    <details><summary>Links</summary><p>
 
-  <details><summary>Links</summary><p>
+  - [Manipulación del DOM](https://curriculum.laboratoria.la/es/topics/browser/dom/1-dom-methods-selection)
+  - [Introducción al DOM - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction)
+  - [Localizando elementos DOM usando selectores - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
+  </p></details>
 
-  * [Introducción a eventos - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Events)
-  * [EventTarget.addEventListener() - MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)
-  * [EventTarget.removeEventListener() - MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener)
-  * [El objeto Event](https://developer.mozilla.org/es/docs/Web/API/Event)
-</p></details>
+- [X] **Manejo de eventos del DOM (listeners, propagación, delegación)**
 
-- [ ] **Manipulación dinámica del DOM**
 
-  <details><summary>Links</summary><p>
+    <details><summary>Links</summary><p>
 
-  * [Introducción al DOM](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction)
-  * [Node.appendChild() - MDN](https://developer.mozilla.org/es/docs/Web/API/Node/appendChild)
-  * [Document.createElement() - MDN](https://developer.mozilla.org/es/docs/Web/API/Document/createElement)
-  * [Document.createTextNode()](https://developer.mozilla.org/es/docs/Web/API/Document/createTextNode)
-  * [Element.innerHTML - MDN](https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML)
-  * [Node.textContent - MDN](https://developer.mozilla.org/es/docs/Web/API/Node/textContent)
-</p></details>
+  - [Introducción a eventos - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Events)
+  - [EventTarget.addEventListener() - MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)
+  - [EventTarget.removeEventListener() - MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener)
+  - [El objeto Event](https://developer.mozilla.org/es/docs/Web/API/Event)
+  </p></details>
+
+
+- [X] **Manipulación dinámica del DOM**
+
+
+    <details><summary>Links</summary><p>
+
+  - [Introducción al DOM](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction)
+  - [Node.appendChild() - MDN](https://developer.mozilla.org/es/docs/Web/API/Node/appendChild)
+  - [Document.createElement() - MDN](https://developer.mozilla.org/es/docs/Web/API/Document/createElement)
+  - [Document.createTextNode()](https://developer.mozilla.org/es/docs/Web/API/Document/createTextNode)
+  - [Element.innerHTML - MDN](https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML)
+  - [Node.textContent - MDN](https://developer.mozilla.org/es/docs/Web/API/Node/textContent)
+  </p></details>
 
 ### JavaScript
 
-- [ ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
 
-- [ ] **Variables (declaración, asignación, ámbito)**
+- [X] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
 
-  <details><summary>Links</summary><p>
+- [X] **Variables (declaración, asignación, ámbito)**
 
-  * [Valores, tipos de datos y operadores](https://curriculum.laboratoria.la/es/topics/javascript/basics/values-variables-and-types)
-  * [Variables](https://curriculum.laboratoria.la/es/topics/javascript/basics/variables)
-</p></details>
 
-- [ ] **Funciones (params, args, return)**
+    <details><summary>Links</summary><p>
 
-  <details><summary>Links</summary><p>
+  - [Valores, tipos de datos y operadores](https://curriculum.laboratoria.la/es/topics/javascript/basics/values-variables-and-types)
+  - [Variables](https://curriculum.laboratoria.la/es/topics/javascript/basics/variables)
+  </p></details>
 
-  * [Funciones (control de flujo)](https://curriculum.laboratoria.la/es/topics/javascript/flow-control/functions)
-  * [Funciones clásicas](https://curriculum.laboratoria.la/es/topics/javascript/functions/classic)
-  * [Arrow Functions](https://curriculum.laboratoria.la/es/topics/javascript/functions/arrow)
-  * [Funciones — bloques de código reutilizables - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Functions)
-</p></details>
+- [X] **Funciones (params, args, return)**
 
-- [ ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
 
-  <details><summary>Links</summary><p>
+    <details><summary>Links</summary><p>
 
-  * [Estructuras condicionales y repetitivas](https://curriculum.laboratoria.la/es/topics/javascript/flow-control/conditionals-and-loops)
-  * [Tomando decisiones en tu código — condicionales - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals)
-</p></details>
+  - [Funciones (control de flujo)](https://curriculum.laboratoria.la/es/topics/javascript/flow-control/functions)
+  - [Funciones clásicas](https://curriculum.laboratoria.la/es/topics/javascript/functions/classic)
+  - [Arrow Functions](https://curriculum.laboratoria.la/es/topics/javascript/functions/arrow)
+  - [Funciones — bloques de código reutilizables - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Functions)
+  </p></details>
 
-- [ ] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
 
-- [ ] **Uso de bucles/ciclos (while, for, for..of)**
+- [X] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
 
-  <details><summary>Links</summary><p>
 
-  * [Bucles (Loops)](https://curriculum.laboratoria.la/es/topics/javascript/flow-control/loops)
-  * [Bucles e iteración - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration)
-</p></details>
+    <details><summary>Links</summary><p>
+
+  - [Estructuras condicionales y repetitivas](https://curriculum.laboratoria.la/es/topics/javascript/flow-control/conditionals-and-loops)
+  - [Tomando decisiones en tu código — condicionales - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals)
+  </p></details>
+
+
+- [X] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
+
+- [X] **Uso de bucles/ciclos (while, for, for..of)**
+
+
+    <details><summary>Links</summary><p>
+
+  - [Bucles (Loops)](https://curriculum.laboratoria.la/es/topics/javascript/flow-control/loops)
+  - [Bucles e iteración - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration)
+  </p></details>
 
 #### Asincronía
 
-- [ ] **Callbacks**
+- [X] **Callbacks**
 
-  <details><summary>Links</summary><p>
+    <details><summary>Links</summary><p>
 
-  * [Función Callback - MDN](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
-</p></details>
+  - [Función Callback - MDN](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
+  </p></details>
 
-- [ ] **Promesas**
 
-  <details><summary>Links</summary><p>
+- [X] **Promesas**
 
-  * [Promise - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-  * [How to Write a JavaScript Promise - freecodecamp (en inglés)](https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/)
-</p></details>
+
+    <details><summary>Links</summary><p>
+
+  - [Promise - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+  - [How to Write a JavaScript Promise - freecodecamp (en inglés)](https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/)
+  </p></details>
 
 #### Tipos de datos
 
-- [ ] **Diferenciar entre tipos de datos primitivos y no primitivos**
 
-- [ ] **Arrays (arreglos)**
+- [X] **Diferenciar entre tipos de datos primitivos y no primitivos**
 
-  <details><summary>Links</summary><p>
+- [X] **Arrays (arreglos)**
 
-  * [Arreglos](https://curriculum.laboratoria.la/es/topics/javascript/arrays)
-  * [Array - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/)
-  * [Array.prototype.sort() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-  * [Array.prototype.forEach() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-  * [Array.prototype.map() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-  * [Array.prototype.filter() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-  * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-</p></details>
 
-- [ ] **Objetos (key, value)**
+    <details><summary>Links</summary><p>
 
-  <details><summary>Links</summary><p>
+  - [Arreglos](https://curriculum.laboratoria.la/es/topics/javascript/arrays)
+  - [Array - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/)
+  - [Array.prototype.sort() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+  - [Array.prototype.forEach() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+  - [Array.prototype.map() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+  - [Array.prototype.filter() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+  - [Array.prototype.reduce() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+  </p></details>
 
-  * [Objetos en JavaScript](https://curriculum.laboratoria.la/es/topics/javascript/objects/objects)
-</p></details>
+
+- [X] **Objetos (key, value)**
+
+    <details><summary>Links</summary><p>
+
+  - [Objetos en JavaScript](https://curriculum.laboratoria.la/es/topics/javascript/objects/objects)
+  </p></details>
 
 #### Módulos
 
-- [ ] **Módulos de ECMAScript (ES Modules)**
+- [X] **Módulos de ECMAScript (ES Modules)**
 
-  <details><summary>Links</summary><p>
+    <details><summary>Links</summary><p>
 
-  * [import - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import)
-  * [export - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export)
-</p></details>
+  - [import - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import)
+  - [export - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export)
+  </p></details>
 
 #### Testing en Javascript
 
-- [ ] **Pruebas unitarias (unit tests)**
 
-  <details><summary>Links</summary><p>
+- [X] **Pruebas unitarias (unit tests)**
 
-  * [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
-</p></details>
 
-- [ ] **Pruebas asíncronas**
+    <details><summary>Links</summary><p>
 
-  <details><summary>Links</summary><p>
+  - [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
+  </p></details>
 
-  * [Tests de código asincrónico con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/asynchronous)
-</p></details>
+- [x] **Pruebas asíncronas**
 
-- [ ] **Uso de mocks y espías**
+    <details><summary>Links</summary><p>
 
-  <details><summary>Links</summary><p>
+  - [Tests de código asincrónico con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/asynchronous)
+  </p></details>
 
-  * [Manual Mocks con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/manual-mocks)
-</p></details>
+
+- [X] **Uso de mocks y espías**
+
+
+    <details><summary>Links</summary><p>
+
+  - [Manual Mocks con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/manual-mocks)
+  </p></details>
 
 ### HTTP
 
-- [ ] **Cabeceras (headers)**
+- [x] **Cabeceras (headers)**
 
-  <details><summary>Links</summary><p>
+    <details><summary>Links</summary><p>
 
-  * [HTTP headers - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Headers)
-</p></details>
+  - [HTTP headers - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Headers)
+  </p></details>
 
-- [ ] **Consulta o petición (request) y respuesta (response).**
 
-  <details><summary>Links</summary><p>
+- [X] **Consulta o petición (request) y respuesta (response).**
 
-  * [Generalidades del protocolo HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)
-  * [Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages)
-</p></details>
 
-- [ ] **Códigos de status de HTTP**
+    <details><summary>Links</summary><p>
 
-  <details><summary>Links</summary><p>
+  - [Generalidades del protocolo HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)
+  - [Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages)
+  </p></details>
 
-  * [Códigos de estado de respuesta HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
-  * [The Complete Guide to Status Codes for Meaningful ReST APIs - dev.to](https://dev.to/khaosdoctor/the-complete-guide-to-status-codes-for-meaningful-rest-apis-1-5c5)
-</p></details>
+
+- [X] **Códigos de status de HTTP**
+
+
+    <details><summary>Links</summary><p>
+
+  - [Códigos de estado de respuesta HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
+  - [The Complete Guide to Status Codes for Meaningful ReST APIs - dev.to](https://dev.to/khaosdoctor/the-complete-guide-to-status-codes-for-meaningful-rest-apis-1-5c5)
+  </p></details>
 
 ### AI Prompting
 
-- [ ] **Priming Chatbots**
 
-  <details><summary>Links</summary><p>
+- [X] **Priming Chatbots**
 
-  * [Priming Chatbots | Learn Prompting: Your Guide to Communicating with AI](https://learnprompting.org/es/docs/basics/priming_prompt)
-</p></details>
 
-- [ ] **OpenAI API**
+    <details><summary>Links</summary><p>
 
-  <details><summary>Links</summary><p>
+  - [Priming Chatbots | Learn Prompting: Your Guide to Communicating with AI](https://learnprompting.org/es/docs/basics/priming_prompt)
+  </p></details>
 
-  * [Introduction - API Reference - OpenAI API](https://platform.openai.com/docs/introduction)
-  * [Authentication - API Reference - OpenAI API](https://platform.openai.com/docs/api-reference/authentication)
-  * [Making requests - API Reference - OpenAI API](https://platform.openai.com/docs/api-reference/making-requests)
-  * [The chat completion object - API Reference - OpenAI API](https://platform.openai.com/docs/api-reference/chat/object)
-</p></details>
+
+- [X] **OpenAI API**
+
+
+    <details><summary>Links</summary><p>
+
+  - [Introduction - API Reference - OpenAI API](https://platform.openai.com/docs/introduction)
+  - [Authentication - API Reference - OpenAI API](https://platform.openai.com/docs/api-reference/authentication)
+  - [Making requests - API Reference - OpenAI API](https://platform.openai.com/docs/api-reference/making-requests)
+  - [The chat completion object - API Reference - OpenAI API](https://platform.openai.com/docs/api-reference/chat/object)
+  </p></details>
 
 ### Control de Versiones (Git y GitHub)
 
 #### Git
 
-- [ ] **Git: Instalación y configuración**
 
-- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+- [X] **Git: Instalación y configuración**
 
-- [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
+- [X] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+
+- [X] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
 
 #### GitHub
 
-- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
+- [X] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
 
-- [ ] **GitHub: Despliegue con GitHub Pages**
+- [X] **GitHub: Despliegue con GitHub Pages**
 
-  <details><summary>Links</summary><p>
 
-  * [Sitio oficial de GitHub Pages](https://pages.github.com/)
-</p></details>
+    <details><summary>Links</summary><p>
 
-- [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
+  - [Sitio oficial de GitHub Pages](https://pages.github.com/)
+  </p></details>
+
+
+- [X] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
 
 ### Centrado en el usuario
 
-- [ ] **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
+- [X] **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
 
 ### Diseño de producto
 
-- [ ] **Crear prototipos de alta fidelidad que incluyan interacciones**
+- [X] **Crear prototipos de alta fidelidad que incluyan interacciones**
 
-- [ ] **Seguir los principios básicos de diseño visual**
+- [X] **Seguir los principios básicos de diseño visual**
 
 ### Investigación
 
-- [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
+- [] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
 
-  <details><summary>Links</summary><p>
 
-  * [Intro a testeos usabilidad](https://coda.io/@bootcamp-laboratoria/contenido-ux/test-de-usabilidad-15)
-  * [Pruebas con Usuarios 1 — ¿Qué, cuándo y para qué testeamos?](https://eugeniacasabona.medium.com/pruebas-con-usuarios-1-qu%C3%A9-cu%C3%A1ndo-y-para-qu%C3%A9-testeamos-7c3a89b4b5e7)
-</p></details>
+    <details><summary>Links</summary><p>
+
+  - [Intro a testeos usabilidad](https://coda.io/@bootcamp-laboratoria/contenido-ux/test-de-usabilidad-15)
+  - [Pruebas con Usuarios 1 — ¿Qué, cuándo y para qué testeamos?](https://eugeniacasabona.medium.com/pruebas-con-usuarios-1-qu%C3%A9-cu%C3%A1ndo-y-para-qu%C3%A9-testeamos-7c3a89b4b5e7)
+  </p></details>
 
 ## 9. Pistas, tips y lecturas complementarias
 
@@ -731,78 +754,79 @@ de tu aplicación
 
 #### Cuando ya estés lista para codear, te sugerimos empezar de esta manera
 
-1. Una de las integrantes del equipo debe realizar un :fork_and_knife:
+1. Una de las integrantes del equipo debe realizar un :fork*and_knife:
    [fork](https://help.github.com/articles/fork-a-repo/) del repo de tu cohort,
-   tus _coaches_ te compartirán un _link_ a un repo y te darán acceso de lectura
+   tus \_coaches* te compartirán un _link_ a un repo y te darán acceso de lectura
    en ese repo. La otra integrante del equipo deber hacer un fork **del
    repositorio de su compañera** y
    [configurar](https://gist.github.com/BCasal/026e4c7f5c71418485c1) un `remote`
    hacia el mismo.
-2. :arrow_down: [Clona](https://help.github.com/articles/cloning-a-repository/)
-   tu _fork_ a tu computadora (copia local).
+2. :arrow*down: [Clona](https://help.github.com/articles/cloning-a-repository/)
+   tu \_fork* a tu computadora (copia local).
 3. 📦 Instala las dependencias del proyecto con el comando `npm install`. Esto
    asume que has instalado [Node.js](https://nodejs.org/) (que incluye [npm](https://docs.npmjs.com/)).
 4. Si todo ha ido bien, deberías poder ejecutar las :traffic_light:
    pruebas unitarias (unit tests) con el comando `npm test`.
 5. Para ver la interfaz de tu programa en el navegador, usa el comando
-  `npm start` para arrancar el servidor web y dirígete a
-  `http://localhost:5000` en tu navegador.
+   `npm start` para arrancar el servidor web y dirígete a
+   `http://localhost:5000` en tu navegador.
 6. A codear se ha dicho! :rocket:
 
 ### Contenido de referencia
 
 #### Desarrollo Front-end
 
-* [Topicos en la curricula de sitio Laboratoria](https://curriculum.laboratoria.la/es/web-dev/topics)
+- [Topicos en la curricula de sitio Laboratoria](https://curriculum.laboratoria.la/es/web-dev/topics)
   testing, arreglos, objetos, funciones, DOM en Browser Javascript.
-* [Promesas](https://es.javascript.info/promise-basics)
-* [Haciendo peticiones con Fetch](https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch)
-* [Almacenamiento con LocalStorage](https://es.javascript.info/localstorage)
-* [Creando un router SPA con vanilla Javascript](https://github.com/Laboratoria/curriculum/blob/main/guides/router-spa/README.md)
-* [Delegación de eventos](https://es.javascript.info/event-delegation)
+- [Promesas](https://es.javascript.info/promise-basics)
+- [Haciendo peticiones con Fetch](https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch)
+- [Almacenamiento con LocalStorage](https://es.javascript.info/localstorage)
+- [Creando un router SPA con vanilla Javascript](https://github.com/Laboratoria/curriculum/blob/main/guides/router-spa/README.md)
+- [Delegación de eventos](https://es.javascript.info/event-delegation)
 
 #### Inteligencia Artificial y Prompting
 
-* [Learn Prompting](https://learnprompting.org/es/docs/category/-basic-applications)
-* [Prompt Engineering Roadmap](https://roadmap.sh/prompt-engineering)
-* [OpenAI Playground](https://beta.openai.com/playground)
-* [Making requests](https://platform.openai.com/docs/api-reference/making-requests)
-* [Chat with AI](https://platform.openai.com/docs/api-reference/chat)
-* [Priming Chatbots](https://learnprompting.org/es/docs/basics/priming_prompt)
-* [Build your aplication with AI](https://platform.openai.com/docs/quickstart/build-your-application)
+- [Learn Prompting](https://learnprompting.org/es/docs/category/-basic-applications)
+- [Prompt Engineering Roadmap](https://roadmap.sh/prompt-engineering)
+- [OpenAI Playground](https://beta.openai.com/playground)
+- [Making requests](https://platform.openai.com/docs/api-reference/making-requests)
+- [Chat with AI](https://platform.openai.com/docs/api-reference/chat)
+- [Priming Chatbots](https://learnprompting.org/es/docs/basics/priming_prompt)
+- [Build your aplication with AI](https://platform.openai.com/docs/quickstart/build-your-application)
 
 #### Herramientas
 
-* [Jest](https://jestjs.io/)
-* [Vercel](https://vercel.com/)
-* [Netlify](https://www.netlify.com/)
+- [Jest](https://jestjs.io/)
+- [Vercel](https://vercel.com/)
+- [Netlify](https://www.netlify.com/)
 
 ## 10. Consideraciones para pedir tu Project Feedback
 
 Antes de agendar tu Project Feedback con un coach, asegúrate que tu proyecto:
 
-* [ ] Cumple con todas las pruebas unitarias al ejecutar `npm run test` y
-  que tienen una cobertura del 70% de _statements_ (_sentencias_),
-  _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
-* [ ] Esta libre de _errores_ de `eslint` al ejecutar `npm run pretest`
-* [ ] Está subido a GitHub y desplegado en Netlify o Vercel.
-* Tiene un `README.md` con la siguiente:
-  - [ ] _Definición del producto_ clara e informativa
-  - [ ] Historias de usuaria
-  - [ ] Un _sketch_ de la solución (prototipo de baja fidelidad) y
-    _Diseño de la Interfaz de Usuaria_ (prototipo de alta fidelidad)
-  - [ ] El listado de problemas que detectaste a través de tests
-    de usabilidad en el `README.md`
-* Tiene un UI que cumple las funcionalidades:
-  - [ ] Permite ver toda la data en la pantalla principal con opciones para
-    filtrar y ordenar.
-  - [ ] Permite ingresar un API Key a través de un formulario.
-  - [ ] Permite ver una página con más detalles de cada entidad. En esta página
-    se puede iniciar el chat.
-  - [ ] Permite conversar con el personaje o entidad de la data a través
-    de un chat.
-  - [ ] Permite chatear de forma grupal con todas las entidades de la data.
-  - [ ] Es responsive y fue realizado usando la metodología mobile first.
+
+- [x] Cumple con todas las pruebas unitarias al ejecutar `npm run test` y
+      que tienen una cobertura del 70% de _statements_ (_sentencias_),
+      _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
+- [x] Esta libre de _errores_ de `eslint` al ejecutar `npm run pretest`
+- [x] Está subido a GitHub y desplegado en Netlify o Vercel.
+- Tiene un `README.md` con la siguiente: -[X] _Definición del producto_ clara e informativa
+  - [x] Historias de usuaria
+  - [x] Un _sketch_ de la solución (prototipo de baja fidelidad) y
+        _Diseño de la Interfaz de Usuaria_ (prototipo de alta fidelidad)
+  - [x] El listado de problemas que detectaste a través de tests
+        de usabilidad en el `README.md`
+- Tiene un UI que cumple las funcionalidades:
+  - [x] Permite ver toda la data en la pantalla principal con opciones para
+        filtrar y ordenar.
+  - [x] Permite ingresar un API Key a través de un formulario.
+  - [x] Permite ver una página con más detalles de cada entidad. En esta página
+        se puede iniciar el chat.
+  - [x] Permite conversar con el personaje o entidad de la data a través
+        de un chat.
+  - [x] Permite chatear de forma grupal con todas las entidades de la data.
+  - [x] Es responsive y fue realizado usando la metodología mobile first.
+
 
 Recuerda que debes hacer una autoevaluación de _objetivos de aprendizaje_ y
 _life skills_ desde tu dashboard de estudiante.
