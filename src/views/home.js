@@ -239,7 +239,6 @@ export const Home = () => {
   buttonGroup.addEventListener("click", () => {
     const target = buttonGroup.getAttribute("data-target");
     localStorage.setItem("apiKeyTarget", target);
-    console.log(target);
     const keyCheck = getApiKey();
     if (keyCheck === null) {
       navigateTo("/apiregister");

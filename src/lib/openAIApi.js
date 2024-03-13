@@ -35,7 +35,6 @@ export const communicateWithOpenAI = async (userInput, selectedPainting) => {
     }
 
     const result = await response.json();
-    console.log(result.choices[0].message.content);
     return result.choices[0].message.content;
   } catch (error) {
     // const errorAlert = window.alert("Error en la solicitud a OpenAI");
