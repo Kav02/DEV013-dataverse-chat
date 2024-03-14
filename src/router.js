@@ -4,8 +4,6 @@ let rootElement = ""; //Referencia el root donde se renderizan las vistas. Eleme
 export const setRootElement = (newRootElementValue) => {
   //Una función para establecer el elemento raíz del router.
   rootElement = newRootElementValue;
-  //validar si es un objeto html
-  //validar que exista
 };
 
 //Esta función asigna el valor del parámetro routes al objeto ROUTES
@@ -52,6 +50,15 @@ export const queryStringToObject = (queryString) => {
   // Devolver el objeto
   return queryParams;
 };
+// Función para capitalizar la primera letra de una cadena
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// Función para quitar el '/' al principio de una cadena
+function removeLeadingSlash(string) {
+  return string.startsWith("/") ? string.substring(1) : string;
+}
 export const navigateTo = (pathname, props = {}) => {
   if (props.id) {
     const newURL = `${pathname}?id=${props.id}`;
@@ -61,6 +68,8 @@ export const navigateTo = (pathname, props = {}) => {
   } else {
     window.history.pushState({}, "", pathname);
   }
+  const cleanPathname = capitalizeFirstLetter(removeLeadingSlash(pathname));
+  document.title = `Art Place ${cleanPathname}`;
   // render the view with the pathname and props
   renderView(pathname, props);
 };
